@@ -4,26 +4,22 @@ body {
     font-family: Arial, sans-serif;
   }
 
-  p {
-    font-family: 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
-  }
-  
+
   .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80px; /* más alto */
-    background-color: #6FA1A6; /* nuevo color */
+    height: 120px; /* más alto */
+    background-image: url("../src/assets/navbar.png");
   }
   
   .navbar-logo {
-    height: 50px; /* ligeramente más grande */
+    height: 90px; /* ligeramente más grande */
   }
   
   .section {
     text-align: center;
     margin: 0;
-    padding-top: 2rem;     /* separación con navbar */
     padding-bottom: 4rem;  /* espacio amplio antes del footer */
   }
   
@@ -56,7 +52,7 @@ body {
     justify-content: space-around;
     align-items: flex-start;
     padding: 2rem 1rem;
-    background-color: #6FA1A6; /* mismo color que navbar */
+    background-image: url("../src/assets/navbar.png");
     color: white;
     flex-wrap: wrap;
     gap: 2rem;
