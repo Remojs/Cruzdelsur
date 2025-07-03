@@ -22,13 +22,13 @@ function App() {
         <div className="footer-column">
           <h4>Links</h4>
           <ul>
-            <li><a href="/">Coming Soon...</a></li>
+            <li><a href="/">Animation</a></li>
           </ul>
         </div>
         <div className="footer-column">
           <h4>Recursos</h4>
           <ul>
-            <li><a href="/">Coming Soon...</a></li>
+            <li><a href="/">Portrait</a></li>
           </ul>
         </div>
       </footer>
