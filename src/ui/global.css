@@ -1,0 +1,52 @@
+/* NORMALIZE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* COLORS */
+:root {
+  /* Basic Colors */
+    --white: #FFFFFF;
+    --black: #000000;
+
+    --light-gray: #565A65;
+    --dark-gray: #1E1E1E;
+    --gray: #565A65;
+
+    --blue-primary: #6FA1A6;
+    --blue-secondary: #59BBA8;
+    --blue-terciary: #3FC8C0;
+
+    --golden: #B38D2F;
+}
+
+

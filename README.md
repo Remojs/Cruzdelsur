@@ -17,7 +17,6 @@ En cuanto a lo multimedia estaria dividido en 2 grupos, la carpeta de **/Public*
 ```markdown
 public/                 ← Assets estáticos servidos directamente (favicon, og:image...)
 ├── favicon.ico
-├── robots.txt
 └── logo192.png
 
 src/

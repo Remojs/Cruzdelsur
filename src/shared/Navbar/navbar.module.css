@@ -1,0 +1,35 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/backgrounds/navbar.png');
+  background-size: cover;
+  background-position: center;
+  height: 130px;
+  padding: 0 2rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: var(--blue-primary);
+}
+
+.logo {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 5rem;
+}
