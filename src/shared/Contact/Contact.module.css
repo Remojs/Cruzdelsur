@@ -1,0 +1,47 @@
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 5rem 0;
+}
+
+.textBox {
+  width: 30%;
+  padding-left: 20px;
+}
+
+.textBox h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.textBox p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  width: 30rem;
+}
+
+.textBox .buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.textBox .button {
+  padding: 0.5rem 1rem;
+  background-color: var(--blue-primary);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.imageBox {
+  width: 30%;
+  background-image: url('../../assets/images/HomeSection.webp');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}

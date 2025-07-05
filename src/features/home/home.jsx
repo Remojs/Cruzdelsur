@@ -1,8 +1,18 @@
 import styles from "./home.module.css"
 import HomeIMG from '@assets/images/HomeSection.webp'
 import HomePortrait from '@assets/banners/HomePortrait.webp'
+import SectionCardGroup from '../../shared/SectionCardGroup/SectionCardGroup';
+import exampleImage from '../../assets/banners/HomePortrait.webp';
+import Stats from '../../shared/Stats/Stats';
+import Contact from '../../shared/Contact/Contact';
 
 export default function Home() {
+  const cards = [
+    { title: 'Learning&Training', image: exampleImage, link: '/learning' },
+    { title: 'Recruitment', image: exampleImage, link: '/recruitment' },
+    { title: 'Safety', image: exampleImage, link: '/safety' },
+    { title: 'Charters', image: exampleImage, link: '/charters' },
+  ];
 
   return (
     <div className={styles.container}>
@@ -50,7 +60,16 @@ export default function Home() {
             <button className={styles.ctaButton}>READ MORE</button>
           </div>
         </div>
+
+        <div>
+          <SectionCardGroup cards={cards} />
+        </div>
+
+        
       </main>
+      
+      <Stats />
+      <Contact />
     </div>
   )
 }
