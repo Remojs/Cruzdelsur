@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../features/home/home';
 import Layout from './layout/Layout';
 import Charters from '../features/charters/charters';
+import WebinarPage from '../pages/webinar/webinar';
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ export const router = createBrowserRouter([
       {
         path: '/charters',
         element: <Charters />,
+      },
+      {
+        path: '/webinar',
+        element: <WebinarPage />,
       },
     ],
   },
