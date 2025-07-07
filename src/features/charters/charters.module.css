@@ -1,0 +1,470 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: white;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.birdIcon {
+  display: inline-block;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #565a65;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1rem;
+  color: #565a65;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.subDescription {
+  font-size: 0.95rem;
+  color: #565a65;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.form {
+  width: 100%;
+}
+
+/* Flight Search Section */
+.flightSearchSection {
+  margin-bottom: 50px;
+}
+
+.sectionSubtitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #6fa1a6;
+  padding-bottom: 10px;
+}
+
+.flightSearch {
+  display: flex;
+  gap: 0;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  background: white;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.flightSearch:last-of-type {
+  margin-bottom: 30px;
+}
+
+.searchField {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+  border-right: 1px solid #eee;
+  min-height: 40px;
+}
+
+.searchField:last-child {
+  border-right: none;
+}
+
+.fieldContent {
+  flex: 1;
+  position: relative;
+}
+
+.fieldContent label {
+  display: block;
+  font-size: 0.85rem;
+  color: #565a65;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.searchInput,
+.searchSelect {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #1e1e1e;
+  outline: none;
+}
+
+.addReturn {
+  font-size: 0.8rem;
+  color: #6fa1a6;
+  cursor: pointer;
+  margin-top: 5px;
+  display: block;
+}
+
+.passengerCounter {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.counterButton {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #6fa1a6;
+  background: white;
+  color: #6fa1a6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.counterButton:hover {
+  background: #6fa1a6;
+  color: white;
+}
+
+.passengerNumber {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e1e1e;
+  min-width: 20px;
+  text-align: center;
+}
+
+.addFlightButton {
+  background: #59bba8;
+  border: 2px solid #59bba8;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addFlightButton:hover {
+  background: #3fc8c0;
+  border-color: #3fc8c0;
+}
+
+/* Personal Information Section */
+.personalInfoSection {
+  background: #f6f7f8;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 60px;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.titleField {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameField {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.emailField,
+.phoneField {
+  display: flex;
+  flex-direction: column;
+}
+
+.emailField input{
+    width: 450px;
+}
+
+.preferencesSection {
+  margin-bottom: 30px;
+  padding: 25px;
+  background: white;
+  border-radius: 8px;
+  border-left: 4px solid #59bba8;
+}
+
+.subsectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e1e1e;
+  margin-bottom: 20px;
+}
+
+.preferencesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.requestsSection {
+  margin-bottom: 30px;
+}
+
+.consentSection {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldGroup label {
+  font-size: 0.9rem;
+  color: #565a65;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.fieldHint {
+  font-size: 0.8rem;
+  color: #999;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.input,
+.select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 1rem;
+  color: #1e1e1e;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus,
+.select:focus {
+  border-color: #6fa1a6;
+  box-shadow: 0 0 0 2px rgba(111, 161, 166, 0.1);
+}
+
+.phoneGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.phoneCountrySelect {
+  flex: 0 0 120px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 1rem;
+  color: #1e1e1e;
+  outline: none;
+}
+
+.phoneInput {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 1rem;
+  color: #1e1e1e;
+  outline: none;
+}
+
+.phoneCountrySelect:focus,
+.phoneInput:focus {
+  border-color: #6fa1a6;
+  box-shadow: 0 0 0 2px rgba(111, 161, 166, 0.1);
+}
+
+.largeTextarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  font-size: 1rem;
+  color: #1e1e1e;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 120px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.largeTextarea:focus {
+  border-color: #6fa1a6;
+  box-shadow: 0 0 0 2px rgba(111, 161, 166, 0.1);
+}
+
+.checkboxGroup {
+  margin-bottom: 20px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #565a65;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 2px;
+  accent-color: #6fa1a6;
+}
+
+.submitButton {
+  background: transparent;
+  color: #6fa1a6;
+  border: 2px solid #6fa1a6;
+  padding: 18px 50px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.submitButton:hover {
+  background: #6fa1a6;
+  color: white;
+}
+
+.contact {
+  font-size: 0.9rem;
+  color: #565a65;
+  text-align: center;
+}
+
+.link {
+  color: #6fa1a6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.phone {
+  color: #6fa1a6;
+  text-decoration: underline;
+}
+
+.membershipSection {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid #eee;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #565a65;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.membershipSubtitle {
+  font-size: 1rem;
+  color: #565a65;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.membershipDescription {
+  font-size: 0.95rem;
+  color: #565a65;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .flightSearch {
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  .searchField {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .searchField:last-child {
+    border-bottom: none;
+  }
+
+  .nameRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .contactRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .preferencesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mainTitle {
+    font-size: 2rem;
+  }
+
+  .personalInfoSection {
+    padding: 20px;
+  }
+
+  .phoneGroup {
+    flex-direction: column;
+  }
+
+  .phoneCountrySelect {
+    flex: 1;
+  }
+
+  .submitButton {
+    width: 100%;
+    max-width: none;
+  }
+}

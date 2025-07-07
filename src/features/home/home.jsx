@@ -1,17 +1,26 @@
-import styles from "./home.module.css"
-import HomeIMG from '@assets/images/HomeSection.webp'
+import styles from './home.module.css';
+
+//Images
 import HomePortrait from '@assets/banners/HomePortrait.webp'
-import SectionCardGroup from '../../shared/SectionCardGroup/SectionCardGroup';
-import exampleImage from '../../assets/banners/HomePortrait.webp';
-import Stats from '../../shared/Stats/Stats';
-import Contact from '../../shared/Contact/Contact';
+import HomeIMG from '@assets/images/HomeSection.webp'
+import HomeIMG2 from '@assets/images/HomeSection2.webp'
+import SectionCard1 from '@assets/images/SectionCard_IMG1.webp';
+import SectionCard2 from '@assets/images/SectionCard_IMG2.webp';
+import SectionCard3 from '@assets/images/SectionCard_IMG3.webp';
+import SectionCard4 from '@assets/images/SectionCard_IMG4.webp';
+
+//Components
+import SectionCardGroup from '@shared/SectionCardGroup/SectionCardGroup';
+import Stats from '@shared/Stats/Stats';
+import Contact from '@shared/Contact/Contact';
 
 export default function Home() {
+
   const cards = [
-    { title: 'Learning&Training', image: exampleImage, link: '/learning' },
-    { title: 'Recruitment', image: exampleImage, link: '/recruitment' },
-    { title: 'Safety', image: exampleImage, link: '/safety' },
-    { title: 'Charters', image: exampleImage, link: '/charters' },
+    { title: 'Learning&Training', image: SectionCard1, link: '/learning' },
+    { title: 'Recruitment', image: SectionCard2, link: '/recruitment' },
+    { title: 'Safety', image: SectionCard3, link: '/safety' },
+    { title: 'Charters', image: SectionCard4, link: '/charters' },
   ];
 
   return (
@@ -43,7 +52,7 @@ export default function Home() {
         <div className={styles.contentGridReversed}>
 
           <div className={styles.imageColumn}>
-            <img src={HomeIMG} alt="Aviation personnel walking through airport terminal" className={styles.heroImage} loading="lazy"/>
+            <img src={HomeIMG2} alt="Aviation personnel walking through airport terminal" className={styles.heroImage} loading="lazy"/>
           </div>
 
           <div className={styles.contentColumn}>
