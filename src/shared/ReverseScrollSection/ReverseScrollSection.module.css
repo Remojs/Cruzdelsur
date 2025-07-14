@@ -72,11 +72,6 @@
     flex-direction: column;
     gap: 2rem;
   }
-  
-  .card:first-child {
-    margin-right: 0;
-    margin-bottom: -40px;
-  }
 }
 
 .card {
@@ -96,35 +91,44 @@
   box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
 }
 
+/* First card is the text card (left) - larger */
 .card:first-child {
+  width: 1000px;
+  height: 745px;
+  display: flex;
+  align-items: center;
+  margin-right: -40px;
+}
+
+/* Second card is the logo card (right) - smaller */
+.card:last-child {
   width: 475px;
   height: 475px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  margin-right: -40px;
-}
-
-.card:last-child {
-  width: 1000px;
-  height: 745px;
-  display: flex;
-  align-items: center;
 }
 
 @media (max-width: 1600px) {
   .card:first-child {
     width: 100%;
     height: auto;
-    min-height: 400px;
+    min-height: 600px;
     margin-right: -20px;
   }
   
   .card:last-child {
     width: 100%;
     height: auto;
-    min-height: 600px;
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card:first-child {
+    margin-right: 0;
+    margin-bottom: -40px;
   }
 }
 
@@ -232,57 +236,4 @@
   font-size: 1.125rem;
   color: #374151;
   line-height: 1.625;
-}
-
-.scrollIndicator {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
-}
-
-.scrollContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.scrollText {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-.scrollArrow {
-  width: 1.5rem;
-  height: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.reversed {
-  flex-direction: row-reverse;
-}
-
-.reversed .card:first-child {
-  margin-right: 0;
-  margin-left: -40px;
-}
-
-@media (max-width: 1600px) {
-  .reversed .card:first-child {
-    margin-left: -20px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .reversed {
-    flex-direction: column;
-  }
-  
-  .reversed .card:first-child {
-    margin-left: 0;
-    margin-bottom: -40px;
-  }
 }

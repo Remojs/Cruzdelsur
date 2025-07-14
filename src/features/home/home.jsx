@@ -14,6 +14,7 @@ import SectionCardGroup from '@shared/SectionCardGroup/SectionCardGroup';
 import Stats from '@shared/Stats/Stats';
 import Contact from '@shared/Contact/Contact';
 import ScrollSection from '@shared/ScrollSection/ScrollSection';
+import ReverseScrollSection from '@shared/ReverseScrollSection/ReverseScrollSection';
 
 export default function Home() {
 
@@ -29,6 +30,8 @@ export default function Home() {
       <img src={HomePortrait} alt="Aviation personnel walking through airport terminal" className={styles.portrait} loading="lazy"/>
 
       <ScrollSection imageSrc={HomeIMG} altText="Cruz del Sur Aviation"/>
+      
+      <ReverseScrollSection imageSrc={HomeIMG2} altText="Cruz del Sur Mission"/>
 
       <main className={styles.main}>
         <div className={styles.contentGrid}>
