@@ -13,11 +13,12 @@ import SectionCard4 from '@assets/images/SectionCard_IMG4.webp';
 import SectionCardGroup from '@shared/SectionCardGroup/SectionCardGroup';
 import Stats from '@shared/Stats/Stats';
 import Contact from '@shared/Contact/Contact';
+import ScrollSection from '@shared/ScrollSection/ScrollSection';
 
 export default function Home() {
 
   const cards = [
-    { title: 'Learning&Training', image: SectionCard1, link: '/learning' },
+    { title: 'Executive', image: SectionCard1, link: '/learning' },
     { title: 'Recruitment', image: SectionCard2, link: '/recruitment' },
     { title: 'Safety', image: SectionCard3, link: '/safety' },
     { title: 'Charters', image: SectionCard4, link: '/charters' },
@@ -26,6 +27,8 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <img src={HomePortrait} alt="Aviation personnel walking through airport terminal" className={styles.portrait} loading="lazy"/>
+
+      <ScrollSection imageSrc={HomeIMG} altText="Cruz del Sur Aviation"/>
 
       <main className={styles.main}>
         <div className={styles.contentGrid}>
