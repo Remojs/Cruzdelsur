@@ -19,63 +19,19 @@ import ReverseScrollSection from '@shared/ReverseScrollSection/ReverseScrollSect
 export default function Home() {
 
   const cards = [
-    { title: 'Executive', image: SectionCard1, link: '/learning' },
-    { title: 'Recruitment', image: SectionCard2, link: '/recruitment' },
+    { title: 'Charter Services', image: SectionCard1, link: '/charters' },
+    { title: 'Learning', image: SectionCard2, link: '/learning' },
     { title: 'Safety', image: SectionCard3, link: '/safety' },
-    { title: 'Charters', image: SectionCard4, link: '/charters' },
+    { title: 'Recruitment', image: SectionCard4, link: '/recruitment' },
   ];
 
   return (
     <div className={styles.container}>
-      <img src={HomePortrait} alt="Aviation personnel walking through airport terminal" className={styles.portrait} loading="lazy"/>
-
-      <ScrollSection imageSrc={HomeIMG} altText="Cruz del Sur Aviation"/>
+      <ScrollSection imageSrc="/src/assets/backgrounds/Animation-BG.webp" altText="Cruz del Sur Aviation"/>
       
-      <ReverseScrollSection imageSrc={HomeIMG2} altText="Cruz del Sur Mission"/>
+      <ReverseScrollSection imageSrc="/src/assets/backgrounds/Animation-BG.webp" altText="Cruz del Sur Mission"/>
 
       <main className={styles.main}>
-        <div className={styles.contentGrid}>
-
-          <div className={styles.imageColumn}>
-            <img src={HomeIMG} alt="Aviation personnel walking through airport terminal" className={styles.heroImage} loading="lazy"/>
-          </div>
-
-          <div className={styles.contentColumn}>
-            <h2 className={styles.sectionTitle}>What we offer</h2>
-
-            <h3 className={styles.mainHeading}>Tailored Aviation & Talent Solutions for Latin America</h3>
-
-            <div className={styles.textContent}>
-              <p className={styles.paragraph}>Driven by strategic vision and deep market knowledge, Cruz del Sur combines world-class charter services with custom recruitment solutions for the aviation industry. Our mission is to deliver end-to-end support that elevates your operations and enhances every aspect of the flight and hiring experience.</p>
-
-              <p className={styles.paragraph}>We act as strategic partners. Whether optimizing operations or sourcing the right talent, our goal is always the same: helping you grow with excellence and precision.</p>
-            </div>
-
-            <button className={styles.ctaButton}>READ MORE</button>
-          </div>
-        </div>
-
-        <div className={styles.contentGridReversed}>
-
-          <div className={styles.imageColumn}>
-            <img src={HomeIMG2} alt="Aviation personnel walking through airport terminal" className={styles.heroImage} loading="lazy"/>
-          </div>
-
-          <div className={styles.contentColumn}>
-            <h2 className={styles.sectionTitle}>What we offer</h2>
-
-            <h3 className={styles.mainHeading}>Tailored Aviation & Talent Solutions for Latin America</h3>
-
-            <div className={styles.textContent}>
-              <p className={styles.paragraph}>Driven by strategic vision and deep market knowledge, Cruz del Sur combines world-class charter services with custom recruitment solutions for the aviation industry. Our mission is to deliver end-to-end support that elevates your operations and enhances every aspect of the flight and hiring experience.</p>
-
-              <p className={styles.paragraph}>We act as strategic partners. Whether optimizing operations or sourcing the right talent, our goal is always the same: helping you grow with excellence and precision.</p>
-            </div>
-
-            <button className={styles.ctaButton}>READ MORE</button>
-          </div>
-        </div>
-
         <div>
           <SectionCardGroup cards={cards} />
         </div>

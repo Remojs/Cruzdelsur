@@ -44,18 +44,18 @@ export default function Charters() {
 
 
       <div className={styles.content}>
-        <h1 className={styles.mainTitle}>Request a Quote for Your Next Flight.</h1>
+        <h1 className={styles.mainTitle}>Solicita una Cotización para tu Próximo Vuelo Charter</h1>
 
         <p className={styles.description}>
-          Every flight is unique, which is why we work diligently to create the perfect flight that meets both your
-          travel requirements and personal preferences every time you fly. To find the optimal flight solution for your
-          next trip, provide all the information you can below and we will offer you a personalized suggestion
-          accompanied by a quote.
+          Cada vuelo tiene una historia, una necesidad y un propósito diferente. Por eso, en Cruz del Sur diseñamos experiencias de vuelo que combinan eficiencia operativa, confort y precisión a medida.
+        </p>
+
+        <p className={styles.description}>
+          Contanos los detalles de tu próximo viaje y nuestro equipo te contactará a la brevedad con una propuesta personalizada, pensada para optimizar tu tiempo y responder con exactitud a tus expectativas.
         </p>
 
         <p className={styles.subDescription}>
-          Enter your flight details below and our team will contact you shortly. Private jet charter flight prices are
-          subject to market rates and start from USD $11,000.
+          Completá el formulario con toda la información posible. Estamos listos para ayudarte a llegar más alto.
         </p>
 
 

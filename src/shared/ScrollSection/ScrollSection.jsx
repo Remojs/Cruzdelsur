@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./ScrollSection.module.css";
-import logo from '@assets/logos/logo.png';
+import logo from '@assets/logos/logo-complete.png';
 
 const ScrollSection = ({ 
-  imageSrc = "/clouds-sunset.png", 
+  imageSrc, 
   altText = "Clouds at sunset"
 }) => {
   const heroRef = useRef(null);
@@ -67,15 +67,9 @@ const ScrollSection = ({
                 animate={isHeroInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, delay: 1.8, ease: "easeOut" }}
               >
-                <p className={styles.paragraph}>
-                  Somos una empresa dedicada a inspirar y conectar el mundo de la aviación. Con años de experiencia en
-                  el sector, nos especializamos en brindar servicios excepcionales que elevan los estándares de la
-                  industria.
-                </p>
-                <p className={styles.paragraph}>
-                  Nuestra pasión por volar nos impulsa a crear experiencias únicas que trascienden las nubes y tocan
-                  el cielo.
-                </p>
+                <p className={styles.paragraph}>En el firmamento austral, la constelación Cruz del Sur ha guiado a exploradores y navegantes durante siglos. Hoy, su esencia nos inspira para acompañar y guiar a quienes navegan los cielos, lideran, transforman y sueñan en el mundo de la aviación.</p>
+                <p className={styles.paragraph}>En un mundo donde la aviación evoluciona y se redefine constantemente, Cruz del Sur nace para marcar un rumbo. Somos una consultora global estratégica, que no solo interpreta el presente de la industria: la desafía, la transforma y la inspira.</p>
+                <p className={styles.paragraph}>Construimos conexiones estratégicas entre personas, ideas, y objetivos. Desarrollamos proyectos de alto impacto. Articulamos oferta y demanda con precisión, optimizando tiempos, procesos y recursos clave. Diseñamos soluciones con precisión técnica, visión global y una profunda valoración del capital humano. Y lo hacemos con la certeza de que cada proyecto en el que trabajamos tiene el potencial de abrir un nuevo horizonte, elevarse y llegar a destino con éxito. Porque creemos que cada iniciativa bien dirigida no solo resuelve una necesidad: abre caminos, transforma escenarios y expande posibilidades.</p>
               </motion.div>
             </div>
           </motion.div>

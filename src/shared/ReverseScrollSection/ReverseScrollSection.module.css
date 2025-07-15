@@ -77,7 +77,7 @@
 .card {
   backdrop-filter: blur(4px);
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 1rem;
+  border-radius: .25rem;
   padding: 2rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -94,7 +94,7 @@
 /* First card is the text card (left) - larger */
 .card:first-child {
   width: 1000px;
-  height: 745px;
+  height: 600px;
   display: flex;
   align-items: center;
   margin-right: -40px;
@@ -103,7 +103,7 @@
 /* Second card is the logo card (right) - smaller */
 .card:last-child {
   width: 475px;
-  height: 475px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,8 +147,8 @@
 }
 
 .logoContainer {
-  width: 80%;
-  height: 80%;
+  width: 95%;
+  height: 95%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -228,12 +228,12 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 90%;
+  width: 100%;
   margin-left: 0;
 }
 
 .paragraph {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: #374151;
   line-height: 1.625;
 }

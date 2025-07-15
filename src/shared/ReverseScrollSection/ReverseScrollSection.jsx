@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import styles from "./ReverseScrollSection.module.css";
-import logo from '@assets/logos/logo.png';
+import logo from '@assets/logos/logo-complete.png';
 
 const ReverseScrollSection = ({ 
-  imageSrc = "/clouds-sunset.png", 
+  imageSrc, 
   altText = "Clouds at sunset"
 }) => {
   const sectionRef = useRef(null);
@@ -52,14 +52,9 @@ const ReverseScrollSection = ({
                 animate={isSectionInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, delay: 1.8, ease: "easeOut" }}
               >
-                <p className={styles.paragraph}>
-                  Nuestra misión es revolucionar la industria de la aviación a través de la innovación, la excelencia
-                  operacional y un compromiso inquebrantable con la seguridad y la calidad.
-                </p>
-                <p className={styles.paragraph}>
-                  Trabajamos incansablemente para crear soluciones que no solo cumplan con los más altos estándares,
-                  sino que también inspiren a las futuras generaciones de aviadores.
-                </p>
+                <p className={styles.paragraph}>Somos un equipo interdisciplinario de expertos con vasta experiencia profesional en la industria Aerocomercial, aviación ejecutiva y Organismos gubernamentales de aviación. Managers, Reclutadores, Psicólogos aeronáuticos, Investigadores, Auditores, Gestores, Consultores, Pilotos, Tripulantes de cabina, Instructores, unidos por una misma convicción:</p>
+                <p className={styles.paragraph}>Que cada desafío en esta industria merece una respuesta hecha a medida. Única. Asertiva. Práctica. Efectiva. Técnicamente Precisa. Profunda. Humana. Valiosa. Significativa.</p>
+                <p className={styles.paragraph}>Desde el diseño de Modelos y estrategias de optimización de campañas de reclutamiento, hasta la mejora estadística de los departamentos de Safety, a partir de auditorías, desarrollo e implementación de programas customizados. Experiencias de crecimiento y transformación a partir de programas de Mentoría de perfil y búsqueda laboral. La gestión de la adquisición-venta de aeronaves, así como la promoción de Vuelos Ejecutivos, merecen un capítulo aparte.  Trabajamos con un equipo especialmente dedicado según el perfil de cada proyecto y servicio que brindamos.</p>
               </motion.div>
             </div>
           </motion.div>
