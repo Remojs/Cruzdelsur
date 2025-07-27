@@ -3,11 +3,13 @@ import Home from '../features/home/home';
 import Layout from './layout/Layout';
 import Charters from '../features/charters/charters';
 import WebinarPage from '../pages/webinar/webinar';
+import { NotFound, UnderConstruction } from '../ui';
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
@@ -21,6 +23,44 @@ export const router = createBrowserRouter([
       {
         path: '/webinar',
         element: <WebinarPage />,
+      },
+      // Navbar routes - Under Construction
+      {
+        path: '/learning',
+        element: <UnderConstruction />,
+      },
+      {
+        path: '/recruitment',
+        element: <UnderConstruction />,
+      },
+      {
+        path: '/careers',
+        element: <UnderConstruction />,
+      },
+      {
+        path: '/consulting',
+        element: <UnderConstruction />,
+      },
+      {
+        path: '/safety',
+        element: <UnderConstruction />,
+      },
+      {
+        path: '/contact',
+        element: <UnderConstruction />,
+      },
+      {
+        path: '/search',
+        element: <UnderConstruction />,
+      },
+      {
+        path: '/cart',
+        element: <UnderConstruction />,
+      },
+      // 404 catch-all route
+      {
+        path: '*',
+        element: <NotFound />,
       },
     ],
   },
