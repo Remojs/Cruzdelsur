@@ -177,6 +177,9 @@
   padding: 40px;
   border-radius: 12px;
   margin-bottom: 60px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .nameRow {
@@ -210,7 +213,8 @@
 }
 
 .emailField input{
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
 }
 
 .preferencesSection {
@@ -274,6 +278,8 @@
   color: #1e1e1e;
   outline: none;
   transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input:focus,
@@ -418,7 +424,71 @@
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+
+/* Large Desktop - 1200px and up */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+    padding: 60px 40px;
+  }
+  
+  .content {
+    max-width: 1200px;
+  }
+  
+  .mainTitle {
+    font-size: 3rem;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+  }
+  
+  .personalInfoSection {
+    padding: 50px;
+  }
+}
+
+/* Medium Desktop - 992px to 1199px */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .container {
+    max-width: 1100px;
+    padding: 50px 30px;
+  }
+  
+  .content {
+    max-width: 900px;
+  }
+  
+  .mainTitle {
+    font-size: 2.8rem;
+  }
+  
+  .personalInfoSection {
+    padding: 40px;
+  }
+  
+  .emailField input {
+    width: 100%;
+  }
+}
+
+/* Small Desktop/Large Tablet - 768px to 991px */
+@media (max-width: 991px) and (min-width: 768px) {
+  .container {
+    max-width: 900px;
+    padding: 40px 25px;
+  }
+  
+  .content {
+    max-width: 800px;
+  }
+  
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+  
   .flightSearch {
     flex-direction: column;
     border-radius: 8px;
@@ -427,6 +497,70 @@
   .searchField {
     border-right: none;
     border-bottom: 1px solid #eee;
+    padding: 12px 20px;
+  }
+
+  .searchField:last-child {
+    border-bottom: none;
+  }
+  
+  .nameRow {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  
+  .titleField {
+    grid-column: 1 / -1;
+  }
+  
+  .contactRow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .preferencesGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .personalInfoSection {
+    padding: 30px;
+  }
+  
+  .emailField input {
+    width: 100%;
+  }
+}
+
+/* Mobile Large - 576px to 767px */
+@media (max-width: 767px) and (min-width: 576px) {
+  .container {
+    padding: 30px 20px;
+  }
+  
+  .content {
+    max-width: 100%;
+  }
+  
+  .mainTitle {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  
+  .description,
+  .subDescription {
+    text-align: center;
+  }
+  
+  .flightSearch {
+    flex-direction: column;
+    border-radius: 8px;
+  }
+
+  .searchField {
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding: 15px 20px;
   }
 
   .searchField:last-child {
@@ -447,24 +581,329 @@
     grid-template-columns: 1fr;
   }
 
-  .mainTitle {
-    font-size: 2rem;
-  }
-
   .personalInfoSection {
-    padding: 20px;
+    padding: 25px;
   }
 
   .phoneGroup {
-    flex-direction: column;
+    gap: 8px;
   }
 
   .phoneCountrySelect {
-    flex: 1;
+    flex: 0 0 100px;
   }
 
   .submitButton {
     width: 100%;
     max-width: none;
+    padding: 16px 30px;
+  }
+  
+  .emailField input {
+    width: 100%;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .passengerCounter {
+    justify-content: center;
+  }
+}
+
+/* Mobile Medium - 480px to 575px */
+@media (max-width: 575px) and (min-width: 480px) {
+  .container {
+    padding: 25px 15px;
+  }
+  
+  .mainTitle {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .subDescription {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .flightSearchSection {
+    margin-bottom: 40px;
+  }
+  
+  .searchField {
+    padding: 12px 15px;
+  }
+  
+  .personalInfoSection {
+    padding: 20px;
+  }
+  
+  .nameRow,
+  .contactRow {
+    gap: 12px;
+  }
+  
+  .phoneGroup {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .phoneCountrySelect {
+    flex: 1;
+  }
+  
+  .preferencesSection {
+    padding: 20px;
+  }
+  
+  .counterButton {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+  
+  .passengerCounter {
+    gap: 12px;
+  }
+  
+  .submitButton {
+    padding: 14px 25px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Small - 320px to 479px */
+@media (max-width: 479px) {
+  .container {
+    padding: 20px 10px;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  .mainTitle {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  
+  .subDescription {
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .flightSearchSection {
+    margin-bottom: 35px;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .searchField {
+    padding: 10px 12px;
+  }
+  
+  .fieldContent label {
+    font-size: 0.8rem;
+  }
+  
+  .searchInput {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+  
+  .personalInfoSection {
+    padding: 15px;
+  }
+  
+  .nameRow,
+  .contactRow {
+    gap: 10px;
+  }
+  
+  .input,
+  .select {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .phoneGroup {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .phoneCountrySelect,
+  .phoneInput {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .preferencesSection {
+    padding: 15px;
+  }
+  
+  .subsectionTitle {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .fieldGroup label {
+    font-size: 0.85rem;
+  }
+  
+  .counterButton {
+    width: 26px;
+    height: 26px;
+    font-size: 0.9rem;
+  }
+  
+  .passengerNumber {
+    font-size: 1rem;
+  }
+  
+  .largeTextarea {
+    font-size: 0.9rem;
+    padding: 10px;
+    min-height: 100px;
+  }
+  
+  .checkboxLabel {
+    font-size: 0.85rem;
+  }
+  
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .contact {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  
+  .addReturn {
+    font-size: 0.75rem;
+  }
+  
+  .fieldHint {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra Small Mobile - 320px and below */
+@media (max-width: 320px) {
+  .container {
+    padding: 15px 8px;
+  }
+  
+  .mainTitle {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  .description,
+  .subDescription {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  .subDescription {
+    margin-bottom: 20px;
+  }
+  
+  .searchField {
+    padding: 8px 10px;
+  }
+  
+  .personalInfoSection {
+    padding: 12px;
+  }
+  
+  .preferencesSection {
+    padding: 12px;
+  }
+  
+  .input,
+  .select,
+  .phoneCountrySelect,
+  .phoneInput {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  .largeTextarea {
+    padding: 8px;
+    font-size: 0.85rem;
+    min-height: 80px;
+  }
+  
+  .submitButton {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .counterButton {
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+  }
+  
+  .passengerNumber {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Screens - Below 400px */
+@media (max-width: 399px) {
+  .personalInfoSection {
+    margin: 20px 5px;
+    padding: 15px;
+    overflow-x: hidden;
+  }
+  
+  .nameRow,
+  .contactRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .titleField,
+  .nameField,
+  .emailField,
+  .phoneField {
+    width: 100%;
+  }
+  
+  .emailField input,
+  .phoneField input,
+  .nameField input,
+  .titleField select {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
   }
 }
