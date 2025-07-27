@@ -19,9 +19,9 @@ import ReverseScrollSection from '@shared/ReverseScrollSection/ReverseScrollSect
 export default function Home() {
 
   const cards = [
-    { title: 'Charter Services', image: SectionCard1, link: '/charters' },
+    { title: 'Executive Flights', image: SectionCard1, link: '/charters' },
     { title: 'Learning', image: SectionCard2, link: '/learning' },
-    { title: 'Safety', image: SectionCard3, link: '/safety' },
+    { title: 'Safety Management', image: SectionCard3, link: '/safety' },
     { title: 'Recruitment', image: SectionCard4, link: '/recruitment' },
   ];
 

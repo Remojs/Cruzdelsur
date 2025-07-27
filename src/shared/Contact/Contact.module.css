@@ -4,17 +4,25 @@
   align-items: center;
   width: 100%;
   margin: 5rem 0;
+  padding: 0 2rem;
+  gap: 2rem;
 }
 
 .textBox {
   width: 30%;
   padding-left: 20px;
+  min-width: 300px;
 }
 
 .textBox h3 {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: var(--black);
+}
+
+.highlight {
+  color: var(--blue-primary);
 }
 
 .textBox p {
@@ -22,20 +30,30 @@
   line-height: 1.5;
   margin-bottom: 1.5rem;
   width: 30rem;
+  max-width: 100%;
+  color: var(--text-gray);
 }
 
 .textBox .buttons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .textBox .button {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   background-color: var(--blue-primary);
   color: var(--white);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.textBox .button:hover {
+  background-color: #005a9e;
+  transform: translateY(-2px);
 }
 
 .imageBox {
@@ -44,4 +62,273 @@
   background-size: cover;
   background-position: center;
   height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  min-width: 250px;
+}
+
+/* Responsive Breakpoints */
+
+/* Ultra Large Desktop - 1900px and up */
+@media (min-width: 1900px) {
+  .contactContainer {
+    margin: 8rem 0;
+    padding: 0 4rem;
+    gap: 4rem;
+  }
+  
+  .textBox {
+    width: 35%;
+    padding-left: 30px;
+  }
+  
+  .textBox h3 {
+    font-size: 2.5rem;
+  }
+  
+  .textBox p {
+    font-size: 1.2rem;
+    width: 35rem;
+  }
+  
+  .imageBox {
+    width: 35%;
+    height: 400px;
+  }
+}
+
+/* Extra Large Desktop - 1500px to 1899px */
+@media (max-width: 1899px) and (min-width: 1500px) {
+  .contactContainer {
+    margin: 7rem 0;
+    padding: 0 3rem;
+    gap: 3rem;
+  }
+  
+  .textBox {
+    width: 32%;
+  }
+  
+  .textBox h3 {
+    font-size: 2.2rem;
+  }
+  
+  .textBox p {
+    font-size: 1.1rem;
+    width: 32rem;
+  }
+  
+  .imageBox {
+    width: 32%;
+    height: 350px;
+  }
+}
+
+/* Large Desktop - 1200px to 1499px */
+@media (max-width: 1499px) and (min-width: 1200px) {
+  .contactContainer {
+    margin: 6rem 0;
+    gap: 2.5rem;
+  }
+  
+  .textBox {
+    width: 40%;
+  }
+  
+  .textBox p {
+    width: 28rem;
+  }
+  
+  .imageBox {
+    width: 40%;
+    height: 320px;
+  }
+}
+
+/* Medium Desktop - 1024px to 1199px */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .contactContainer {
+    margin: 5rem 0;
+    gap: 2rem;
+  }
+  
+  .textBox {
+    width: 45%;
+    padding-left: 15px;
+  }
+  
+  .textBox h3 {
+    font-size: 1.8rem;
+  }
+  
+  .textBox p {
+    font-size: 0.95rem;
+    width: 25rem;
+  }
+  
+  .imageBox {
+    width: 45%;
+    height: 280px;
+  }
+}
+
+/* Large Tablet - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .contactContainer {
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 0;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .textBox {
+    width: 80%;
+    max-width: 600px;
+    padding-left: 0;
+  }
+  
+  .textBox h3 {
+    font-size: 1.8rem;
+  }
+  
+  .textBox p {
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .textBox .buttons {
+    justify-content: center;
+  }
+  
+  .imageBox {
+    width: 80%;
+    max-width: 500px;
+    height: 250px;
+  }
+}
+
+/* Mobile Large - 481px to 767px */
+@media (max-width: 767px) and (min-width: 481px) {
+  .contactContainer {
+    flex-direction: column;
+    margin: 3rem 0;
+    padding: 0 1.5rem;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .textBox {
+    width: 100%;
+    padding-left: 0;
+  }
+  
+  .textBox h3 {
+    font-size: 1.6rem;
+  }
+  
+  .textBox p {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+  
+  .textBox .buttons {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  
+  .textBox .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .imageBox {
+    width: 100%;
+    height: 200px;
+    min-width: auto;
+  }
+}
+
+/* Mobile Small - 480px and below */
+@media (max-width: 480px) {
+  .contactContainer {
+    margin: 2.5rem 0;
+    padding: 0 1rem;
+    gap: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .textBox {
+    width: 100%;
+    padding-left: 0;
+    order: 1;
+  }
+  
+  .textBox h3 {
+    font-size: 1.4rem;
+  }
+  
+  .textBox p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    width: 100%;
+  }
+  
+  .textBox .buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+  
+  .textBox .button {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    width: 100%;
+  }
+  
+  .imageBox {
+    width: 100%;
+    height: 180px;
+    order: 2;
+    min-width: auto;
+  }
+}
+
+/* Extra Small Mobile - 360px and below */
+@media (max-width: 360px) {
+  .contactContainer {
+    margin: 2rem 0;
+    padding: 0 0.8rem;
+    gap: 1rem;
+  }
+  
+  .textBox {
+    order: 1;
+  }
+  
+  .textBox h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .textBox p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  .textBox .buttons {
+    gap: 0.6rem;
+  }
+  
+  .textBox .button {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .imageBox {
+    height: 150px;
+    order: 2;
+  }
 }

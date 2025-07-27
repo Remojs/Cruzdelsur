@@ -10,7 +10,8 @@ export default function SectionCardGroup({ cards }) {
           key={index} 
           title={card.title} 
           image={card.image} 
-          link={card.link} 
+          link={card.link}
+          index={index}
         />
       ))}
     </div>

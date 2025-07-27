@@ -5,32 +5,432 @@
   background-image: url('../../assets/backgrounds/navbar.png');
   background-size: cover;
   background-position: center;
-  height: 130px;
-  padding: 0 2rem;
+  height: 117px;
+  padding: 0 1rem;
   font-family: 'Quicksand', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
-.navLinks {
+.navContainer {
   display: flex;
-  gap: 2rem;
-  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
 }
 
-.navLinks a {
+.navContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  max-width: 80%;
+}
+
+.leftNavLinks, .rightNavLinks {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.leftNavLinks {
+  gap: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.rightNavLinks {
+  gap: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.leftNavLinks a, .rightNavLinks a {
   text-decoration: none;
   color: white;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
-.navLinks a:hover {
-  color: var(--blue-primary);
+.leftNavLinks a:hover, .rightNavLinks a:hover {
+  color: #007acc;
+}
+
+.homeIcon {
+  margin-right: 0.3rem;
 }
 
 .logo {
-  width: 250px;
-  height: auto;
-  border-radius: 8px;
-  margin: 0 5rem;
+  height: 75px;
+  width: auto;
+  object-fit: contain;
+}
+
+.mobileLogo {
+  display: none;
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.iconContainer {
+  display: flex;
+  gap: 0.8rem;
+  position: absolute;
+  right: 0;
+  z-index: 10;
+}
+
+.iconLink {
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.iconLink:hover {
+  color: #007acc;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  z-index: 1001;
+  padding: 0.5rem;
+}
+
+.mobileMenuButton:hover {
+  color: #007acc;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 117px;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(180deg, #1a365d 0%, #2c5282 50%, #2d3748 100%);
+  overflow: hidden;
+  transition: height 0.4s ease-in-out;
+  z-index: 999;
+}
+
+.mobileMenu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 54, 93, 0.9);
+  z-index: -1;
+}
+
+.mobileMenu.open {
+  height: calc(100vh - 117px);
+}
+
+.mobileMenuLinks {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 2rem 1.5rem;
+  margin: 0;
+  height: 100%;
+  justify-content: flex-start;
+}
+
+.mobileMenuLinks li {
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileMenuLinks li:last-child {
+  border-bottom: none;
+}
+
+.mobileMenuLinks a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.mobileMenuLinks a:hover {
+  color: #007acc;
+  transform: translateX(5px);
+}
+
+.mobileIcons {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobileIcons a {
+  font-size: 1rem;
+}
+
+/* Responsive Breakpoints */
+
+/* Large Desktop - 1200px and up */
+@media (min-width: 1200px) {
+  .navbar {
+    padding: 0 1.5rem;
+  }
+  
+  .navContainer {
+    max-width: 1400px;
+  }
+  
+  .leftNavLinks, .rightNavLinks {
+    gap: 1.8rem;
+  }
+  
+  .leftNavLinks {
+    margin-right: 1.8rem;
+  }
+  
+  .rightNavLinks {
+    margin-left: 1.8rem;
+  }
+  
+  .leftNavLinks a, .rightNavLinks a {
+    font-size: 1rem;
+  }
+  
+  .logo {
+    height: 80px;
+  }
+  
+  .iconLink {
+    font-size: 1.1rem;
+  }
+  
+  .iconContainer {
+    gap: 0.8rem;
+    right: 1rem;
+  }
+}
+
+/* Extra Large Desktop - 1400px and up */
+@media (min-width: 1400px) {
+  .leftNavLinks, .rightNavLinks {
+    gap: 2rem;
+  }
+  
+  .leftNavLinks {
+    margin-right: 2rem;
+  }
+  
+  .rightNavLinks {
+    margin-left: 2rem;
+  }
+  
+  .leftNavLinks a, .rightNavLinks a {
+    font-size: 1.1rem;
+  }
+  
+  .logo {
+    height: 90px;
+  }
+  
+  .iconLink {
+    font-size: 1.2rem;
+  }
+  
+  .iconContainer {
+    gap: 1rem;
+  }
+}
+
+/* Medium Desktop - 1024px to 1199px */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .leftNavLinks, .rightNavLinks {
+    gap: 1.2rem;
+  }
+  
+  .leftNavLinks {
+    margin-right: 1.2rem;
+  }
+  
+  .rightNavLinks {
+    margin-left: 1.2rem;
+  }
+  
+  .leftNavLinks a, .rightNavLinks a {
+    font-size: 0.9rem;
+  }
+  
+  .logo {
+    height: 70px;
+  }
+  
+  .iconLink {
+    font-size: 1rem;
+  }
+  
+  .navContent {
+    max-width: 85%;
+  }
+  
+  .iconContainer {
+    right: 0.5rem;
+  }
+}
+
+/* Small Desktop/Large Tablet - 768px to 1023px */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .leftNavLinks, .rightNavLinks {
+    gap: 0.8rem;
+  }
+  
+  .leftNavLinks {
+    margin-right: 0.8rem;
+  }
+  
+  .rightNavLinks {
+    margin-left: 0.8rem;
+  }
+  
+  .leftNavLinks a, .rightNavLinks a {
+    font-size: 0.8rem;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  .iconLink {
+    font-size: 0.9rem;
+  }
+  
+  .iconContainer {
+    gap: 0.6rem;
+  }
+  
+  .navContent {
+    max-width: 90%;
+  }
+}
+
+/* Mobile - 767px and below */
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0 1rem;
+    height: 100px;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .navContainer {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navContent {
+    display: none;
+  }
+  
+  .iconContainer {
+    display: none;
+  }
+  
+  .logo {
+    display: none;
+  }
+  
+  .mobileLogo {
+    display: block;
+    height: 60px;
+  }
+  
+  .mobileMenuButton {
+    display: block;
+    position: static;
+    transform: none;
+  }
+  
+  .mobileMenu {
+    top: 100px;
+  }
+  
+  .mobileMenu.open {
+    height: calc(100vh - 100px);
+    display: block;
+  }
+  
+  .mobileMenuLinks {
+    padding: 1.5rem 1rem;
+    height: 100%;
+  }
+  
+  .mobileMenuLinks a {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Small - 480px and below */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0 0.8rem;
+    height: 90px;
+  }
+  
+  .mobileLogo {
+    height: 50px;
+  }
+  
+  .mobileMenuButton {
+    font-size: 1.2rem;
+  }
+  
+  .mobileMenu {
+    top: 90px;
+  }
+  
+  .mobileMenu.open {
+    height: calc(100vh - 90px);
+  }
+  
+  .mobileMenuLinks {
+    padding: 1rem 0.8rem;
+    height: 100%;
+  }
+  
+  .mobileMenuLinks a {
+    font-size: 1rem;
+  }
+  
+  .mobileMenuLinks li {
+    margin: 0.4rem 0;
+  }
 }

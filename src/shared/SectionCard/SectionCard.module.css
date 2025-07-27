@@ -20,7 +20,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   transition: background-color 0.3s ease;
-  border-radius: 5PX;
+  border-radius: 5px;
 }
 
 .card:hover .overlay {
@@ -33,4 +33,85 @@
   font-weight: 600;
   z-index: 1;
   text-align: center;
+}
+
+.blueTitle {
+  color: #1b3280;
+}
+
+/* Responsive Breakpoints */
+
+/* Large Desktop - 1200px and up - Títulos abajo, letra pequeña */
+@media (min-width: 1200px) {
+  .card {
+    width: 350px;
+    height: 500px;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+}
+
+/* Medium Desktop - 1001px to 1199px - Títulos abajo, letra pequeña */
+@media (max-width: 1199px) and (min-width: 1001px) {
+  .card {
+    width: 320px;
+    height: 450px;
+    align-items: flex-end;
+    padding-bottom: 2rem;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+}
+
+/* Large Tablet - 768px to 1000px - Centrados, tamaño original */
+@media (max-width: 1000px) and (min-width: 768px) {
+  .card {
+    width: 280px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+  
+  .title {
+    font-size: 30px;
+  }
+}
+
+/* Mobile - 767px and below - Centrados, tamaño original */
+@media (max-width: 767px) {
+  .card {
+    width: 100%;
+    max-width: 300px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+  
+  .title {
+    font-size: 30px;
+  }
+}
+
+/* Mobile Small - 480px and below - Centrados, tamaño original */
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    max-width: 280px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+  }
+  
+  .title {
+    font-size: 30px;
+  }
 }
