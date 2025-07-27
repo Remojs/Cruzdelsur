@@ -72,7 +72,6 @@
   background-position: center;
   right: 0;
   z-index: 1;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   order: 1;
 }
 
@@ -97,60 +96,28 @@
 
 /* Responsive Breakpoints */
 
-/* Ultra Large Desktop - 1900px and up */
-@media (min-width: 1900px) {
+/* Ultra Large Desktop - 2000px and up */
+@media (min-width: 2000px) {
   .statsContainer {
-    height: 800px;
-    margin: 15rem 0;
+    height: 850px;
+    margin: 18rem 0;
   }
   
   .grayBox {
-    width: 1500px;
-    height: 800px;
-    padding-left: 50px;
+    width: 1600px;
+    height: 850px;
+    padding-left: 60px;
   }
   
   .grayStatsBox {
-    width: 45%;
-    margin-left: 8%;
+    width: 400px;
+    margin-left: 100px;
   }
   
   .blackBox {
-    width: 1200px;
-    height: 700px;
-  }
-  
-  .bulletTitle {
-    font-size: 1.8rem;
-  }
-  
-  .bulletList {
-    font-size: 1.1rem;
-    line-height: 1.7;
-  }
-}
-
-/* Extra Large Desktop - 1500px to 1899px */
-@media (max-width: 1899px) and (min-width: 1500px) {
-  .statsContainer {
+    width: calc(100vw - 600px);
+    max-width: 1300px;
     height: 750px;
-    margin: 12rem 0;
-  }
-  
-  .grayBox {
-    width: 1400px;
-    height: 750px;
-    padding-left: 40px;
-  }
-  
-  .grayStatsBox {
-    width: 45%;
-    margin-left: 8%;
-  }
-  
-  .blackBox {
-    width: 1100px;
-    height: 650px;
   }
   
   .bulletTitle {
@@ -163,31 +130,32 @@
   }
 }
 
-/* Large Desktop - 1280px to 1499px */
-@media (max-width: 1499px) and (min-width: 1280px) {
+/* Extra Ultra Large Desktop - 1800px to 1999px */
+@media (max-width: 1999px) and (min-width: 1800px) {
   .statsContainer {
-    height: 700px;
-    margin: 10rem 0;
+    height: 750px;
+    margin: 15rem 0;
   }
   
   .grayBox {
-    width: 1300px;
-    height: 700px;
-    padding-left: 35px;
+    width: 1450px;
+    height: 750px;
+    padding-left: 50px;
   }
   
   .grayStatsBox {
-    width: 48%;
-    margin-left: 8%;
+    width: 400px;
+    margin-left: 100px;
   }
   
   .blackBox {
-    width: 950px;
-    height: 600px;
+    width: calc(100vw - 600px);
+    max-width: 1150px;
+    height: 650px;
   }
   
   .bulletTitle {
-    font-size: 1.8rem;
+    font-size: 1.85rem;
   }
   
   .bulletList {
@@ -196,41 +164,96 @@
   }
 }
 
-/* Medium Desktop - 1000px to 1279px - LAYOUT CHANGE TO VERTICAL */
-@media (max-width: 1279px) and (min-width: 1000px) {
+/* Ultra Large Desktop - 1900px to 1799px (corrected range) */
+@media (max-width: 1799px) and (min-width: 1600px) {
   .statsContainer {
-    height: auto;
-    margin: 8rem 0;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    position: static;
+    height: 700px;
+    margin: 12rem 0;
   }
   
   .grayBox {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    left: auto;
-    margin-top: 0;
-    padding: 2.5rem;
-    order: 2;
+    width: 1350px;
+    height: 700px;
+    padding-left: 45px;
   }
   
   .grayStatsBox {
-    width: 100%;
-    margin-left: 0;
+    width: 400px;
+    margin-left: 100px;
   }
   
   .blackBox {
-    position: relative;
-    width: 100%;
+    width: calc(100vw - 600px);
     max-width: 1000px;
-    height: 400px;
-    right: auto;
-    order: 1;
-    border-radius: 8px;
+    height: 600px;
+  }
+  
+  .bulletTitle {
+    font-size: 1.8rem;
+  }
+  
+  .bulletList {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+}
+
+/* Extra Large Desktop - 1500px to 1599px */
+@media (max-width: 1599px) and (min-width: 1500px) {
+  .statsContainer {
+    height: 650px;
+    margin: 10rem 0;
+  }
+  
+  .grayBox {
+    width: 1250px;
+    height: 650px;
+    padding-left: 40px;
+  }
+  
+  .grayStatsBox {
+    width: 400px;
+    margin-left: 100px;
+  }
+  
+  .blackBox {
+    width: calc(100vw - 600px);
+    max-width: 900px;
+    height: 550px;
+  }
+  
+  .bulletTitle {
+    font-size: 1.75rem;
+  }
+  
+  .bulletList {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Large Desktop - 1200px to 1499px */
+@media (max-width: 1499px) and (min-width: 1200px) {
+  .statsContainer {
+    height: 600px;
+    margin: 8rem 0;
+  }
+  
+  .grayBox {
+    width: 1150px;
+    height: 600px;
+    padding-left: 35px;
+  }
+  
+  .grayStatsBox {
+    width: 400px;
+    margin-left: 100px;
+  }
+  
+  .blackBox {
+    width: calc(100vw - 600px);
+    max-width: 800px;
+    height: 500px;
   }
   
   .bulletTitle {
@@ -238,12 +261,80 @@
   }
   
   .bulletList {
-    font-size: 1.05rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.55;
   }
 }
 
-/* Small Desktop - 1024px to 999px */
+/* Medium Desktop Side-by-Side - 1100px to 1199px */
+@media (max-width: 1199px) and (min-width: 1100px) {
+  .statsContainer {
+    height: 550px;
+    margin: 6rem 0;
+  }
+  
+  .grayBox {
+    width: 1000px;
+    height: 550px;
+    padding-left: 30px;
+  }
+  
+  .grayStatsBox {
+    width: 380px;
+    margin-left: 80px;
+  }
+  
+  .blackBox {
+    width: calc(100vw - 540px);
+    max-width: 650px;
+    height: 450px;
+  }
+  
+  .bulletTitle {
+    font-size: 1.5rem;
+  }
+  
+  .bulletList {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
+/* Medium Desktop Side-by-Side Small - 1000px to 1099px */
+@media (max-width: 1099px) and (min-width: 1000px) {
+  .statsContainer {
+    height: 520px;
+    margin: 5.5rem 0;
+  }
+  
+  .grayBox {
+    width: 950px;
+    height: 520px;
+    padding-left: 25px;
+  }
+  
+  .grayStatsBox {
+    width: 360px;
+    margin-left: 70px;
+  }
+  
+  .blackBox {
+    width: calc(100vw - 500px);
+    max-width: 600px;
+    height: 420px;
+  }
+  
+  .bulletTitle {
+    font-size: 1.3rem;
+  }
+  
+  .bulletList {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+/* Small Desktop - Vertical Layout - 768px to 999px */
 @media (max-width: 999px) and (min-width: 768px) {
   .statsContainer {
     height: auto;
