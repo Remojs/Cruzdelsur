@@ -2,9 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('../../assets/backgrounds/navbar.png');
-  background-size: cover;
-  background-position: center;
+  background-color: #041227;
   height: 117px;
   padding: 0 1rem;
   font-family: 'Quicksand', sans-serif;
@@ -72,8 +70,12 @@
   margin-right: 0.3rem;
 }
 
+.planeIcon {
+  margin-left: 0.3rem;
+}
+
 .logo {
-  height: 75px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   margin: 0 2rem;
@@ -228,7 +230,7 @@
   }
   
   .logo {
-    height: 80px;
+    height: 70px;
   }
   
   .iconLink {
@@ -260,7 +262,7 @@
   }
   
   .logo {
-    height: 90px;
+    height: 70px;
   }
   
   .iconLink {

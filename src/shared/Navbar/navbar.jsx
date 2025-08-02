@@ -1,6 +1,6 @@
 import styles from './navbar.module.css';
 import logo from '@assets/logos/logo.png';
-import { FaHome, FaShoppingCart, FaSearch, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHome, FaShoppingCart, FaSearch, FaBars, FaTimes, FaPlane } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
@@ -37,8 +37,8 @@ export default function Navbar() {
           <ul className={styles.rightNavLinks}>
             <li><a href="/consulting">Consulting</a></li>
             <li><a href="/safety">Safety</a></li>
-            <li><a href="/charters">Charters</a></li>
             <li><a href="/contact">Contact</a></li>
+            <li><a href="/charters">Flights <FaPlane className={styles.planeIcon} /></a></li>
           </ul>
         </div>
         
@@ -68,7 +68,7 @@ export default function Navbar() {
           <li><a href="/careers">Careers</a></li>
           <li><a href="/consulting">Consulting</a></li>
           <li><a href="/safety">Safety</a></li>
-          <li><a href="/charters">Charters</a></li>
+          <li><a href="/charters">Charters <FaPlane className={styles.planeIcon} /></a></li>
           <li><a href="/contact">Contact</a></li>
           <li className={styles.mobileIcons}>
             <a href="/search" className={styles.iconLink}><FaSearch /> Search</a>

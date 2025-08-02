@@ -149,9 +149,10 @@
 }
 
 .invitationText p {
-  font-size: 1.1rem;
+  font-size: 1.225rem;
   margin-bottom: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
 }
 
 .invitationImageContainer {
@@ -201,7 +202,8 @@
   }
   
   .invitationText p {
-    font-size: 1.2rem;
+    font-size: 1.325rem;
+    letter-spacing: 0.5px;
   }
   
   .invitationContent {
@@ -242,7 +244,8 @@
   }
   
   .invitationText p {
-    font-size: 1.1rem;
+    font-size: 1.225rem;
+    letter-spacing: 0.5px;
   }
   
   .invitationContent {
@@ -289,7 +292,8 @@
   }
   
   .invitationText p {
-    font-size: 0.9rem;
+    font-size: 1.025rem;
+    letter-spacing: 0.5px;
   }
   
   .invitationContent {
@@ -355,7 +359,8 @@
   }
   
   .invitationText p {
-    font-size: 0.85rem;
+    font-size: 0.975rem;
+    letter-spacing: 0.5px;
     margin-bottom: 0;
   }
   
@@ -415,7 +420,8 @@
   }
   
   .invitationText p {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
     margin-bottom: 0;
   }
   

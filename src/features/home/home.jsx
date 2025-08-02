@@ -20,9 +20,9 @@ import BlueSection from '@shared/BlueSection/BlueSection';
 export default function Home() {
 
   const cards = [
-    { title: 'Executive Flights', image: SectionCard1, link: '/charters' },
+    { title: 'Flights', image: SectionCard1, link: '/charters' },
     { title: 'Learning', image: SectionCard2, link: '/learning' },
-    { title: 'Safety Management', image: SectionCard3, link: '/safety' },
+    { title: 'Safety', image: SectionCard3, link: '/safety' },
     { title: 'Recruitment', image: SectionCard4, link: '/recruitment' },
   ];
 
