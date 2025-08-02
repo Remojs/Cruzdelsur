@@ -1,18 +1,14 @@
 .blueSection {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(to bottom, 
-    #ffffff 0%,
-    #041227 2%,
-    #041227 98%,
-    #ffffff 100%
-  );
+  background-color: #041227;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 12rem 2rem 4rem 2rem;
   box-sizing: border-box;
   overflow: hidden;
+  margin: 10rem 0;
 }
 
 .gradientOverlay {
@@ -21,10 +17,7 @@
   left: 0;
   right: 0;
   height: 2%;
-  background: linear-gradient(to bottom, 
-    rgba(255, 255, 255, 1) 0%,
-    rgba(4, 18, 39, 1) 100%
-  );
+  background-color: #041227;
   z-index: 1;
 }
 

@@ -40,7 +40,7 @@ export default function Home() {
         
       </main>
       
-      <Stats />
+      {/* <Stats /> */}
       <BlueSection />
       <Contact />
     </div>

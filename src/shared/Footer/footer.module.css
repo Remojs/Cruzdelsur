@@ -35,6 +35,7 @@
   object-fit: contain;
   opacity: 0.85;
   transition: opacity 0.2s;
+  cursor: pointer;
 }
 .footerIcon:hover {
   opacity: 1;
@@ -100,6 +101,7 @@
   display: block;
   transition: color 0.2s;
   text-align: left;
+  cursor: pointer;
 }
 .footerLink:hover {
   color: #b3c6ff;
