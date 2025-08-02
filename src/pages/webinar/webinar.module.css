@@ -7,8 +7,9 @@
 /* Banner Section */
 .banner {
   position: relative;
-  height: 400px;
+  height: 463px; /* 580px - 117px del navbar */
   overflow: hidden;
+  margin-top: 117px; /* Altura del navbar */
 }
 
 .bannerBackground {
@@ -32,9 +33,9 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(30, 58, 85, 0.3) 0%,
-    rgba(111, 161, 166, 0.2) 50%,
-    rgba(30, 58, 85, 0.4) 100%
+    rgba(4, 18, 39, 0.9) 0%,
+    rgba(179, 141, 47, 0.5) 50%,
+    rgba(4, 18, 39, 0.98) 100%
   );
   display: flex;
   align-items: center;
@@ -43,24 +44,28 @@
 .bannerContent {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  margin-right: .5rem;
 }
 
 .bannerText {
-  max-width: 600px;
+  max-width: 900px; /* Aumentado de 600px a 900px (50% más) */
+  width: 100%;
   color: white;
-  text-align: left;
+  text-align: right;
+  margin-right: 30px; /* 30% más pegado al margen derecho */
 }
 
 .bannerTitle {
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .bannerSubtext {
@@ -74,30 +79,32 @@
   font-weight: 400;
   color: #b38d2f;
   font-size: 2.4rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .bannerDescription {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
   opacity: 0.95;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .bannerFeatures {
   display: flex;
-  gap: 30px;
-  margin-bottom: 30px;
+  gap: 25px;
+  margin-bottom: 35px;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .featureItem {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.95rem;
+  gap: 10px;
+  font-size: 1rem;
   font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .featureIcon {
@@ -111,18 +118,20 @@
   backdrop-filter: blur(10px);
 }
 
+
 .readMoreButton {
-  background: rgba(30, 30, 30, 0.8);
+  background: rgba(4, 18, 39, 0.8);
   color: white;
   border: none;
-  padding: 12px 30px;
-  font-size: 0.9rem;
+  padding: 14px 48px;
+  min-width: 180px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
 }
 
 .readMoreButton:hover {
@@ -134,13 +143,16 @@
 /* Responsive adjustments for banner */
 @media (max-width: 768px) {
   .banner {
-    height: 350px;
+    height: 363px; /* 480px - 117px del navbar */
+    margin-top: 117px;
   }
 
   .bannerContent {
-    padding: 0 20px;
+    padding: 30px 15px;
     justify-content: center;
     text-align: center;
+    align-items: center;
+    height: 100%;
   }
 
   .bannerText {
@@ -209,7 +221,7 @@
 }
 
 .badge {
-  background: #6fa1a6;
+  background: #041227;
   color: white;
   padding: 8px 20px;
   border-radius: 25px;
@@ -223,7 +235,7 @@
 .webinarTitle {
   font-size: 3rem;
   font-weight: 700;
-  color: #1e1e1e;
+  color: #041227;
   line-height: 1.2;
   margin-bottom: 30px;
   max-width: 900px;
@@ -241,7 +253,8 @@
 
 .webinarDetails {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 30px;
   margin-top: 50px;
 }
@@ -265,7 +278,7 @@
   flex-shrink: 0;
   width: 50px;
   height: 50px;
-  background: rgba(111, 161, 166, 0.1);
+  background: rgba(179, 141, 47, 0.1);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -292,7 +305,25 @@
 /* Learning Section */
 .learningSection {
   padding: 80px 20px;
-  background: white;
+  background: url('@assets/backgrounds/webinarbackground.jpg') center/cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.learningSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 1;
+}
+
+.learningSection .sectionContent {
+  position: relative;
+  z-index: 2;
 }
 
 .sectionTitle {
@@ -320,8 +351,8 @@
 
 .learningItem:hover {
   transform: translateY(-8px);
-  border-color: #6fa1a6;
-  box-shadow: 0 8px 30px rgba(111, 161, 166, 0.15);
+  border-color: #041227;
+  box-shadow: 0 8px 30px rgba(4, 18, 39, 0.15);
 }
 
 .learningIcon {
@@ -390,7 +421,7 @@
 }
 
 .speakerTitle {
-  color: #6fa1a6;
+  color: #041227;
   font-weight: 600;
   margin-bottom: 15px;
 }
@@ -416,9 +447,9 @@
 }
 
 .registrationInfo h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #1e1e1e;
+  color: #041227;
   margin-bottom: 20px;
 }
 
@@ -445,7 +476,7 @@
   flex-shrink: 0;
   width: 30px;
   height: 30px;
-  background: rgba(89, 187, 168, 0.1);
+  background: rgba(179, 141, 47, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -460,9 +491,9 @@
 }
 
 .registrationForm h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
-  color: #1e1e1e;
+  color: #041227;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -480,14 +511,16 @@
 .formGroup label {
   display: block;
   font-weight: 600;
+  font-size: 0.9rem;
   color: #1e1e1e;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .input,
 .select {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
+  height: 42px;
   border: 2px solid #ddd;
   border-radius: 6px;
   font-size: 1rem;
@@ -497,28 +530,29 @@
 .input:focus,
 .select:focus {
   outline: none;
-  border-color: #6fa1a6;
-  box-shadow: 0 0 0 3px rgba(111, 161, 166, 0.1);
+  border-color: #b38d2f;
+  box-shadow: 0 0 0 3px rgba(179, 141, 47, 0.1);
 }
 
 .interestsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 15px;
   margin-top: 10px;
 }
 
 .checkboxLabel {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-size: 0.95rem;
   color: #565a65;
   cursor: pointer;
+  padding: 5px 0;
 }
 
 .checkbox {
-  accent-color: #6fa1a6;
+  accent-color: #b38d2f;
 }
 
 .consentGroup {
@@ -530,7 +564,7 @@
 
 .registerButton {
   width: 100%;
-  background: #59bba8;
+  background: #b38d2f;
   color: white;
   border: none;
   padding: 18px;
@@ -543,7 +577,7 @@
 }
 
 .registerButton:hover {
-  background: #3fc8c0;
+  background: #9a7826;
 }
 
 .disclaimer {
@@ -582,7 +616,7 @@
 }
 
 .backButton {
-  background: #6fa1a6;
+  background: #041227;
   color: white;
   border: none;
   padding: 12px 24px;
@@ -594,7 +628,7 @@
 }
 
 .backButton:hover {
-  background: #59bba8;
+  background: #062140;
 }
 
 /* Footer */
@@ -633,6 +667,7 @@
 
   .webinarDetails {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 
   .registrationContainer {

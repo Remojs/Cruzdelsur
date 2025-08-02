@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./webinar.module.css";
+import webinarBanner from "@assets/banners/webinar banner.png";
 
 export default function Webinar() {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ export default function Webinar() {
         <div className={styles.successMessage}>
           <div className={styles.successIcon}>
             <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-              <circle cx="40" cy="40" r="40" fill="#59BBA8" />
+              <circle cx="40" cy="40" r="40" fill="#b38d2f" />
               <path
                 d="M25 40L35 50L55 30"
                 stroke="white"
@@ -70,51 +71,58 @@ export default function Webinar() {
       {/* Banner Section */}
       <section className={styles.banner}>
         <div className={styles.bannerBackground}>
-          <img src="/images/aviation-banner.png" alt="Aviation Banner" className={styles.bannerImage} />
+          <img src={webinarBanner} alt="Webinar Banner" className={styles.bannerImage} />
           <div className={styles.bannerOverlay}>
             <div className={styles.bannerContent}>
               <div className={styles.bannerText}>
                 <h1 className={styles.bannerTitle}>
-                  EMPOWERING AVIATION
+                  EMPODERANDO LA AVIACIÓN
                   <br />
-                  <span className={styles.bannerSubtext}>professionals with</span>
+                  <span className={styles.bannerSubtext}>profesionales con</span>
                   <br />
-                  <span className={styles.bannerScript}>Confidence and Strategy</span>
+                  <span className={styles.bannerScript}>Confianza y Estrategia</span>
                 </h1>
                 <p className={styles.bannerDescription}>
-                  From operational planning to premium onboard service, we design each flight experience to meet your
-                  unique needs.
+                  Desde la planificación operativa hasta el servicio premium a bordo, diseñamos cada experiencia de vuelo para satisfacer sus necesidades únicas.
                 </p>
                 <div className={styles.bannerFeatures}>
                   <div className={styles.featureItem}>
                     <div className={styles.featureIcon}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#B38D2F" strokeWidth="2" />
-                        <path d="M8 12L11 15L16 9" stroke="#B38D2F" strokeWidth="2" strokeLinecap="round" />
+                        <circle cx="12" cy="12" r="10" stroke="#b38d2f" strokeWidth="2" />
+                        <path d="M8 12L11 15L16 9" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
                       </svg>
                     </div>
-                    <span>Regional Expertise</span>
+                    <span>Experiencia Regional</span>
                   </div>
                   <div className={styles.featureItem}>
                     <div className={styles.featureIcon}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#B38D2F" strokeWidth="2" />
-                        <polyline points="12,6 12,12 16,14" stroke="#B38D2F" strokeWidth="2" />
+                        <circle cx="12" cy="12" r="10" stroke="#b38d2f" strokeWidth="2" />
+                        <polyline points="12,6 12,12 16,14" stroke="#b38d2f" strokeWidth="2" />
                       </svg>
                     </div>
-                    <span>On-time Performance</span>
+                    <span>Puntualidad</span>
                   </div>
                   <div className={styles.featureItem}>
                     <div className={styles.featureIcon}>
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#B38D2F" strokeWidth="2" />
-                        <path d="M9 12L11 14L15 10" stroke="#B38D2F" strokeWidth="2" strokeLinecap="round" />
+                        <circle cx="12" cy="12" r="10" stroke="#b38d2f" strokeWidth="2" />
+                        <path d="M9 12L11 14L15 10" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
                       </svg>
                     </div>
-                    <span>Quality Service</span>
+                    <span>Servicio de Calidad</span>
                   </div>
                 </div>
-                <button className={styles.readMoreButton}>READ MORE</button>
+                <button
+                  className={styles.readMoreButton}
+                  onClick={() => {
+                    const el = document.getElementById('que-aprenderas');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  LEER MÁS
+                </button>
               </div>
             </div>
           </div>
@@ -125,11 +133,10 @@ export default function Webinar() {
       <section className={styles.webinarSection}>
         <div className={styles.sectionContent}>
           <div className={styles.webinarHeader}>
-            <div className={styles.badge}>EXCLUSIVE WEBINAR</div>
-            <h2 className={styles.webinarTitle}>The Future of Private Aviation: Trends, Technology & Sustainability</h2>
+            <div className={styles.badge}>WEBINAR EXCLUSIVO</div>
+            <h2 className={styles.webinarTitle}>El Futuro de la Aviación Privada: Tendencias, Tecnología y Sostenibilidad</h2>
             <p className={styles.webinarDescription}>
-              Join industry leaders as we explore the evolving landscape of private aviation, from cutting-edge
-              technology to sustainable flight solutions that are reshaping the industry.
+              Únete a los líderes de la industria mientras exploramos el panorama en evolución de la aviación privada, desde tecnología de vanguardia hasta soluciones de vuelo sostenibles que están transformando la industria.
             </p>
           </div>
 
@@ -137,27 +144,27 @@ export default function Webinar() {
             <div className={styles.detailItem}>
               <div className={styles.detailIcon}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="#6FA1A6" strokeWidth="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" stroke="#6FA1A6" strokeWidth="2" />
-                  <line x1="8" y1="2" x2="8" y2="6" stroke="#6FA1A6" strokeWidth="2" />
-                  <line x1="3" y1="10" x2="21" y2="10" stroke="#6FA1A6" strokeWidth="2" />
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="#b38d2f" strokeWidth="2" />
+                  <line x1="16" y1="2" x2="16" y2="6" stroke="#b38d2f" strokeWidth="2" />
+                  <line x1="8" y1="2" x2="8" y2="6" stroke="#b38d2f" strokeWidth="2" />
+                  <line x1="3" y1="10" x2="21" y2="10" stroke="#b38d2f" strokeWidth="2" />
                 </svg>
               </div>
               <div className={styles.detailContent}>
-                <strong>Date</strong>
-                <span>March 15, 2024</span>
+                <strong>Fecha</strong>
+                <span>15 de Marzo, 2024</span>
               </div>
             </div>
 
             <div className={styles.detailItem}>
               <div className={styles.detailIcon}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="#6FA1A6" strokeWidth="2" />
-                  <polyline points="12,6 12,12 16,14" stroke="#6FA1A6" strokeWidth="2" />
+                  <circle cx="12" cy="12" r="10" stroke="#b38d2f" strokeWidth="2" />
+                  <polyline points="12,6 12,12 16,14" stroke="#b38d2f" strokeWidth="2" />
                 </svg>
               </div>
               <div className={styles.detailContent}>
-                <strong>Time</strong>
+                <strong>Hora</strong>
                 <span>2:00 PM - 3:30 PM EST</span>
               </div>
             </div>
@@ -165,28 +172,28 @@ export default function Webinar() {
             <div className={styles.detailItem}>
               <div className={styles.detailIcon}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="#6FA1A6" strokeWidth="2" />
-                  <line x1="8" y1="21" x2="16" y2="21" stroke="#6FA1A6" strokeWidth="2" />
-                  <line x1="12" y1="17" x2="12" y2="21" stroke="#6FA1A6" strokeWidth="2" />
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2" stroke="#b38d2f" strokeWidth="2" />
+                  <line x1="8" y1="21" x2="16" y2="21" stroke="#b38d2f" strokeWidth="2" />
+                  <line x1="12" y1="17" x2="12" y2="21" stroke="#b38d2f" strokeWidth="2" />
                 </svg>
               </div>
               <div className={styles.detailContent}>
-                <strong>Format</strong>
-                <span>Live Online Event</span>
+                <strong>Formato</strong>
+                <span>Evento Online en Vivo</span>
               </div>
             </div>
 
             <div className={styles.detailItem}>
               <div className={styles.detailIcon}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#6FA1A6" strokeWidth="2" />
-                  <path d="M2 17L12 22L22 17" stroke="#6FA1A6" strokeWidth="2" />
-                  <path d="M2 12L12 17L22 12" stroke="#6FA1A6" strokeWidth="2" />
+                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#b38d2f" strokeWidth="2" />
+                  <path d="M2 17L12 22L22 17" stroke="#b38d2f" strokeWidth="2" />
+                  <path d="M2 12L12 17L22 12" stroke="#b38d2f" strokeWidth="2" />
                 </svg>
               </div>
               <div className={styles.detailContent}>
-                <strong>Duration</strong>
-                <span>90 Minutes + Q&A</span>
+                <strong>Duración</strong>
+                <span>90 Minutos + Preguntas</span>
               </div>
             </div>
           </div>
@@ -194,21 +201,21 @@ export default function Webinar() {
       </section>
 
       {/* What You'll Learn Section */}
-      <section className={styles.learningSection}>
+      <section className={styles.learningSection} id="que-aprenderas">
         <div className={styles.sectionContent}>
-          <h2 className={styles.sectionTitle}>What You'll Learn</h2>
+          <h2 className={styles.sectionTitle}>Qué Aprenderás</h2>
           <div className={styles.learningGrid}>
             <div className={styles.learningItem}>
               <div className={styles.learningIcon}>
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z" stroke="#6FA1A6" strokeWidth="2" />
-                  <path d="M24 4V44" stroke="#6FA1A6" strokeWidth="2" />
-                  <path d="M4 14L24 24L44 14" stroke="#6FA1A6" strokeWidth="2" />
+                  <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z" stroke="#b38d2f" strokeWidth="2" />
+                  <path d="M24 4V44" stroke="#b38d2f" strokeWidth="2" />
+                  <path d="M4 14L24 24L44 14" stroke="#b38d2f" strokeWidth="2" />
                 </svg>
               </div>
-              <h3>Innovation & Technology</h3>
+              <h3>Innovación y Tecnología</h3>
               <p>
-                Discover the latest technological advances in aircraft design, avionics, and flight management systems.
+                Descubre los últimos avances tecnológicos en diseño de aeronaves, aviónica y sistemas de gestión de vuelo.
               </p>
             </div>
 
@@ -217,19 +224,19 @@ export default function Webinar() {
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                   <path
                     d="M24 8C30.6274 8 36 13.3726 36 20C36 26.6274 30.6274 32 24 32C17.3726 32 12 26.6274 12 20C12 13.3726 17.3726 8 24 8Z"
-                    stroke="#6FA1A6"
+                    stroke="#b38d2f"
                     strokeWidth="2"
                   />
                   <path
                     d="M8 40C8 33.3726 13.3726 28 20 28H28C34.6274 28 40 33.3726 40 40V44H8V40Z"
-                    stroke="#6FA1A6"
+                    stroke="#b38d2f"
                     strokeWidth="2"
                   />
                 </svg>
               </div>
-              <h3>Sustainable Aviation</h3>
+              <h3>Aviación Sostenible</h3>
               <p>
-                Learn about eco-friendly initiatives, sustainable aviation fuels, and carbon-neutral flight options.
+                Aprende sobre iniciativas ecológicas, combustibles de aviación sostenibles y opciones de vuelo carbono neutro.
               </p>
             </div>
 
@@ -238,23 +245,23 @@ export default function Webinar() {
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                   <path
                     d="M8 40L16 32L24 40L32 28L40 36"
-                    stroke="#6FA1A6"
+                    stroke="#b38d2f"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                   <path
                     d="M40 28V36H32"
-                    stroke="#6FA1A6"
+                    stroke="#b38d2f"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
-                  <rect x="4" y="4" width="40" height="40" rx="2" stroke="#6FA1A6" strokeWidth="2" />
+                  <rect x="4" y="4" width="40" height="40" rx="2" stroke="#b38d2f" strokeWidth="2" />
                 </svg>
               </div>
-              <h3>Market Trends</h3>
-              <p>Understand current market dynamics, growth opportunities, and emerging customer preferences.</p>
+              <h3>Tendencias del Mercado</h3>
+              <p>Comprende las dinámicas actuales del mercado, oportunidades de crecimiento y preferencias emergentes de los clientes.</p>
             </div>
 
             <div className={styles.learningItem}>
@@ -262,35 +269,35 @@ export default function Webinar() {
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                   <path
                     d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4Z"
-                    stroke="#6FA1A6"
+                    stroke="#b38d2f"
                     strokeWidth="2"
                   />
                   <path
                     d="M18 24L22 28L30 20"
-                    stroke="#6FA1A6"
+                    stroke="#b38d2f"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
                 </svg>
               </div>
-              <h3>Safety & Regulations</h3>
-              <p>Stay updated on the latest safety protocols, regulatory changes, and compliance requirements.</p>
+              <h3>Seguridad y Regulaciones</h3>
+              <p>Mantente actualizado sobre los últimos protocolos de seguridad, cambios regulatorios y requisitos de cumplimiento.</p>
             </div>
 
             <div className={styles.learningItem}>
               <div className={styles.learningIcon}>
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <rect x="8" y="12" width="32" height="28" rx="2" stroke="#6FA1A6" strokeWidth="2" />
-                  <path d="M16 8V16" stroke="#6FA1A6" strokeWidth="2" />
-                  <path d="M32 8V16" stroke="#6FA1A6" strokeWidth="2" />
-                  <path d="M8 24H40" stroke="#6FA1A6" strokeWidth="2" />
-                  <circle cx="20" cy="32" r="2" fill="#6FA1A6" />
-                  <circle cx="28" cy="32" r="2" fill="#6FA1A6" />
+                  <rect x="8" y="12" width="32" height="28" rx="2" stroke="#b38d2f" strokeWidth="2" />
+                  <path d="M16 8V16" stroke="#b38d2f" strokeWidth="2" />
+                  <path d="M32 8V16" stroke="#b38d2f" strokeWidth="2" />
+                  <path d="M8 24H40" stroke="#b38d2f" strokeWidth="2" />
+                  <circle cx="20" cy="32" r="2" fill="#b38d2f" />
+                  <circle cx="28" cy="32" r="2" fill="#b38d2f" />
                 </svg>
               </div>
-              <h3>Fleet Management</h3>
-              <p>Optimize operations with advanced fleet management strategies and digital transformation tools.</p>
+              <h3>Gestión de Flota</h3>
+              <p>Optimiza las operaciones con estrategias avanzadas de gestión de flota y herramientas de transformación digital.</p>
             </div>
 
             <div className={styles.learningItem}>
@@ -298,21 +305,21 @@ export default function Webinar() {
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                   <path
                     d="M20 6C20 4.89543 20.8954 4 22 4H26C27.1046 4 28 4.89543 28 6V10H20V6Z"
-                    stroke="#6FA1A6"
+                    stroke="#b38d2f"
                     strokeWidth="2"
                   />
                   <path
                     d="M8 10H40V38C40 40.2091 38.2091 42 36 42H12C9.79086 42 8 40.2091 8 38V10Z"
-                    stroke="#6FA1A6"
+                    stroke="#b38d2f"
                     strokeWidth="2"
                   />
-                  <path d="M18 20V30" stroke="#6FA1A6" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M24 18V30" stroke="#6FA1A6" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M30 22V30" stroke="#6FA1A6" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M18 20V30" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M24 18V30" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M30 22V30" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
                 </svg>
               </div>
-              <h3>Customer Experience</h3>
-              <p>Enhance passenger satisfaction through personalized services and innovative cabin technologies.</p>
+              <h3>Experiencia del Cliente</h3>
+              <p>Mejora la satisfacción del pasajero a través de servicios personalizados y tecnologías innovadoras de cabina.</p>
             </div>
           </div>
         </div>
@@ -321,7 +328,7 @@ export default function Webinar() {
       {/* Speakers Section */}
       <section className={styles.speakersSection}>
         <div className={styles.sectionContent}>
-          <h2 className={styles.sectionTitle}>Featured Speakers</h2>
+          <h2 className={styles.sectionTitle}>Ponentes Destacados</h2>
           <div className={styles.speakersGrid}>
             <div className={styles.speakerCard}>
               <div className={styles.speakerAvatar}>
@@ -330,7 +337,7 @@ export default function Webinar() {
               <h3>John Davidson</h3>
               <p className={styles.speakerTitle}>CEO, AeroTech Solutions</p>
               <p className={styles.speakerBio}>
-                20+ years in aviation technology, former Boeing executive, leading expert in sustainable aviation.
+                Más de 20 años en tecnología de aviación, ex ejecutivo de Boeing, experto líder en aviación sostenible.
               </p>
             </div>
             <div className={styles.speakerCard}>
@@ -338,9 +345,9 @@ export default function Webinar() {
                 <span>SM</span>
               </div>
               <h3>Sarah Mitchell</h3>
-              <p className={styles.speakerTitle}>Director of Innovation, SkyVentures</p>
+              <p className={styles.speakerTitle}>Directora de Innovación, SkyVentures</p>
               <p className={styles.speakerBio}>
-                Pioneer in electric aircraft development, MIT graduate, 15 years in aerospace engineering.
+                Pionera en desarrollo de aeronaves eléctricas, graduada del MIT, 15 años en ingeniería aeroespacial.
               </p>
             </div>
             <div className={styles.speakerCard}>
@@ -348,9 +355,9 @@ export default function Webinar() {
                 <span>RC</span>
               </div>
               <h3>Robert Chen</h3>
-              <p className={styles.speakerTitle}>Aviation Market Analyst</p>
+              <p className={styles.speakerTitle}>Analista de Mercado de Aviación</p>
               <p className={styles.speakerBio}>
-                Leading market researcher, published author on aviation trends, consultant for major airlines.
+                Investigador de mercado líder, autor publicado sobre tendencias de aviación, consultor para aerolíneas principales.
               </p>
             </div>
           </div>
@@ -362,10 +369,9 @@ export default function Webinar() {
         <div className={styles.sectionContent}>
           <div className={styles.registrationContainer}>
             <div className={styles.registrationInfo}>
-              <h2>Reserve Your Spot</h2>
+              <h2>Reserva Tu Lugar</h2>
               <p>
-                Don't miss this exclusive opportunity to gain insights from industry leaders and network with aviation
-                professionals worldwide.
+                No te pierdas esta oportunidad exclusiva de obtener perspectivas de líderes de la industria y conectar con profesionales de aviación de todo el mundo.
               </p>
               <div className={styles.benefits}>
                 <div className={styles.benefit}>
@@ -373,66 +379,66 @@ export default function Webinar() {
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path
                         d="M16.6667 5L7.5 14.1667L3.33333 10"
-                        stroke="#59BBA8"
+                        stroke="#b38d2f"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
                   </div>
-                  <span>Live Q&A with industry experts</span>
+                  <span>Preguntas y respuestas en vivo con expertos de la industria</span>
                 </div>
                 <div className={styles.benefit}>
                   <div className={styles.checkIcon}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path
                         d="M16.6667 5L7.5 14.1667L3.33333 10"
-                        stroke="#59BBA8"
+                        stroke="#b38d2f"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
                   </div>
-                  <span>Downloadable resources and reports</span>
+                  <span>Recursos descargables y reportes</span>
                 </div>
                 <div className={styles.benefit}>
                   <div className={styles.checkIcon}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path
                         d="M16.6667 5L7.5 14.1667L3.33333 10"
-                        stroke="#59BBA8"
+                        stroke="#b38d2f"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
                   </div>
-                  <span>Recording available for 30 days</span>
+                  <span>Grabación disponible durante 30 días</span>
                 </div>
                 <div className={styles.benefit}>
                   <div className={styles.checkIcon}>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path
                         d="M16.6667 5L7.5 14.1667L3.33333 10"
-                        stroke="#59BBA8"
+                        stroke="#b38d2f"
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
                     </svg>
                   </div>
-                  <span>Networking opportunities</span>
+                  <span>Oportunidades de networking</span>
                 </div>
               </div>
             </div>
 
             <form onSubmit={handleSubmit} className={styles.registrationForm}>
-              <h3>Register Now - It's Free!</h3>
+              <h3>¡Regístrate Ahora - Es Gratis!</h3>
 
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
-                  <label>First Name *</label>
+                  <label>Nombre *</label>
                   <input
                     type="text"
                     name="firstName"
@@ -443,7 +449,7 @@ export default function Webinar() {
                   />
                 </div>
                 <div className={styles.formGroup}>
-                  <label>Last Name *</label>
+                  <label>Apellido *</label>
                   <input
                     type="text"
                     name="lastName"
@@ -469,7 +475,7 @@ export default function Webinar() {
 
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
-                  <label>Company</label>
+                  <label>Empresa</label>
                   <input
                     type="text"
                     name="company"
@@ -479,27 +485,27 @@ export default function Webinar() {
                   />
                 </div>
                 <div className={styles.formGroup}>
-                  <label>Position</label>
+                  <label>Cargo</label>
                   <select
                     name="position"
                     value={formData.position}
                     onChange={handleInputChange}
                     className={styles.select}
                   >
-                    <option value="">Select Position</option>
-                    <option>CEO/President</option>
+                    <option value="">Seleccionar Cargo</option>
+                    <option>CEO/Presidente</option>
                     <option>VP/Director</option>
-                    <option>Manager</option>
-                    <option>Pilot</option>
-                    <option>Engineer</option>
-                    <option>Consultant</option>
-                    <option>Other</option>
+                    <option>Gerente</option>
+                    <option>Piloto</option>
+                    <option>Ingeniero</option>
+                    <option>Consultor</option>
+                    <option>Otro</option>
                   </select>
                 </div>
               </div>
 
               <div className={styles.formGroup}>
-                <label>Phone Number</label>
+                <label>Número de Teléfono</label>
                 <input
                   type="tel"
                   name="phone"
@@ -510,15 +516,15 @@ export default function Webinar() {
               </div>
 
               <div className={styles.formGroup}>
-                <label>Areas of Interest (Select all that apply)</label>
+                <label>Áreas de Interés (Selecciona todas las que apliquen)</label>
                 <div className={styles.interestsGrid}>
                   {[
-                    "Aircraft Technology",
-                    "Sustainable Aviation",
-                    "Market Analysis",
-                    "Safety & Regulations",
-                    "Fleet Management",
-                    "Customer Experience",
+                    "Tecnología Aeronáutica",
+                    "Aviación Sostenible",
+                    "Análisis de Mercado",
+                    "Seguridad y Regulaciones",
+                    "Gestión de Flota",
+                    "Experiencia del Cliente",
                   ].map((interest) => (
                     <label key={interest} className={styles.checkboxLabel}>
                       <input
@@ -542,30 +548,21 @@ export default function Webinar() {
                     onChange={handleInputChange}
                     className={styles.checkbox}
                   />
-                  I agree to receive updates about future webinars and aviation industry insights.
+                  Acepto recibir actualizaciones sobre futuros webinars y perspectivas de la industria de aviación.
                 </label>
               </div>
 
               <button type="submit" className={styles.registerButton}>
-                Register for Free Webinar
+                Registrarse al Webinar Gratuito
               </button>
 
               <p className={styles.disclaimer}>
-                By registering, you agree to our privacy policy. We respect your privacy and will never share your
-                information.
+                Al registrarte, aceptas nuestra política de privacidad. Respetamos tu privacidad y nunca compartiremos tu información.
               </p>
             </form>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerContent}>
-          <p>&copy; 2024 AeroVision Webinars. All rights reserved.</p>
-          <p>Questions? Contact us at webinars@aerovision.com</p>
-        </div>
-      </footer>
     </div>
   );
 }
