@@ -76,6 +76,7 @@
   height: 75px;
   width: auto;
   object-fit: contain;
+  margin: 0 2rem;
 }
 
 .mobileLogo {
@@ -89,7 +90,7 @@
   display: flex;
   gap: 0.8rem;
   position: absolute;
-  right: 0;
+  right: -12rem;
   z-index: 10;
 }
 
@@ -236,7 +237,7 @@
   
   .iconContainer {
     gap: 0.8rem;
-    right: 1rem;
+    right: -6rem;
   }
 }
 
@@ -302,7 +303,7 @@
   }
   
   .iconContainer {
-    right: 0.5rem;
+    right: -4rem;
   }
 }
 

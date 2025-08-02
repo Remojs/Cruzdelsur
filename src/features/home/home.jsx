@@ -15,6 +15,7 @@ import Stats from '@shared/Stats/Stats';
 import Contact from '@shared/Contact/Contact';
 import ScrollSection from '@shared/ScrollSection/ScrollSection';
 import ReverseScrollSection from '@shared/ReverseScrollSection/ReverseScrollSection';
+import BlueSection from '@shared/BlueSection/BlueSection';
 
 export default function Home() {
 
@@ -40,6 +41,7 @@ export default function Home() {
       </main>
       
       <Stats />
+      <BlueSection />
       <Contact />
     </div>
   )
