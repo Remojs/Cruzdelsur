@@ -32,7 +32,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url('/src/assets/backgrounds/Animation-BG.webp');
+  /* La imagen se pasa como prop desde el componente padre */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

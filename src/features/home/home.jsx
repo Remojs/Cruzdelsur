@@ -24,31 +24,31 @@ export default function Home() {
     { 
       title: 'Consulting', 
       image: SectionCard4, 
-      link: '/consulting',
+      link: '#/consulting',
       description: 'Desde la idea hasta la implementación y seguimiento. Creamos y desarrollamos proyectos aeronáuticos con estrategia, innovación y un conocimiento profundo del mercado.'
     },
     { 
       title: 'Recruitment', 
       image: SectionCard5, 
-      link: '/recruitment',
+      link: '#/recruitment',
       description: 'Campañas de reclutamiento / Diseño de Modelos y estrategias de optimización de procesos de selección.'
     },
     { 
       title: 'Safety', 
       image: SectionCard3, 
-      link: '/safety',
+      link: '#/safety',
       description: 'Asesoría, Diseño, implementación y optimización de programas Gestión de riesgos de seguridad operacional en compañías de aviación. Auditamos, diagnosticamos y acompañamos la construcción de culturas organizacionales sólidas.'
     },
     { 
       title: 'Academy', 
       image: SectionCard2, 
-      link: '/academy',
+      link: '#/academy',
       description: 'Experiencias de crecimiento y transformación a partir de programas de formación específica, Mentorías de construcción de perfil profesional / preparación estratégica de entrevistas en la búsqueda laboral.'
     },
     { 
       title: 'Flights', 
       image: SectionCard1, 
-      link: '/flights',
+      link: '#/flights',
       description: 'Ofrecemos soluciones premium en vuelos privados de negocios, placer, medivac- logística aérea- y servicios de soporte, con enfoque en la seguridad, confidencialidad y calidad de excelencia en el servicio y detalle.'
     },
   ];

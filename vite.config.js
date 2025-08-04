@@ -21,6 +21,7 @@ export default defineConfig({
       '@app': path.resolve(__dirname, './src/app')
     }
   },
+  base: './', // Usar rutas relativas en lugar de absolutas
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
