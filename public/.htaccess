@@ -1,7 +1,27 @@
-# Servir JavaScript como módulos con el tipo MIME correcto
+# Configuraciones críticas para hosting compartido (DonWeb)
+Options -MultiViews
+Options -Indexes
+
+# Establecer tipos MIME correctos
 <IfModule mod_mime.c>
+  AddType text/html .html .htm
   AddType application/javascript .js
   AddType application/javascript .mjs
+  AddType text/css .css
+  AddType image/webp .webp
+  AddType image/png .png
+  AddType image/jpeg .jpg .jpeg
+  AddType image/svg+xml .svg
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  
+  # Forzar MIME types
+  <FilesMatch "\.js$">
+    ForceType application/javascript
+  </FilesMatch>
+  <FilesMatch "\.css$">
+    ForceType text/css
+  </FilesMatch>
 </IfModule>
 
 # Activar el motor de reescritura
@@ -11,22 +31,53 @@
   
   # Si la solicitud es directamente para index.html, no hacer nada
   RewriteRule ^index\.html$ - [L]
-  
+
+  # Asegurar que los assets se sirvan con el tipo MIME correcto
+  RewriteCond %{REQUEST_URI} \.(js|mjs)$
+  RewriteRule .* - [T=application/javascript]
+
   # Si la solicitud no es un archivo o directorio existente
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   
-  # Servir el index.html para cualquier otra solicitud
+  # Servir el index.html para cualquier otra solicitud (SPA routing)
   RewriteRule . index.html [L]
 </IfModule>
 
-# Configurar encabezados de seguridad
+# Encabezados adicionales para seguridad y tipos MIME
 <IfModule mod_headers.c>
-  # Permitir que los scripts se carguen como módulos
+  # Prevenir sniffing de MIME types
   Header set X-Content-Type-Options "nosniff"
   
-  # Configurar el tipo MIME para JavaScript
+  # Forzar tipos MIME correctos vía encabezados HTTP
   <FilesMatch "\.(js|mjs)$">
     Header set Content-Type "application/javascript"
   </FilesMatch>
+  <FilesMatch "\.css$">
+    Header set Content-Type "text/css"
+  </FilesMatch>
+  <FilesMatch "\.(webp)$">
+    Header set Content-Type "image/webp"
+  </FilesMatch>
+  
+  # Habilitar CORS para todos los recursos
+  <FilesMatch "\.(js|mjs|css|png|jpg|jpeg|gif|webp|woff|woff2|ttf|svg)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
+
+# Compresión de archivos para mejorar velocidad
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>
+
+# Caché de navegador para archivos estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
