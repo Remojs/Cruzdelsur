@@ -20,5 +20,29 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, './src/utils'),
       '@app': path.resolve(__dirname, './src/app')
     }
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    copyPublicDir: true,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor': [
+            'react', 
+            'react-dom', 
+            'react-router-dom'
+          ],
+          'ui': ['framer-motion', 'react-icons']
+        }
+      }
+    }
   }
 })
