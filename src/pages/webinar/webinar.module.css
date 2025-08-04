@@ -265,6 +265,16 @@
     width: 24px;
     height: 24px;
   }
+
+  /* Hero responsive */
+  .hero {
+    min-height: 450px;
+    margin-top: 0;
+  }
+
+  .heroImage {
+    height: 450px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -325,6 +335,16 @@
     font-size: 0.85rem;
     min-width: 120px;
   }
+
+  /* Hero responsive */
+  .hero {
+    min-height: 420px;
+    margin-top: 0;
+  }
+
+  .heroImage {
+    height: 420px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -381,6 +401,16 @@
     padding: 8px 20px;
     font-size: 0.8rem;
     min-width: 100px;
+  }
+
+  /* Hero responsive */
+  .hero {
+    min-height: 380px;
+    margin-top: 0;
+  }
+
+  .heroImage {
+    height: 380px;
   }
 }
 

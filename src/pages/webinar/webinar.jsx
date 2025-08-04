@@ -66,7 +66,7 @@ export default function Webinar() {
               </div>
               <div className={styles.detailContent}>
                 <strong>Hora</strong>
-                <span>15hs a 16hs (franja horaria arg)</span>
+                <span>15:00 a 16:00 (GMT-3 Argentina)</span>
               </div>
             </div>
 
@@ -169,7 +169,7 @@ export default function Webinar() {
         </div>
       </section>
 
-      {/* Speakers Section */}
+      {/* Speakers Section - Commented out until speakers are confirmed 
       <section className={styles.speakersSection}>
         <div className={styles.sectionContent}>
           <h2 className={styles.sectionTitle}>Ponentes Destacados</h2>
@@ -207,6 +207,7 @@ export default function Webinar() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Registration Form Section */}
       <section className={styles.registrationSection}>
