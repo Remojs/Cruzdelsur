@@ -562,7 +562,7 @@
 /* Learning Section */
 .learningSection {
   padding: 80px 20px;
-  background: url('@assets/backgrounds/background-webinar.png') center/cover;
+  background: url('../../assets/backgrounds/background-webinar.png') center/cover;
   background-attachment: fixed;
   position: relative;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./webinar.module.css";
-import webinarBanner from "@assets/banners/webinar banner.png";
+import webinarBanner from "@assets/banners/webinar-banner.png";
 
 export default function Webinar() {
   const handleSubmit = (e) => {

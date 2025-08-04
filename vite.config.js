@@ -27,6 +27,8 @@ export default defineConfig({
     assetsDir: 'assets',
     copyPublicDir: true,
     minify: 'terser',
+    // Utilizamos la opción legado para mayor compatibilidad
+    target: 'es2015',
     terserOptions: {
       compress: {
         drop_console: true,
@@ -35,11 +37,11 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        // Asegura que los scripts se sirvan con el tipo MIME correcto
         format: 'es',
-        entryFileNames: 'assets/[name]-[hash].js',
-        chunkFileNames: 'assets/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash].[ext]',
+        // Evitamos guiones y usamos solo un hash corto para más compatibilidad
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]',
         manualChunks: {
           'vendor': [
             'react', 
