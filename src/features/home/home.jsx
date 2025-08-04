@@ -2,8 +2,8 @@ import styles from './home.module.css';
 
 //Images
 import HomePortrait from '@assets/banners/HomePortrait.webp'
-import HomeIMG from '@assets/images/HomeSection.webp'
-import HomeIMG2 from '@assets/images/HomeSection2.webp'
+import HomeIMG from '@assets/backgrounds/AnimationBG.webp'
+import HomeIMG2 from '@assets/backgrounds/AnimationBG.webp'
 import SectionCard1 from '@assets/images/SectionCard_IMG1.webp';
 import SectionCard2 from '@assets/images/SectionCard_IMG2.webp';
 import SectionCard3 from '@assets/images/SectionCard_IMG3.webp';
@@ -55,9 +55,9 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <ScrollSection imageSrc="/src/assets/backgrounds/Animation-BG.webp" altText="Cruz del Sur Aviation"/>
+      <ScrollSection imageSrc={HomeIMG} altText="" />
       
-      <ReverseScrollSection imageSrc="/src/assets/backgrounds/Animation-BG.webp" altText="Cruz del Sur Mission"/>
+      <ReverseScrollSection imageSrc={HomeIMG2} altText="" />
 
       <main className={styles.main}>
         <div>
