@@ -1,6 +1,32 @@
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.html$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.html [L]
+# Servir JavaScript como módulos con el tipo MIME correcto
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType application/javascript .mjs
+</IfModule>
+
+# Activar el motor de reescritura
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Si la solicitud es directamente para index.html, no hacer nada
+  RewriteRule ^index\.html$ - [L]
+  
+  # Si la solicitud no es un archivo o directorio existente
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Servir el index.html para cualquier otra solicitud
+  RewriteRule . index.html [L]
+</IfModule>
+
+# Configurar encabezados de seguridad
+<IfModule mod_headers.c>
+  # Permitir que los scripts se carguen como módulos
+  Header set X-Content-Type-Options "nosniff"
+  
+  # Configurar el tipo MIME para JavaScript
+  <FilesMatch "\.(js|mjs)$">
+    Header set Content-Type "application/javascript"
+  </FilesMatch>
+</IfModule>

@@ -58,7 +58,7 @@
 
 .imageBox {
   width: 30%;
-  background-image: url('../../assets/images/Contact.webp');
+  /* Mejor importar la imagen en el JSX */
   background-size: cover;
   background-position: center;
   height: 300px;

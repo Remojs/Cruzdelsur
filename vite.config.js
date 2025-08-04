@@ -21,6 +21,7 @@ export default defineConfig({
       '@app': path.resolve(__dirname, './src/app')
     }
   },
+  base: './', // Usar rutas relativas en lugar de absolutas
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
@@ -34,6 +35,11 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
+        // Asegura que los scripts se sirvan con el tipo MIME correcto
+        format: 'es',
+        entryFileNames: 'assets/[name]-[hash].js',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
         manualChunks: {
           'vendor': [
             'react', 

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Contact.module.css';
+import ContactImg from '@assets/images/Contact.webp';
 
 export default function Contact() {
   return (
@@ -12,7 +13,7 @@ export default function Contact() {
           <button className={styles.button}>VIEW MORE</button>
         </div>
       </div>
-      <div className={styles.imageBox}></div>
+      <div className={styles.imageBox} style={{ backgroundImage: `url(${ContactImg})` }}></div>
     </div>
   );
 }
