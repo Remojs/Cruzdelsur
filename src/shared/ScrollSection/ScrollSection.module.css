@@ -83,7 +83,7 @@
 
 .card {
   backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: .25rem;
   padding: 1rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -91,6 +91,26 @@
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Quicksand', sans-serif;
+}
+
+.card:nth-child(2) {
+  position: relative;
+}
+
+.card:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/images/texture.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4; /* Solo el fondo será transparente */
+  border-radius: inherit;
+  z-index: -1;
 }
 
 .card:hover {
@@ -316,7 +336,7 @@
 }
 
 @media (min-width: 640px) {
-  .card {
+  .card:nth-child(2) {
     padding: 3rem;
   }
 }
@@ -375,8 +395,8 @@
 }
 
 .italic {
-  font-style: italic;
   font-family: 'Quicksand', sans-serif;
+  font-size: 1.25rem;
 }
 
 .subtitle {

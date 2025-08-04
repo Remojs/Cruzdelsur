@@ -1,24 +1,31 @@
 .group {
   display: flex;
   justify-content: center;
-  gap: 35px;
+  gap: 25px; /* Reducido de 35px a 25px para acomodar 5 cards */
   flex-wrap: wrap;
   padding: 0 1rem;
+  margin-bottom: 1rem; /* Agregado margen inferior de 1rem */
+  max-width: 1800px; /* Agregado ancho máximo para permitir más espacio */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
 }
 
 /* Large Desktop - 1200px and up */
 @media (min-width: 1200px) {
   .group {
-    gap: 35px;
+    gap: 30px; /* Aumentado de 25px a 30px para aprovechar el espacio extra */
     flex-wrap: nowrap;
+    padding: 0 2rem; /* Aumentado padding para pantallas grandes */
   }
 }
 
 /* Medium Desktop - 1024px to 1199px */
 @media (max-width: 1199px) and (min-width: 1024px) {
   .group {
-    gap: 25px;
+    gap: 25px; /* Aumentado de 20px a 25px */
     flex-wrap: nowrap;
+    padding: 0 1.5rem; /* Aumentado padding */
   }
 }
 

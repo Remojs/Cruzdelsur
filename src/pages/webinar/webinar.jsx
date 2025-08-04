@@ -1,129 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./webinar.module.css";
 import webinarBanner from "@assets/banners/webinar banner.png";
 
 export default function Webinar() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    company: "",
-    position: "",
-    phone: "",
-    interests: [],
-    marketingConsent: false,
-  });
-
-  const [isRegistered, setIsRegistered] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  };
-
-  const handleInterestChange = (interest) => {
-    setFormData((prev) => ({
-      ...prev,
-      interests: prev.interests.includes(interest)
-        ? prev.interests.filter((i) => i !== interest)
-        : [...prev.interests, interest],
-    }));
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Registration submitted:", formData);
-    setIsRegistered(true);
+    console.log("Registration submitted");
   };
-
-  if (isRegistered) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.successMessage}>
-          <div className={styles.successIcon}>
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-              <circle cx="40" cy="40" r="40" fill="#b38d2f" />
-              <path
-                d="M25 40L35 50L55 30"
-                stroke="white"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <h1>Registration Confirmed!</h1>
-          <p>Thank you for registering for our exclusive webinar.</p>
-          <p>You'll receive a confirmation email with the webinar link shortly.</p>
-          <button onClick={() => setIsRegistered(false)} className={styles.backButton}>
-            Register Another Attendee
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className={styles.container}>
-      {/* Banner Section */}
-      <section className={styles.banner}>
-        <div className={styles.bannerBackground}>
-          <img src={webinarBanner} alt="Webinar Banner" className={styles.bannerImage} />
-          <div className={styles.bannerOverlay}>
-            <div className={styles.bannerContent}>
-              <div className={styles.bannerText}>
-                <h1 className={styles.bannerTitle}>
-                  EMPODERANDO LA AVIACIÓN
-                  <br />
-                  <span className={styles.bannerSubtext}>profesionales con</span>
-                  <br />
-                  <span className={styles.bannerScript}>Confianza y Estrategia</span>
-                </h1>
-                <p className={styles.bannerDescription}>
-                  Desde la planificación operativa hasta el servicio premium a bordo, diseñamos cada experiencia de vuelo para satisfacer sus necesidades únicas.
-                </p>
-                <div className={styles.bannerFeatures}>
-                  <div className={styles.featureItem}>
-                    <div className={styles.featureIcon}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#b38d2f" strokeWidth="2" />
-                        <path d="M8 12L11 15L16 9" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <span>Experiencia Regional</span>
-                  </div>
-                  <div className={styles.featureItem}>
-                    <div className={styles.featureIcon}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#b38d2f" strokeWidth="2" />
-                        <polyline points="12,6 12,12 16,14" stroke="#b38d2f" strokeWidth="2" />
-                      </svg>
-                    </div>
-                    <span>Puntualidad</span>
-                  </div>
-                  <div className={styles.featureItem}>
-                    <div className={styles.featureIcon}>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#b38d2f" strokeWidth="2" />
-                        <path d="M9 12L11 14L15 10" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    <span>Servicio de Calidad</span>
-                  </div>
-                </div>
-                <button
-                  className={styles.readMoreButton}
-                  onClick={() => {
-                    const el = document.getElementById('que-aprenderas');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  LEER MÁS
-                </button>
-              </div>
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <div className={styles.heroBackground}>
+          <img src={webinarBanner} alt="Webinar Background" className={styles.heroImage} />
+          <div className={styles.heroOverlay}>
+            <div className={styles.heroContent}>
+              <button
+                className={styles.readMoreButton}
+                onClick={() => {
+                  const el = document.getElementById('que-aprenderas');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                LEER MÁS
+              </button>
             </div>
           </div>
         </div>
@@ -152,7 +53,7 @@ export default function Webinar() {
               </div>
               <div className={styles.detailContent}>
                 <strong>Fecha</strong>
-                <span>15 de Marzo, 2024</span>
+                <span>15 de agosto</span>
               </div>
             </div>
 
@@ -165,7 +66,7 @@ export default function Webinar() {
               </div>
               <div className={styles.detailContent}>
                 <strong>Hora</strong>
-                <span>2:00 PM - 3:30 PM EST</span>
+                <span>15hs a 16hs (franja horaria arg)</span>
               </div>
             </div>
 
@@ -208,41 +109,6 @@ export default function Webinar() {
             <div className={styles.learningItem}>
               <div className={styles.learningIcon}>
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z" stroke="#b38d2f" strokeWidth="2" />
-                  <path d="M24 4V44" stroke="#b38d2f" strokeWidth="2" />
-                  <path d="M4 14L24 24L44 14" stroke="#b38d2f" strokeWidth="2" />
-                </svg>
-              </div>
-              <h3>Innovación y Tecnología</h3>
-              <p>
-                Descubre los últimos avances tecnológicos en diseño de aeronaves, aviónica y sistemas de gestión de vuelo.
-              </p>
-            </div>
-
-            <div className={styles.learningItem}>
-              <div className={styles.learningIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path
-                    d="M24 8C30.6274 8 36 13.3726 36 20C36 26.6274 30.6274 32 24 32C17.3726 32 12 26.6274 12 20C12 13.3726 17.3726 8 24 8Z"
-                    stroke="#b38d2f"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M8 40C8 33.3726 13.3726 28 20 28H28C34.6274 28 40 33.3726 40 40V44H8V40Z"
-                    stroke="#b38d2f"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </div>
-              <h3>Aviación Sostenible</h3>
-              <p>
-                Aprende sobre iniciativas ecológicas, combustibles de aviación sostenibles y opciones de vuelo carbono neutro.
-              </p>
-            </div>
-
-            <div className={styles.learningItem}>
-              <div className={styles.learningIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
                   <path
                     d="M8 40L16 32L24 40L32 28L40 36"
                     stroke="#b38d2f"
@@ -260,29 +126,26 @@ export default function Webinar() {
                   <rect x="4" y="4" width="40" height="40" rx="2" stroke="#b38d2f" strokeWidth="2" />
                 </svg>
               </div>
-              <h3>Tendencias del Mercado</h3>
-              <p>Comprende las dinámicas actuales del mercado, oportunidades de crecimiento y preferencias emergentes de los clientes.</p>
+              <h3>Actualidad del mercado</h3>
+              <p>
+                Análisis profundo de las tendencias actuales del sector aeronáutico, oportunidades de crecimiento emergentes, nuevos nichos de mercado y comportamiento del consumidor post-pandemia. Comprenderás las dinámicas económicas que están redefiniendo la industria de la aviación y cómo posicionarte estratégicamente en este contexto cambiante.
+              </p>
             </div>
 
             <div className={styles.learningItem}>
               <div className={styles.learningIcon}>
                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path
-                    d="M24 4C35.0457 4 44 12.9543 44 24C44 35.0457 35.0457 44 24 44C12.9543 44 4 35.0457 4 24C4 12.9543 12.9543 4 24 4Z"
-                    stroke="#b38d2f"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M18 24L22 28L30 20"
-                    stroke="#b38d2f"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+                  <path d="M12 20C12 16.6863 14.6863 14 18 14H30C33.3137 14 36 16.6863 36 20V28C36 31.3137 33.3137 34 30 34H18C14.6863 34 12 31.3137 12 28V20Z" stroke="#b38d2f" strokeWidth="2"/>
+                  <path d="M24 20V28" stroke="#b38d2f" strokeWidth="2"/>
+                  <path d="M18 24H30" stroke="#b38d2f" strokeWidth="2"/>
+                  <circle cx="24" cy="8" r="4" stroke="#b38d2f" strokeWidth="2"/>
+                  <path d="M16 40C16 36.6863 18.6863 34 22 34H26C29.3137 34 32 36.6863 32 40V44H16V40Z" stroke="#b38d2f" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Seguridad y Regulaciones</h3>
-              <p>Mantente actualizado sobre los últimos protocolos de seguridad, cambios regulatorios y requisitos de cumplimiento.</p>
+              <h3>Storytelling</h3>
+              <p>
+                Técnicas avanzadas de narrativa personal y profesional para construir una marca personal sólida en el sector aeronáutico. Aprenderás a comunicar tu experiencia de manera convincente, desarrollar tu propuesta de valor única y crear conexiones auténticas que impulsen tu carrera. Incluye estrategias para redes sociales profesionales y presentaciones impactantes.
+              </p>
             </div>
 
             <div className={styles.learningItem}>
@@ -292,34 +155,15 @@ export default function Webinar() {
                   <path d="M16 8V16" stroke="#b38d2f" strokeWidth="2" />
                   <path d="M32 8V16" stroke="#b38d2f" strokeWidth="2" />
                   <path d="M8 24H40" stroke="#b38d2f" strokeWidth="2" />
-                  <circle cx="20" cy="32" r="2" fill="#b38d2f" />
-                  <circle cx="28" cy="32" r="2" fill="#b38d2f" />
+                  <path d="M14 30H26" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M14 34H22" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round"/>
+                  <circle cx="34" cy="32" r="2" fill="#b38d2f" />
                 </svg>
               </div>
-              <h3>Gestión de Flota</h3>
-              <p>Optimiza las operaciones con estrategias avanzadas de gestión de flota y herramientas de transformación digital.</p>
-            </div>
-
-            <div className={styles.learningItem}>
-              <div className={styles.learningIcon}>
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path
-                    d="M20 6C20 4.89543 20.8954 4 22 4H26C27.1046 4 28 4.89543 28 6V10H20V6Z"
-                    stroke="#b38d2f"
-                    strokeWidth="2"
-                  />
-                  <path
-                    d="M8 10H40V38C40 40.2091 38.2091 42 36 42H12C9.79086 42 8 40.2091 8 38V10Z"
-                    stroke="#b38d2f"
-                    strokeWidth="2"
-                  />
-                  <path d="M18 20V30" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M24 18V30" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M30 22V30" stroke="#b38d2f" strokeWidth="2" strokeLinecap="round" />
-                </svg>
-              </div>
-              <h3>Experiencia del Cliente</h3>
-              <p>Mejora la satisfacción del pasajero a través de servicios personalizados y tecnologías innovadoras de cabina.</p>
+              <h3>Preparación de CV</h3>
+              <p>
+                Metodología especializada para crear currículums vitae que destaquen en la industria aeronáutica. Conocerás las expectativas específicas de reclutadores del sector, formatos optimizados, palabras clave estratégicas y cómo presentar experiencia técnica de manera atractiva. Incluye templates exclusivos y técnicas de optimización para sistemas ATS utilizados por las principales empresas aeronáuticas.
+              </p>
             </div>
           </div>
         </div>
@@ -436,129 +280,21 @@ export default function Webinar() {
             <form onSubmit={handleSubmit} className={styles.registrationForm}>
               <h3>¡Regístrate Ahora - Es Gratis!</h3>
 
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <label>Nombre *</label>
-                  <input
-                    type="text"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleInputChange}
-                    className={styles.input}
-                    required
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label>Apellido *</label>
-                  <input
-                    type="text"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleInputChange}
-                    className={styles.input}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>Email Address *</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  className={styles.input}
-                  required
-                />
-              </div>
-
-              <div className={styles.formRow}>
-                <div className={styles.formGroup}>
-                  <label>Empresa</label>
-                  <input
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className={styles.input}
-                  />
-                </div>
-                <div className={styles.formGroup}>
-                  <label>Cargo</label>
-                  <select
-                    name="position"
-                    value={formData.position}
-                    onChange={handleInputChange}
-                    className={styles.select}
-                  >
-                    <option value="">Seleccionar Cargo</option>
-                    <option>CEO/Presidente</option>
-                    <option>VP/Director</option>
-                    <option>Gerente</option>
-                    <option>Piloto</option>
-                    <option>Ingeniero</option>
-                    <option>Consultor</option>
-                    <option>Otro</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>Número de Teléfono</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className={styles.input}
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label>Áreas de Interés (Selecciona todas las que apliquen)</label>
-                <div className={styles.interestsGrid}>
-                  {[
-                    "Tecnología Aeronáutica",
-                    "Aviación Sostenible",
-                    "Análisis de Mercado",
-                    "Seguridad y Regulaciones",
-                    "Gestión de Flota",
-                    "Experiencia del Cliente",
-                  ].map((interest) => (
-                    <label key={interest} className={styles.checkboxLabel}>
-                      <input
-                        type="checkbox"
-                        checked={formData.interests.includes(interest)}
-                        onChange={() => handleInterestChange(interest)}
-                        className={styles.checkbox}
-                      />
-                      {interest}
-                    </label>
-                  ))}
-                </div>
-              </div>
-
               <div className={styles.consentGroup}>
                 <label className={styles.checkboxLabel}>
-                  <input
-                    type="checkbox"
-                    name="marketingConsent"
-                    checked={formData.marketingConsent}
-                    onChange={handleInputChange}
-                    className={styles.checkbox}
-                  />
-                  Acepto recibir actualizaciones sobre futuros webinars y perspectivas de la industria de aviación.
+                  <input type="checkbox" className={styles.checkbox} />
+                  Acepto recibir comunicaciones sobre eventos y novedades de Cruz del Sur
+                </label>
+                
+                <label className={styles.checkboxLabel}>
+                  <input type="checkbox" className={styles.checkbox} />
+                  He leído y acepto los términos y condiciones y política de privacidad
                 </label>
               </div>
 
               <button type="submit" className={styles.registerButton}>
-                Registrarse al Webinar Gratuito
+                Reservar mi lugar
               </button>
-
-              <p className={styles.disclaimer}>
-                Al registrarte, aceptas nuestra política de privacidad. Respetamos tu privacidad y nunca compartiremos tu información.
-              </p>
             </form>
           </div>
         </div>

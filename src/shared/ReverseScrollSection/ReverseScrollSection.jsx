@@ -54,7 +54,7 @@ const ReverseScrollSection = ({
               >
                 <p className={styles.paragraph}>Somos un equipo interdisciplinario de expertos con vasta experiencia profesional en la industria Aerocomercial, aviación ejecutiva y Organismos gubernamentales de aviación. Managers, Reclutadores, Psicólogos aeronáuticos, Investigadores, Auditores, Gestores, Consultores, Pilotos, Tripulantes de cabina, Instructores, unidos por una misma convicción:</p>
                 <p className={styles.paragraph}>Que cada desafío en esta industria merece una respuesta hecha a medida. Única. Asertiva. Práctica. Efectiva. Técnicamente Precisa. Profunda. Humana. Valiosa. Significativa.</p>
-                <p className={styles.paragraph}>Desde el diseño de Modelos y estrategias de optimización de campañas de reclutamiento, hasta la mejora estadística de los departamentos de Safety, a partir de auditorías, desarrollo e implementación de programas customizados. Experiencias de crecimiento y transformación a partir de programas de Mentoría de perfil y búsqueda laboral. La gestión de la adquisición-venta de aeronaves, así como la promoción de Vuelos Ejecutivos, merecen un capítulo aparte.  Trabajamos con un equipo especialmente dedicado según el perfil de cada proyecto y servicio que brindamos.</p>
+                <p className={styles.paragraph}>Trabajamos con un equipo especialmente dedicado según el perfil de cada proyecto y servicio que brindamos. Nuestro enfoque se despliega en cinco áreas clave</p>
               </motion.div>
             </div>
           </motion.div>

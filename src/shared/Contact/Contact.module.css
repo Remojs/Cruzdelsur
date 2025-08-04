@@ -22,7 +22,7 @@
 }
 
 .highlight {
-  color: var(--blue-primary);
+  color: #002c6e;
 }
 
 .textBox p {
@@ -42,7 +42,7 @@
 
 .textBox .button {
   padding: 0.75rem 1.5rem;
-  background-color: var(--blue-primary);
+  background-color: #002c6e;
   color: var(--white);
   border: none;
   border-radius: 5px;
@@ -52,7 +52,7 @@
 }
 
 .textBox .button:hover {
-  background-color: #005a9e;
+  background-color: #0a2d4f;
   transform: translateY(-2px);
 }
 

@@ -12,6 +12,7 @@ export default function SectionCardGroup({ cards }) {
           image={card.image} 
           link={card.link}
           index={index}
+          description={card.description}
         />
       ))}
     </div>

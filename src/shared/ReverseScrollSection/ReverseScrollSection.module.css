@@ -78,14 +78,34 @@
 
 .card {
   backdrop-filter: blur(4px);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: .25rem;
-  padding: 2rem;
+  padding: 1rem;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-family: 'Quicksand', sans-serif;
+}
+
+.card:nth-child(1) {
+  position: relative;
+}
+
+.card:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/images/texture.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4; /* Mismo valor que en ScrollSection */
+  border-radius: inherit;
+  z-index: -1;
 }
 
 .card:hover {
@@ -100,7 +120,7 @@
   display: flex;
   align-items: center;
   margin-right: -90px;
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(255, 255, 255, 0.8); */
 }
 
 /* Second card is the logo card (right) - smaller */
@@ -321,7 +341,7 @@
 
 
 @media (min-width: 640px) {
-  .card {
+  .card:first-child {
     padding: 3rem;
   }
 }
@@ -380,8 +400,8 @@
 }
 
 .italic {
-  font-style: italic;
   font-family: 'Quicksand', sans-serif;
+  font-size: 1.25rem;
 }
 
 .subtitle {
@@ -413,7 +433,7 @@
   font-weight: normal;
   font-style: normal;
   color: #1f2937;
-  margin: 0 0 0 3rem;
+  margin: 0 0 0 1rem;
   align-self: flex-start;
 }
 
