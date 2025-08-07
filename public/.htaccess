@@ -36,11 +36,18 @@ Options -Indexes
   RewriteCond %{REQUEST_URI} \.(js|mjs)$
   RewriteRule .* - [T=application/javascript]
 
-  # Si la solicitud no es un archivo o directorio existente
+  # Para HashRouter: Solo redirigir si NO es un archivo existente y NO contiene fragmento (#)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/$
+  RewriteCond %{REQUEST_URI} !\.(js|mjs|css|png|jpg|jpeg|gif|webp|woff|woff2|ttf|svg|ico|html)$
   
-  # Servir el index.html para cualquier otra solicitud (SPA routing)
+  # Redirigir a la raíz para que HashRouter maneje las rutas
+  RewriteRule ^(.*)$ / [R=302,L]
+  
+  # Fallback: servir index.html para solicitudes que no coincidan
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . index.html [L]
 </IfModule>
 

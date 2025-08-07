@@ -366,6 +366,11 @@
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
   }
+
+  .invitationText  {
+    width: 95vw;
+    margin-left: 0;
+  }
   
   .invitationText p {
     font-size: 0.975rem;
@@ -388,9 +393,15 @@
   }
   
   .invitationImageContainer {
-    width: 95vw;
+    width: 90vw;
     text-align: center;
+    margin-top: 1rem;
   }
+
+  .invitationImageContainer img{
+    width: 85vw;
+  }
+
 }
 
 /* Mobile Small - 480px and below */

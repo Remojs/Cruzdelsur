@@ -134,10 +134,11 @@
   left: 0;
   width: 100%;
   height: 0;
-  background: linear-gradient(180deg, #1a365d 0%, #2c5282 50%, #2d3748 100%);
+  background: #041227; /* Cambiado al mismo color del navbar */
   overflow: hidden;
   transition: height 0.4s ease-in-out;
   z-index: 999;
+  overscroll-behavior: contain; /* Evita el scroll de la página */
 }
 
 .mobileMenu::before {
@@ -147,12 +148,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(26, 54, 93, 0.9);
+  background: rgba(4, 18, 39, 0.95); /* Ajustado al color del navbar */
   z-index: -1;
 }
 
 .mobileMenu.open {
   height: calc(100vh - 117px);
+  overflow-y: auto; /* Permitir scroll interno pero controlado */
+  overscroll-behavior: contain; /* Evita el scroll de la página padre */
 }
 
 .mobileMenuLinks {
@@ -163,6 +166,8 @@
   margin: 0;
   height: 100%;
   justify-content: flex-start;
+  overflow-y: auto; /* Scroll interno */
+  overscroll-behavior: contain; /* Evita el scroll de la página */
 }
 
 .mobileMenuLinks li {
@@ -390,6 +395,8 @@
   .mobileMenu.open {
     height: calc(100vh - 100px);
     display: block;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   
   .mobileMenuLinks {
@@ -423,6 +430,8 @@
   
   .mobileMenu.open {
     height: calc(100vh - 90px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   
   .mobileMenuLinks {

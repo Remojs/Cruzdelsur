@@ -35,7 +35,6 @@
   font-weight: 500;
   text-transform: uppercase;
   color: #000000;
-  margin: 0 1.5rem;
   width: 100%;
   text-align: center;
 }
@@ -162,6 +161,12 @@
   }
 
   .mainHeading {
-    font-size: 2rem;
+    font-size: 1.6rem; /* Reducido de 2rem a 1.6rem para mobile */
   }
+
+  .sectionTitleCard {
+    font-size: 0.9rem; /* Reducido de 1.3rem a 1.1rem para mobile */
+  }
+
+  
 }

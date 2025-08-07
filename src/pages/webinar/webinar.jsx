@@ -1,7 +1,8 @@
 import React from "react";
 import { useTranslation } from "../../i18n/LanguageContext";
 import styles from "./webinar.module.css";
-import webinarBanner from "@assets/banners/webinar-banner.png";
+import WebinarBanner from '@shared/WebinarBanner/WebinarBanner';
+
 
 export default function Webinar() {
   const { t } = useTranslation();
@@ -13,17 +14,7 @@ export default function Webinar() {
   return (
     <div className={styles.container}>
       {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.heroBackground}>
-          <img src={webinarBanner} alt="Webinar Background" className={styles.heroImage} />
-          <div className={styles.heroOverlay}>
-            <div className={styles.heroContent}>
-              {/* Botón "LEER MÁS" eliminado */}
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <WebinarBanner />
       {/* Exclusive Webinar Section */}
       <section className={styles.webinarSection}>
         <div className={styles.sectionContent}>

@@ -216,24 +216,30 @@
 @media (max-width: 767px) and (min-width: 481px) {
   .contactContainer {
     flex-direction: column;
-    margin: 3rem 0;
-    padding: 0 1.5rem;
-    gap: 2rem;
+    margin: 2rem 0; /* Reducido de 3rem a 2rem */
+    padding: 0 1rem; /* Reducido de 1.5rem a 1rem */
+    gap: 1.5rem; /* Reducido de 2rem a 1.5rem */
     text-align: center;
   }
   
   .textBox {
     width: 100%;
     padding-left: 0;
+    margin-left: 0;
   }
   
   .textBox h3 {
     font-size: 1.6rem;
+    margin-bottom: 0.8rem; /* Reducido margen inferior */
+    text-align: center; /* Centrado en mobile */
   }
   
   .textBox p {
     width: 100%;
     font-size: 0.95rem;
+    text-align: center; /* Centrado en mobile */
+    margin-left: 0; /* Eliminado margen izquierdo extra */
+    margin-bottom: 1rem; /* Reducido margen inferior */
   }
   
   .textBox .buttons {
@@ -267,6 +273,7 @@
     width: 100%;
     padding-left: 0;
     order: 1;
+    margin-left: 0;
   }
   
   .textBox h3 {
@@ -277,6 +284,7 @@
     font-size: 0.9rem;
     line-height: 1.4;
     width: 100%;
+    margin-left: 0;
   }
   
   .textBox .buttons {
