@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "../../i18n/LanguageContext";
 import styles from "./ReverseScrollSection.module.css";
 import logo from '@assets/logos/logo-complete.png';
 
@@ -7,6 +8,7 @@ const ReverseScrollSection = ({
   imageSrc, 
   altText = "Clouds at sunset"
 }) => {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const isSectionInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
@@ -42,7 +44,7 @@ const ReverseScrollSection = ({
                 animate={isSectionInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
                 transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
               >
-                <span className={styles.italic}>Nuestra misión</span>
+                <span className={styles.italic}>{t('about.ourMission')}</span>
               </motion.h2>
 
               {/* Description with delayed fade-in */}
@@ -52,9 +54,9 @@ const ReverseScrollSection = ({
                 animate={isSectionInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, delay: 1.8, ease: "easeOut" }}
               >
-                <p className={styles.paragraph}>Somos un equipo interdisciplinario de expertos con vasta experiencia profesional en la industria Aerocomercial, aviación ejecutiva y Organismos gubernamentales de aviación. Managers, Reclutadores, Psicólogos aeronáuticos, Investigadores, Auditores, Gestores, Consultores, Pilotos, Tripulantes de cabina, Instructores, unidos por una misma convicción:</p>
-                <p className={styles.paragraph}>Que cada desafío en esta industria merece una respuesta hecha a medida. Única. Asertiva. Práctica. Efectiva. Técnicamente Precisa. Profunda. Humana. Valiosa. Significativa.</p>
-                <p className={styles.paragraph}>Trabajamos con un equipo especialmente dedicado según el perfil de cada proyecto y servicio que brindamos. Nuestro enfoque se despliega en cinco áreas clave</p>
+                <p className={styles.paragraph}>{t('about.team')}</p>
+                <p className={styles.paragraph}>{t('about.conviction')}</p>
+                <p className={styles.paragraph}>{t('about.dedication')}</p>
               </motion.div>
             </div>
           </motion.div>

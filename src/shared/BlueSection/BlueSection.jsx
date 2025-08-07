@@ -1,8 +1,10 @@
+import { useTranslation } from '../../i18n/LanguageContext';
 import styles from './BlueSection.module.css';
 import BlueSectionImg from '@assets/images/Bluesectionimg.png';
 import BlueSectionImg2 from '@assets/images/Bluesectionimg2.png';
 
 export default function BlueSection() {
+  const { t } = useTranslation();
   return (
     <section className={styles.blueSection}>
       <div className={styles.gradientOverlay}></div>
@@ -15,48 +17,48 @@ export default function BlueSection() {
           />
         </div>
         <div className={styles.textContainer}>
-          <h2 className={styles.title}>Lo que nos define:</h2>
+          <h2 className={styles.title}>{t('blueSection.title')}</h2>
           
           <ul className={styles.defineList}>
             <li className={styles.defineItem}>
-              <strong className={styles.defineTitle}>Rigurosidad operativa + sensibilidad cultural</strong>
+              <strong className={styles.defineTitle}>{t('blueSection.principle1.title')}</strong>
               <span className={styles.defineDescription}>
-                Porque la excelencia técnica no tiene sentido sin un entendimiento profundo de las personas y los contextos.
+                {t('blueSection.principle1.description')}
               </span>
             </li>
 
             <li className={styles.defineItem}>
-              <strong className={styles.defineTitle}>Escucha activa + pensamiento estratégico</strong>
+              <strong className={styles.defineTitle}>{t('blueSection.principle2.title')}</strong>
               <span className={styles.defineDescription}>
-                Porque no creemos en soluciones enlatadas. Cada cliente es único, y cada proyecto también debe serlo.
+                {t('blueSection.principle2.description')}
               </span>
             </li>
 
             <li className={styles.defineItem}>
-              <strong className={styles.defineTitle}>Red global + conocimiento local</strong>
+              <strong className={styles.defineTitle}>{t('blueSection.principle3.title')}</strong>
               <span className={styles.defineDescription}>
-                Porque trabajamos a nivel global, pero buscamos el valor estratégico y particular de lo que se construye en cada lugar.
+                {t('blueSection.principle3.description')}
               </span>
             </li>
 
             <li className={styles.defineItem}>
-              <strong className={styles.defineTitle}>Visión de futuro + ejecución viable</strong>
+              <strong className={styles.defineTitle}>{t('blueSection.principle4.title')}</strong>
               <span className={styles.defineDescription}>
-                Porque acompañamos procesos de transformación con herramientas concretas, innovadoras y prácticas.
+                {t('blueSection.principle4.description')}
               </span>
             </li>
 
             <li className={styles.defineItem}>
-              <strong className={styles.defineTitle}>Pensamiento creativo + innovación con propósito</strong>
+              <strong className={styles.defineTitle}>{t('blueSection.principle5.title')}</strong>
               <span className={styles.defineDescription}>
-                Porque innovar no es solo pensar en algo nuevo, sino desafiar lo establecido y crearlo. Y cada solución nace de una mirada original aplicada con el propósito de adelantarse y dejar huella de referencia futura.
+                {t('blueSection.principle5.description')}
               </span>
             </li>
 
             <li className={styles.defineItem}>
-              <strong className={styles.defineTitle}>Compromiso genuino + respeto</strong>
+              <strong className={styles.defineTitle}>{t('blueSection.principle6.title')}</strong>
               <span className={styles.defineDescription}>
-                Porque detrás de cada departamento, perfil, cada operación y cada decisión, hay personas reales, con historias, talentos y sueños que merecen ser escuchados y potenciados.
+                {t('blueSection.principle6.description')}
               </span>
             </li>
           </ul>
@@ -67,13 +69,11 @@ export default function BlueSection() {
       <div className={styles.invitationSection}>
         <div className={styles.invitationContent}>
           <div className={styles.invitationTextContainer}>
-            <h2 className={styles.invitationTitle}>Una invitación a volar más alto</h2>
+            <h2 className={styles.invitationTitle}>{t('blueSection.invitation.title')}</h2>
             
             <div className={styles.invitationText}>
               <p>
-                En Cruz del Sur no creemos en los límites estáticos. Creemos en el dinamismo del vuelo, en el movimiento, en la expansión y en la posibilidad de crear nuevos estándares para la industria, a partir del compromiso profesional direccionado a la concreción de objetivos de alto impacto.<br />
-                Por eso, este no es solo un texto institucional.<br />
-                Es una invitación; es una puerta que se abre; el inicio de una alianza, de un proyecto, de un camino que invita a dar pasos.
+                {t('blueSection.invitation.text')}
               </p>
             </div>
           </div>

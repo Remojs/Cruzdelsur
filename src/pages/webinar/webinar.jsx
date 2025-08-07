@@ -1,8 +1,10 @@
 import React from "react";
+import { useTranslation } from "../../i18n/LanguageContext";
 import styles from "./webinar.module.css";
 import webinarBanner from "@assets/banners/webinar-banner.png";
 
 export default function Webinar() {
+  const { t } = useTranslation();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Registration submitted");
@@ -16,15 +18,7 @@ export default function Webinar() {
           <img src={webinarBanner} alt="Webinar Background" className={styles.heroImage} />
           <div className={styles.heroOverlay}>
             <div className={styles.heroContent}>
-              <button
-                className={styles.readMoreButton}
-                onClick={() => {
-                  const el = document.getElementById('que-aprenderas');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                LEER MÁS
-              </button>
+              {/* Botón "LEER MÁS" eliminado */}
             </div>
           </div>
         </div>
@@ -34,10 +28,10 @@ export default function Webinar() {
       <section className={styles.webinarSection}>
         <div className={styles.sectionContent}>
           <div className={styles.webinarHeader}>
-            <div className={styles.badge}>WEBINAR EXCLUSIVO</div>
-            <h2 className={styles.webinarTitle}>El Futuro de la Aviación Privada: Tendencias, Tecnología y Sostenibilidad</h2>
+            <div className={styles.badge}>{t('webinar.exclusive')}</div>
+            <h2 className={styles.webinarTitle}>{t('webinar.title')}</h2>
             <p className={styles.webinarDescription}>
-              Únete a los líderes de la industria mientras exploramos el panorama en evolución de la aviación privada, desde tecnología de vanguardia hasta soluciones de vuelo sostenibles que están transformando la industria.
+              {t('webinar.description')}
             </p>
           </div>
 
@@ -93,8 +87,8 @@ export default function Webinar() {
                 </svg>
               </div>
               <div className={styles.detailContent}>
-                <strong>Duración</strong>
-                <span>90 Minutos + Preguntas</span>
+                <strong>{t('webinar.duration')}</strong>
+                <span>{t('webinar.durationValue')}</span>
               </div>
             </div>
           </div>
@@ -104,7 +98,7 @@ export default function Webinar() {
       {/* What You'll Learn Section */}
       <section className={styles.learningSection} id="que-aprenderas">
         <div className={styles.sectionContent}>
-          <h2 className={styles.sectionTitle}>Qué Aprenderás</h2>
+          <h2 className={styles.sectionTitle}>{t('webinar.whatYouWillLearn')}</h2>
           <div className={styles.learningGrid}>
             <div className={styles.learningItem}>
               <div className={styles.learningIcon}>
@@ -126,9 +120,9 @@ export default function Webinar() {
                   <rect x="4" y="4" width="40" height="40" rx="2" stroke="#b38d2f" strokeWidth="2" />
                 </svg>
               </div>
-              <h3>Actualidad del mercado</h3>
+              <h3>{t('webinar.detailedTopics.topic1.title')}</h3>
               <p>
-                Análisis profundo de las tendencias actuales del sector aeronáutico, oportunidades de crecimiento emergentes, nuevos nichos de mercado y comportamiento del consumidor post-pandemia. Comprenderás las dinámicas económicas que están redefiniendo la industria de la aviación y cómo posicionarte estratégicamente en este contexto cambiante.
+                {t('webinar.detailedTopics.topic1.description')}
               </p>
             </div>
 
@@ -142,9 +136,9 @@ export default function Webinar() {
                   <path d="M16 40C16 36.6863 18.6863 34 22 34H26C29.3137 34 32 36.6863 32 40V44H16V40Z" stroke="#b38d2f" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3>Storytelling</h3>
+              <h3>{t('webinar.detailedTopics.topic2.title')}</h3>
               <p>
-                Técnicas avanzadas de narrativa personal y profesional para construir una marca personal sólida en el sector aeronáutico. Aprenderás a comunicar tu experiencia de manera convincente, desarrollar tu propuesta de valor única y crear conexiones auténticas que impulsen tu carrera. Incluye estrategias para redes sociales profesionales y presentaciones impactantes.
+                {t('webinar.detailedTopics.topic2.description')}
               </p>
             </div>
 
@@ -160,9 +154,9 @@ export default function Webinar() {
                   <circle cx="34" cy="32" r="2" fill="#b38d2f" />
                 </svg>
               </div>
-              <h3>Preparación de CV</h3>
+              <h3>{t('webinar.detailedTopics.topic3.title')}</h3>
               <p>
-                Metodología especializada para crear currículums vitae que destaquen en la industria aeronáutica. Conocerás las expectativas específicas de reclutadores del sector, formatos optimizados, palabras clave estratégicas y cómo presentar experiencia técnica de manera atractiva. Incluye templates exclusivos y técnicas de optimización para sistemas ATS utilizados por las principales empresas aeronáuticas.
+                {t('webinar.detailedTopics.topic3.description')}
               </p>
             </div>
           </div>
@@ -213,10 +207,10 @@ export default function Webinar() {
       <section className={styles.registrationSection}>
         <div className={styles.sectionContent}>
           <div className={styles.registrationContainer}>
-            <div className={styles.registrationInfo}>
-              <h2>Reserva Tu Lugar</h2>
+              <div className={styles.registrationInfo}>
+              <h2>{t('webinar.reserveYourSpot')}</h2>
               <p>
-                No te pierdas esta oportunidad exclusiva de obtener perspectivas de líderes de la industria y conectar con profesionales de aviación de todo el mundo.
+                {t('webinar.registrationInfo.description')}
               </p>
               <div className={styles.benefits}>
                 <div className={styles.benefit}>
@@ -231,7 +225,7 @@ export default function Webinar() {
                       />
                     </svg>
                   </div>
-                  <span>Preguntas y respuestas en vivo con expertos de la industria</span>
+                  <span>{t('webinar.benefits.liveQA')}</span>
                 </div>
                 <div className={styles.benefit}>
                   <div className={styles.checkIcon}>
@@ -245,7 +239,7 @@ export default function Webinar() {
                       />
                     </svg>
                   </div>
-                  <span>Recursos descargables y reportes</span>
+                  <span>{t('webinar.benefits.recording')}</span>
                 </div>
                 <div className={styles.benefit}>
                   <div className={styles.checkIcon}>
@@ -259,42 +253,26 @@ export default function Webinar() {
                       />
                     </svg>
                   </div>
-                  <span>Grabación disponible durante 30 días</span>
-                </div>
-                <div className={styles.benefit}>
-                  <div className={styles.checkIcon}>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path
-                        d="M16.6667 5L7.5 14.1667L3.33333 10"
-                        stroke="#b38d2f"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <span>Oportunidades de networking</span>
+                  <span>{t('webinar.benefits.networking')}</span>
                 </div>
               </div>
-            </div>
-
-            <form onSubmit={handleSubmit} className={styles.registrationForm}>
-              <h3>¡Regístrate Ahora - Es Gratis!</h3>
+            </div>            <form onSubmit={handleSubmit} className={styles.registrationForm}>
+              <h3>{t('webinar.registerTitle')}</h3>
 
               <div className={styles.consentGroup}>
                 <label className={styles.checkboxLabel}>
                   <input type="checkbox" className={styles.checkbox} />
-                  Acepto recibir comunicaciones sobre eventos y novedades de Cruz del Sur
+                  {t('webinar.checkboxes.communications')}
                 </label>
                 
                 <label className={styles.checkboxLabel}>
                   <input type="checkbox" className={styles.checkbox} />
-                  He leído y acepto los términos y condiciones y política de privacidad
+                  {t('webinar.checkboxes.terms')}
                 </label>
               </div>
 
               <button type="submit" className={styles.registerButton}>
-                Reservar mi lugar
+                {t('webinar.register')}
               </button>
             </form>
           </div>

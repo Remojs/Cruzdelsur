@@ -3,6 +3,7 @@ import Home from '../features/home/home';
 import Layout from './layout/Layout';
 import Charters from '../features/charters/charters';
 import WebinarPage from '../pages/webinar/webinar';
+import Contact from '../pages/contact/Contact';
 import { NotFound, UnderConstruction } from '../ui';
 
 export const router = createHashRouter([
@@ -47,7 +48,7 @@ export const router = createHashRouter([
       },
       {
         path: '/contact',
-        element: <UnderConstruction />,
+        element: <Contact />,
       },
       {
         path: '/search',

@@ -7,7 +7,8 @@
 /* Banner Section */
 .banner {
   position: relative;
-  height: 463px; /* 580px - 117px del navbar */
+  height: 100vh; /* Altura completa de la ventana */
+  min-height: 600px; /* Altura mínima para mantener proporciones */
   overflow: hidden;
   margin-top: 117px; /* Altura del navbar */
 }
@@ -32,12 +33,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(4, 18, 39, 0.9) 0%,
-    rgba(179, 141, 47, 0.5) 50%,
-    rgba(4, 18, 39, 0.98) 100%
-  );
+  background: transparent; /* Eliminado el oscurecido */
   display: flex;
   align-items: center;
 }
@@ -417,7 +413,8 @@
 /* Hero Section */
 .hero {
   position: relative;
-  height: 463px;
+  height: 100vh; /* Altura completa de la ventana */
+  min-height: 600px; /* Altura mínima para mantener proporciones */
   overflow: hidden;
   margin-top: 117px;
 }

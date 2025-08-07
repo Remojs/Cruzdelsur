@@ -60,16 +60,18 @@
 
 .title {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   margin-bottom: 2rem;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
   font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  margin-left: 2rem;
 }
 
 .defineList {
-  list-style: disc;
+  list-style: none;
   padding-left: 2rem;
   margin: 0;
   line-height: 1.5;
@@ -127,7 +129,7 @@
 }
 
 .invitationTitle {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 400;
   margin-bottom: 2rem;
   color: #ffffff;
@@ -141,6 +143,8 @@
   color: #e6f3ff;
   line-height: 1.5;
   text-align: justify;
+  width: 900px;
+  margin-left: 2rem;
 }
 
 .invitationText p {
@@ -186,7 +190,7 @@
   }
   
   .title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   .defineDescription {
@@ -194,7 +198,7 @@
   }
   
   .invitationTitle {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
   }
   
@@ -202,6 +206,14 @@
     font-size: 1.4rem;
     letter-spacing: 0.1px;
   }
+
+  .invitationText {
+  color: #e6f3ff;
+  line-height: 1.5;
+  text-align: justify;
+  width: 900px;
+  margin-left: 2rem;
+}
   
   .invitationContent {
     max-width: 1400px;
@@ -209,7 +221,7 @@
   }
   
   .invitationTextContainer {
-    width: 60vw;
+    max-width: 1400px;
   }
   
   .invitationImageContainer {

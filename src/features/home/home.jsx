@@ -1,4 +1,5 @@
 import styles from './home.module.css';
+import { useTranslation } from '../../i18n/LanguageContext';
 
 //Images
 import HomePortrait from '@assets/banners/HomePortrait.webp'
@@ -17,50 +18,54 @@ import Contact from '@shared/Contact/Contact';
 import ScrollSection from '@shared/ScrollSection/ScrollSection';
 import ReverseScrollSection from '@shared/ReverseScrollSection/ReverseScrollSection';
 import BlueSection from '@shared/BlueSection/BlueSection';
+import WebinarBanner from '@shared/WebinarBanner/WebinarBanner';
 
 export default function Home() {
+  const { t } = useTranslation();
 
   const cards = [
     { 
-      title: 'Consulting', 
+      title: t('home.consulting.title'), 
       image: SectionCard4, 
       link: '#/consulting',
-      description: 'Desde la idea hasta la implementación y seguimiento. Creamos y desarrollamos proyectos aeronáuticos con estrategia, innovación y un conocimiento profundo del mercado.'
+      description: t('home.consulting.description')
     },
     { 
-      title: 'Recruitment', 
+      title: t('home.recruitment.title'), 
       image: SectionCard5, 
       link: '#/recruitment',
-      description: 'Campañas de reclutamiento / Diseño de Modelos y estrategias de optimización de procesos de selección.'
+      description: t('home.recruitment.description')
     },
     { 
-      title: 'Safety', 
+      title: t('home.safety.title'), 
       image: SectionCard3, 
       link: '#/safety',
-      description: 'Asesoría, Diseño, implementación y optimización de programas Gestión de riesgos de seguridad operacional en compañías de aviación. Auditamos, diagnosticamos y acompañamos la construcción de culturas organizacionales sólidas.'
+      description: t('home.safety.description')
     },
     { 
-      title: 'Academy', 
+      title: t('home.academy.title'), 
       image: SectionCard2, 
       link: '#/academy',
-      description: 'Experiencias de crecimiento y transformación a partir de programas de formación específica, Mentorías de construcción de perfil profesional / preparación estratégica de entrevistas en la búsqueda laboral.'
+      description: t('home.academy.description')
     },
     { 
-      title: 'Flights', 
+      title: t('home.flights.title'), 
       image: SectionCard1, 
       link: '#/flights',
-      description: 'Ofrecemos soluciones premium en vuelos privados de negocios, placer, medivac- logística aérea- y servicios de soporte, con enfoque en la seguridad, confidencialidad y calidad de excelencia en el servicio y detalle.'
+      description: t('home.flights.description')
     },
   ];
 
   return (
     <div className={styles.container}>
+      <WebinarBanner />
       <ScrollSection imageSrc={HomeIMG} altText="" />
       
       <ReverseScrollSection imageSrc={HomeIMG2} altText="" />
 
       <main className={styles.main}>
         <div>
+          <h1 className={styles.sectionTitleCard}>{t('home.sectionTitle')}</h1>
           <SectionCardGroup cards={cards} />
         </div>
 
