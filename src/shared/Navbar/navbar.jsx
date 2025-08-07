@@ -51,6 +51,11 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
+        {/* Language Selector for medium screens (left side) */}
+        <div className={styles.leftIconContainer}>
+          <LanguageSelector />
+        </div>
+        
         <div className={styles.navContent}>
           <ul className={styles.leftNavLinks}>
             <li><a href="#/"><FaHome className={styles.homeIcon} /> {t('nav.home')}</a></li>

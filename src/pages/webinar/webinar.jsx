@@ -6,9 +6,11 @@ import WebinarBanner from '@shared/WebinarBanner/WebinarBanner';
 
 export default function Webinar() {
   const { t } = useTranslation();
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Registration submitted");
+    // Redirigir al formulario de Google
+    window.open('https://forms.gle/7f9WqTqefJkdbXhA9', '_blank');
   };
 
   return (
@@ -195,14 +197,11 @@ export default function Webinar() {
       */}
 
       {/* Registration Form Section */}
-      <section className={styles.registrationSection}>
+      <section className={`${styles.registrationSection} registrationSection`}>
         <div className={styles.sectionContent}>
           <div className={styles.registrationContainer}>
               <div className={styles.registrationInfo}>
               <h2>{t('webinar.reserveYourSpot')}</h2>
-              <p>
-                {t('webinar.registrationInfo.description')}
-              </p>
               <div className={styles.benefits}>
                 <div className={styles.benefit}>
                   <div className={styles.checkIcon}>
@@ -262,7 +261,11 @@ export default function Webinar() {
                 </label>
               </div>
 
-              <button type="submit" className={styles.registerButton}>
+              <button 
+                type="button" 
+                className={styles.registerButton}
+                onClick={() => window.open('https://forms.gle/7f9WqTqefJkdbXhA9', '_blank')}
+              >
                 {t('webinar.register')}
               </button>
             </form>

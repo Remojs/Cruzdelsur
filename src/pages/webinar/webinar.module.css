@@ -818,7 +818,7 @@
 
 .registerButton {
   width: 100%;
-  background: #b38d2f;
+  background: #041227; /* Color del navbar */
   color: white;
   border: none;
   padding: 18px;
@@ -831,7 +831,7 @@
 }
 
 .registerButton:hover {
-  background: #9a7826;
+  background: #0a2442; /* Versión más clara para hover */
 }
 
 .disclaimer {
