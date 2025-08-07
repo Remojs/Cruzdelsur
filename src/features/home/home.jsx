@@ -61,6 +61,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div>
+          <h1 className={styles.sectionTitleCard}>Nuestro enfoque se despliega en cinco áreas clave</h1>
           <SectionCardGroup cards={cards} />
         </div>
 

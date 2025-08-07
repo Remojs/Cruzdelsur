@@ -38,7 +38,7 @@ export default function Footer() {
             </a> */}
           </div>
         </div>
-        <div className={styles.footerGrid}>
+        {/* <div className={styles.footerGrid}>
           <div className={styles.footerColumn}>
             <div className={styles.footerColumnTitle}>Servicios</div>
             <ul className={styles.footerLinkList}>
@@ -62,7 +62,7 @@ export default function Footer() {
               <li><a href="/privacidad" className={styles.footerLink}>Políticas de privacidad</a></li>
             </ul>
           </div>
-        </div>
+        </div> */}
         {/* Sección de stats comentada por pedido del usuario
         <div className={styles.statsSection}>
           ...stats content...
