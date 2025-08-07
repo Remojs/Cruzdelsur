@@ -1,7 +1,9 @@
 import React, { useState } from "react"
+import { useTranslation } from "../../i18n/LanguageContext"
 import styles from "./charters.module.css"
 
 export default function Charters() {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     from: "",
     to: "",
@@ -44,37 +46,37 @@ export default function Charters() {
 
 
       <div className={styles.content}>
-        <h1 className={styles.mainTitle}>Solicita una Cotización para tu Próximo Vuelo Charter</h1>
+        <h1 className={styles.mainTitle}>{t('flights.title')}</h1>
 
         <p className={styles.description}>
-          Cada vuelo tiene una historia, una necesidad y un propósito diferente. Por eso, en Cruz del Sur diseñamos experiencias de vuelo que combinan eficiencia operativa, confort y precisión a medida.
+          {t('flights.description1')}
         </p>
 
         <p className={styles.description}>
-          Contanos los detalles de tu próximo viaje y nuestro equipo te contactará a la brevedad con una propuesta personalizada, pensada para optimizar tu tiempo y responder con exactitud a tus expectativas.
+          {t('flights.description2')}
         </p>
 
         <p className={styles.subDescription}>
-          Completá el formulario con toda la información posible. Estamos listos para ayudarte a llegar más alto.
+          {t('flights.subDescription')}
         </p>
 
 
         <form onSubmit={handleSubmit} className={styles.form}>
 
           <div className={styles.flightSearchSection}>
-            <h3 className={styles.sectionSubtitle}>Detalles del Vuelo</h3>
+            <h3 className={styles.sectionSubtitle}>{t('flights.flightDetails')}</h3>
 
             <div className={styles.flightSearch}>
               <div className={styles.searchField}>
                 <div className={styles.fieldContent}>
-                  <label>Desde</label>
-                  <input  type="text"  name="from"  value={formData.from}  onChange={handleInputChange}  className={styles.searchInput}  placeholder="Ciudad de origen"/>
+                  <label>{t('flights.from')}</label>
+                  <input  type="text"  name="from"  value={formData.from}  onChange={handleInputChange}  className={styles.searchInput}  placeholder={t('flights.fromPlaceholder')}/>
                 </div>
               </div>
               <div className={styles.searchField}>
                 <div className={styles.fieldContent}>
-                  <label>Hasta</label>
-                  <input type="text" name="to" value={formData.to} onChange={handleInputChange} className={styles.searchInput} placeholder="Ciudad de destino"   />
+                  <label>{t('flights.to')}</label>
+                  <input type="text" name="to" value={formData.to} onChange={handleInputChange} className={styles.searchInput} placeholder={t('flights.toPlaceholder')}   />
                 </div>
               </div>
             </div>
@@ -82,14 +84,14 @@ export default function Charters() {
             <div className={styles.flightSearch}>
               <div className={styles.searchField}>
                 <div className={styles.fieldContent}>
-                  <label>Fecha</label>
+                  <label>{t('flights.date')}</label>
                   <input type="date" name="date" value={formData.date} onChange={handleInputChange} className={styles.searchInput}   />
-                  <span className={styles.addReturn}>Agregar regreso</span>
+                  <span className={styles.addReturn}>{t('flights.addReturn')}</span>
                 </div>
               </div>
               <div className={styles.searchField}>
                 <div className={styles.fieldContent}>
-                  <label>Pasajeros</label>
+                  <label>{t('flights.passengers')}</label>
                   <div className={styles.passengerCounter}>
                     <button
                       type="button"
@@ -110,35 +112,35 @@ export default function Charters() {
 
 
           <div className={styles.personalInfoSection}>
-            <h3 className={styles.sectionSubtitle}>Información Personal</h3>
+            <h3 className={styles.sectionSubtitle}>{t('flights.personalInfo')}</h3>
 
             <div className={styles.nameRow}>
               <div className={styles.titleField}>
-                <label>Título</label>
+                <label>{t('flights.titleField')}</label>
                 <select name="title" value={formData.title} onChange={handleInputChange} className={styles.select}>
-                  <option>Sr.</option>
-                  <option>Sra.</option>
-                  <option>Srta.</option>
-                  <option>Dr.</option>
+                  <option>{t('flights.titles.mr')}</option>
+                  <option>{t('flights.titles.mrs')}</option>
+                  <option>{t('flights.titles.miss')}</option>
+                  <option>{t('flights.titles.dr')}</option>
                 </select>
               </div>
               <div className={styles.nameField}>
-                <label>Nombre</label>
-                <input  type="text"  name="firstName"  value={formData.firstName}  onChange={handleInputChange}  className={styles.input}  placeholder="Ingrese su nombre"/>
+                <label>{t('flights.firstName')}</label>
+                <input  type="text"  name="firstName"  value={formData.firstName}  onChange={handleInputChange}  className={styles.input}  placeholder={t('flights.firstNamePlaceholder')}/>
               </div>
               <div className={styles.nameField}>
-                <label>Apellido</label>
-                <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} className={styles.input} placeholder="Ingrese su apellido"/>
+                <label>{t('flights.lastName')}</label>
+                <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange} className={styles.input} placeholder={t('flights.lastNamePlaceholder')}/>
               </div>
             </div>
 
             <div className={styles.contactRow}>
               <div className={styles.emailField}>
-                <label>Correo Electrónico</label>
-                <input type="email" name="email" value={formData.email} onChange={handleInputChange} className={styles.input} placeholder="su.correo@ejemplo.com" />
+                <label>{t('flights.email')}</label>
+                <input type="email" name="email" value={formData.email} onChange={handleInputChange} className={styles.input} placeholder={t('flights.emailPlaceholder')} />
               </div>
               <div className={styles.phoneField}>
-                <label>Número de Teléfono</label>
+                <label>{t('flights.phoneNumber')}</label>
                 <div className={styles.phoneGroup}>
                   <select name="phoneCountry" value={formData.phoneCountry} onChange={handleInputChange} className={styles.phoneCountrySelect}>
                     <option>+1</option>
@@ -147,48 +149,48 @@ export default function Charters() {
                     <option>+34</option>
                     <option>+33</option>
                   </select>
-                  <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange}  className={styles.phoneInput}  placeholder="Su número de teléfono"/>
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange}  className={styles.phoneInput}  placeholder={t('flights.phonePlaceholder')}/>
                 </div>
               </div>
             </div>
 
             <div className={styles.preferencesSection}>
-              <h4 className={styles.subsectionTitle}>Preferencias de Vuelo</h4>
+              <h4 className={styles.subsectionTitle}>{t('flights.flightPreferences')}</h4>
               <div className={styles.preferencesGrid}>
                 <div className={styles.fieldGroup}>
-                  <label>¿Con qué frecuencia vuela de forma privada?</label>
+                  <label>{t('flights.flyingFrequency')}</label>
                   <select  name="flyingFrequency"  value={formData.flyingFrequency}  onChange={handleInputChange}  className={styles.select}>
-                    <option value="">-- Seleccionar frecuencia --</option>
-                    <option>Semanal</option>
-                    <option>Mensual</option>
-                    <option>Trimestral</option>
-                    <option>Anual</option>
-                    <option>Primera vez</option>
+                    <option value="">{t('flights.frequencies.select')}</option>
+                    <option>{t('flights.frequencies.weekly')}</option>
+                    <option>{t('flights.frequencies.monthly')}</option>
+                    <option>{t('flights.frequencies.quarterly')}</option>
+                    <option>{t('flights.frequencies.yearly')}</option>
+                    <option>{t('flights.frequencies.firstTime')}</option>
                   </select>
                 </div>
 
                 <div className={styles.fieldGroup}>
-                  <label>¿Cuál es su solución de vuelo actual?</label>
+                  <label>{t('flights.currentSolution')}</label>
                   <select  name="currentSolution"  value={formData.currentSolution}  onChange={handleInputChange}  className={styles.select}>
-                    <option value="">-- Seleccionar solución --</option>
-                    <option>Charter</option>
-                    <option>Aerolíneas Comerciales</option>
-                    <option>Aeronave Propia</option>
-                    <option>Propiedad Compartida</option>
-                    <option>Tarjeta Jet</option>
+                    <option value="">{t('flights.solutions.select')}</option>
+                    <option>{t('flights.solutions.charter')}</option>
+                    <option>{t('flights.solutions.commercial')}</option>
+                    <option>{t('flights.solutions.owned')}</option>
+                    <option>{t('flights.solutions.shared')}</option>
+                    <option>{t('flights.solutions.jetCard')}</option>
                   </select>
                 </div>
 
                 <div className={styles.fieldGroup}>
-                  <label>¿Cómo se enteró de Cruz Del Sur?</label>
+                  <label>{t('flights.hearAbout')}</label>
                   <select name="hearAbout" value={formData.hearAbout} onChange={handleInputChange} className={styles.select}   >
-                    <option value="">-- Seleccionar fuente --</option>
-                    <option>Búsqueda en Google</option>
-                    <option>Redes Sociales</option>
-                    <option>Recomendación de un Amigo</option>
-                    <option>Publicidad</option>
-                    <option>Evento de la Industria</option>
-                    <option>Otro</option>
+                    <option value="">{t('flights.sources.select')}</option>
+                    <option>{t('flights.sources.google')}</option>
+                    <option>{t('flights.sources.social')}</option>
+                    <option>{t('flights.sources.friend')}</option>
+                    <option>{t('flights.sources.advertising')}</option>
+                    <option>{t('flights.sources.event')}</option>
+                    <option>{t('flights.sources.other')}</option>
                   </select>
                 </div>
               </div>
@@ -196,9 +198,9 @@ export default function Charters() {
 
             <div className={styles.requestsSection}>
               <div className={styles.fieldGroup}>
-                <label>¿Alguna solicitud adicional en la que podamos ayudarte?</label>
-                <p className={styles.fieldHint}> Por ejemplo, requisitos dietéticos, solicitudes especiales, transporte terrestre </p>
-                <textarea name="additionalRequests" value={formData.additionalRequests} onChange={handleInputChange} className={styles.largeTextarea} rows={6} placeholder="Por favor describa cualquier requisito o solicitud especial..." />
+                <label>{t('flights.additionalRequests')}</label>
+                <p className={styles.fieldHint}> {t('flights.requestsHint')} </p>
+                <textarea name="additionalRequests" value={formData.additionalRequests} onChange={handleInputChange} className={styles.largeTextarea} rows={6} placeholder={t('flights.requestsPlaceholder')} />
               </div>
             </div>
 
@@ -206,14 +208,14 @@ export default function Charters() {
               <div className={styles.checkboxGroup}>
                 <label className={styles.checkboxLabel}>
                   <input type="checkbox" name="marketingConsent" checked={formData.marketingConsent} onChange={handleInputChange} className={styles.checkbox}/>
-                  Acepto recibir comunicaciones por correo electrónico de Cruz Del Sur.
+                  {t('flights.marketingConsent')}
                 </label>
               </div>
             </div>
 
-            <button type="submit" className={styles.submitButton}>ENVIAR SOLICITUD</button>
+            <button type="submit" className={styles.submitButton}>{t('flights.submitButton')}</button>
 
-            <p className={styles.contact}> ¿Necesitas ayuda? Contáctanos al <span className={styles.phone}>+44 800 955 7500</span> </p>
+            <p className={styles.contact}> {t('flights.helpText')} <span className={styles.phone}>{t('flights.contactPhone')}</span> </p>
           </div>
         </form>
 

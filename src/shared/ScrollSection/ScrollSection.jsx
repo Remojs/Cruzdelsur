@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTranslation } from "../../i18n/LanguageContext";
 import styles from "./ScrollSection.module.css";
 import logo from '@assets/logos/logo-complete.png';
 
@@ -7,6 +8,7 @@ const ScrollSection = ({
   imageSrc, 
   altText = "Clouds at sunset"
 }) => {
+  const { t } = useTranslation();
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true, amount: 0.3 });
 
@@ -57,7 +59,7 @@ const ScrollSection = ({
                 animate={isHeroInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
                 transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
               >
-                <span className={styles.italic}>Quiénes somos</span>
+                <span className={styles.italic}>{t('about.whoWeAre')}</span>
               </motion.h2>
 
               {/* Description with delayed fade-in */}
@@ -67,9 +69,9 @@ const ScrollSection = ({
                 animate={isHeroInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 1, delay: 1.8, ease: "easeOut" }}
               >
-                <p className={styles.paragraph}>En el firmamento austral, la constelación Cruz del Sur ha guiado a exploradores y navegantes durante siglos. Hoy, su esencia nos inspira para acompañar y guiar a quienes contribuyen al crecimiento de la industria, o buscan ser parte de ella; desde tripulantes, técnicos y operadores, hasta líderes, formadores y profesionales de áreas de soporte. </p>
-                <p className={styles.paragraph}>En un mundo donde la aviación evoluciona y se redefine constantemente, Cruz del Sur nace para trazar nuevos horizontes, y marcar el rumbo hacia ellos. Somos una consultora global, directiva y con visión de futuro. Construimos conexiones estratégicas entre personas, ideas, y objetivos. Desarrollamos proyectos de alto impacto. Articulamos oferta y demanda eficientemente, optimizando tiempos, procesos y recursos clave. Diseñamos soluciones con precisión técnica, visión global y una profunda valoración del capital humano. </p>
-                <p className={styles.paragraph}>Porque creemos que cada iniciativa bien dirigida no solo resuelve una necesidad: rompe barreras, abre caminos, transforma escenarios, expande posibilidades y multiplica oportunidades. </p>
+                <p className={styles.paragraph}>{t('about.mission')}</p>
+                <p className={styles.paragraph}>{t('about.vision')}</p>
+                <p className={styles.paragraph}>{t('about.promise')}</p>
               </motion.div>
             </div>
           </motion.div>

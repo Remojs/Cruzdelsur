@@ -1,0 +1,46 @@
+.languageSelector {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.langButton {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.langButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.langButton.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #4A90E2; /* Cambiado de #ffd700 (amarillo) a azul/celeste */
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .languageSelector {
+    gap: 0.3rem;
+  }
+  
+  .langButton {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+  }
+}

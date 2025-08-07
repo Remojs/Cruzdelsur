@@ -1,3 +1,4 @@
+import { useTranslation } from "../../i18n/LanguageContext";
 import styles from "./footer.module.css";
 import logo from "@assets/logos/logo.png";
 import fbIcon from "@assets/icons/fb.png";
@@ -8,6 +9,7 @@ import tkIcon from "@assets/icons/tk.png";
 import ytIcon from "@assets/icons/yt.png";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -40,7 +42,7 @@ export default function Footer() {
         </div>
         {/* <div className={styles.footerGrid}>
           <div className={styles.footerColumn}>
-            <div className={styles.footerColumnTitle}>Servicios</div>
+            <div className={styles.footerColumnTitle}>{t('footer.services')}</div>
             <ul className={styles.footerLinkList}>
               <li><a href="/charters" className={styles.footerLink}>Flights</a></li>
               <li><a href="/recruitment" className={styles.footerLink}>Recruitment</a></li>
@@ -48,10 +50,10 @@ export default function Footer() {
             </ul>
           </div>
           <div className={styles.footerColumn}>
-            <div className={styles.footerColumnTitle}>Institucional</div>
+            <div className={styles.footerColumnTitle}>{t('footer.institutional')}</div>
             <ul className={styles.footerLinkList}>
               <li><a href="/careers" className={styles.footerLink}>Careers</a></li>
-              <li><a href="/contact" className={styles.footerLink}>Contact</a></li>
+              <li><a href="/contact" className={styles.footerLink}>{t('footer.contact')}</a></li>
               <li><a href="/webinar" className={styles.footerLink}>Webinar</a></li>
             </ul>
           </div>
@@ -70,7 +72,7 @@ export default function Footer() {
         */}
         <div className={styles.copyright}>
           <p>
-            Copyright © 2025 Cruz del Sur. All rights reserved
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

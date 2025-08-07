@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from '../../i18n/LanguageContext';
 import styles from './Contact.module.css';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     nombre: '',
     correo: '',
@@ -62,14 +64,14 @@ const Contact = () => {
   };
 
   const areas = [
-    { value: '', label: 'Selecciona un área' },
-    { value: 'consulting', label: 'Consulting' },
-    { value: 'recruitment', label: 'Recruitment' },
-    { value: 'safety', label: 'Safety' },
-    { value: 'academy', label: 'Academy' },
-    { value: 'flights', label: 'Flights' },
+    { value: '', label: t('contact.form.selectArea') },
+    { value: 'consulting', label: t('nav.consulting') },
+    { value: 'recruitment', label: t('nav.recruitment') },
+    { value: 'safety', label: t('nav.safety') },
+    { value: 'academy', label: t('nav.academy') },
+    { value: 'flights', label: t('nav.flights') },
     { value: 'learning', label: 'Learning' },
-    { value: 'general', label: 'Consulta General' }
+    { value: 'general', label: t('contact.form.generalInquiry') }
   ];
 
   return (
@@ -81,14 +83,14 @@ const Contact = () => {
             <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 4V6H9V4L3 7V9H21ZM21 10H3V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V10Z"/>
           </svg>
         </div>
-        <h1 className={styles.title}>Contáctanos</h1>
+        <h1 className={styles.title}>{t('contact.title')}</h1>
         <p className={styles.description}>
-          Estamos aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo lo antes posible.
+          {t('contact.description')}
         </p>
         
         <form className={styles.contactForm} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
-            <label htmlFor="nombre" className={styles.label}>Nombre *</label>
+            <label htmlFor="nombre" className={styles.label}>{t('contact.form.name')} *</label>
             <input
               type="text"
               id="nombre"
@@ -97,12 +99,12 @@ const Contact = () => {
               onChange={handleChange}
               required
               className={styles.input}
-              placeholder="Ingresa tu nombre completo"
+              placeholder={t('contact.form.namePlaceholder')}
             />
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="correo" className={styles.label}>Correo Electrónico *</label>
+            <label htmlFor="correo" className={styles.label}>{t('contact.form.email')} *</label>
             <input
               type="email"
               id="correo"
@@ -111,12 +113,12 @@ const Contact = () => {
               onChange={handleChange}
               required
               className={styles.input}
-              placeholder="tu@email.com"
+              placeholder={t('contact.form.emailPlaceholder')}
             />
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="telefono" className={styles.label}>Teléfono</label>
+            <label htmlFor="telefono" className={styles.label}>{t('contact.form.phone')}</label>
             <input
               type="tel"
               id="telefono"
@@ -124,12 +126,12 @@ const Contact = () => {
               value={formData.telefono}
               onChange={handleChange}
               className={styles.input}
-              placeholder="+54 11 1234-5678"
+              placeholder={t('contact.form.phonePlaceholder')}
             />
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="area" className={styles.label}>Área de Interés *</label>
+            <label htmlFor="area" className={styles.label}>{t('contact.form.area')} *</label>
             <select
               id="area"
               name="area"
@@ -147,7 +149,7 @@ const Contact = () => {
           </div>
 
           <div className={styles.formGroup}>
-            <label htmlFor="mensaje" className={styles.label}>Mensaje *</label>
+            <label htmlFor="mensaje" className={styles.label}>{t('contact.form.message')} *</label>
             <textarea
               id="mensaje"
               name="mensaje"
@@ -155,7 +157,7 @@ const Contact = () => {
               onChange={handleChange}
               required
               className={styles.textarea}
-              placeholder="Cuéntanos cómo podemos ayudarte..."
+              placeholder={t('contact.form.messagePlaceholder')}
               rows="5"
             />
           </div>
@@ -171,19 +173,19 @@ const Contact = () => {
                   <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
                 </svg>
               </span>
-              {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
+              {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
             </button>
           </div>
           
           {submitStatus === 'success' && (
             <div className={styles.successMessage}>
-              ¡Mensaje enviado correctamente! Nos pondremos en contacto contigo pronto.
+              {t('contact.form.successMessage')}
             </div>
           )}
           
           {submitStatus === 'error' && (
             <div className={styles.errorMessage}>
-              Error al enviar el mensaje. Por favor, intenta nuevamente.
+              {t('contact.form.errorMessage')}
             </div>
           )}
         </form>
