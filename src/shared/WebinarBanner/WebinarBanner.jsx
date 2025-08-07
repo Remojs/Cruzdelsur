@@ -7,7 +7,19 @@ export default function WebinarBanner() {
   const { t } = useTranslation();
 
   const handleRegisterClick = () => {
+    // Navegar al webinar
     window.location.href = '#/webinar';
+    
+    // Pequeño delay para asegurar que la página se cargue antes del scroll
+    setTimeout(() => {
+      const registrationSection = document.querySelector('.registrationSection');
+      if (registrationSection) {
+        registrationSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }, 300);
   };
 
   return (

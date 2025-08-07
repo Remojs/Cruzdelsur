@@ -1,0 +1,28 @@
+# Configuración simple para HashRouter en hosting compartido
+Options -MultiViews
+Options -Indexes
+
+# Tipos MIME básicos
+<IfModule mod_mime.c>
+  AddType text/html .html .htm
+  AddType application/javascript .js
+  AddType text/css .css
+  AddType image/webp .webp
+  AddType image/png .png
+  AddType image/jpeg .jpg .jpeg
+</IfModule>
+
+# Configuración para HashRouter (mucho más simple)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Solo servir index.html para solicitudes que NO sean archivos existentes
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.html [L]
+</IfModule>
+
+# Compresión básica
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+</IfModule>
