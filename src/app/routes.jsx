@@ -23,7 +23,7 @@ export const router = createHashRouter([
       },
       {
         path: '/webinar',
-        element: <WebinarPage />,
+        element: <UnderConstruction />,
       },
       // Navbar routes - Under Construction
       {

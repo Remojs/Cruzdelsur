@@ -1,7 +1,7 @@
 .bannerContainer {
   position: relative;
   width: 100%;
-  height: 800px; /* Aumentado para ver mejor el webinar */
+
   overflow: hidden;
   margin-top: 117px; /* Altura del navbar para que no lo tape */
 }
@@ -15,8 +15,18 @@
 .bannerImage img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Changed to contain to show full banner */
   object-position: center;
+}
+
+/* Desktop image - show by default */
+.desktopImage {
+  display: block;
+}
+
+/* Mobile image - hidden by default */
+.mobileImage {
+  display: none;
 }
 
 .overlay {
@@ -36,15 +46,16 @@
   background: #041227; /* Color del navbar */
   color: white; /* Texto blanco para contraste */
   border: none;
-  padding: 20px 30px;
-  font-size: 20px;
+  padding: 12px 20px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(4, 18, 39, 0.3);
   z-index: 10;
+  min-width: 120px;
 }
 
 .registerButton:hover {
@@ -59,62 +70,83 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1350px) {
+  .registerButton {
+    bottom: 20px;
+    font-size: 13px;
+    padding: 7px 40px;
+  }
+}
+
 @media (max-width: 1200px) {
+  .registerButton {
+    bottom: 15px;
+    font-size: 13px;
+    padding: 5px 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Tablets and below - switch to mobile banner */
   .bannerContainer {
-    height: 600px; /* Aumentado para mejor visualización */
+    margin-top: 100px;
+  }
+  
+  .desktopImage {
+    display: none;
+  }
+  
+  .mobileImage {
+    display: block;
   }
   
   .registerButton {
+    position: absolute;
     bottom: 25px;
-    right: 25px;
-    padding: 15px 25px;
-    font-size: 16px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 15px;
+    min-width: 110px;
   }
 }
 
 @media (max-width: 768px) {
   .bannerContainer {
-    height: 450px; /* Aumentado para mejor visualización */
-    margin-bottom: 0;
-    margin-top: 100px; /* Ajustado para navbar mobile */
+    margin-top: 0px;
   }
   
   .registerButton {
     bottom: 20px;
-    right: 20px;
-    padding: 12px 20px;
-    font-size: 14px;
-    margin-bottom: 0;
+    padding: 15px 45px;
+    font-size: 12px;
+    min-width: 100px;
   }
 }
 
 @media (max-width: 480px) {
   .bannerContainer {
-    height: 300px; /* Ajustado proporcionalmente */
-    margin-bottom: 0;
-    margin-top: 0px; /* Ajustado para navbar mobile pequeño */
+    margin-top: 80px;
   }
   
   .registerButton {
-    bottom: 15px;
-    right: 15px;
-    padding: 4px 10px;
-    font-size: 13px;
-    margin-bottom: 4.8rem;
-    margin-left: .5rem;
+    bottom: 18px;
+    padding: 8px 14px;
+    font-size: 11px;
+    min-width: 90px;
   }
 }
 
 @media (max-width: 360px) {
   .bannerContainer {
-    height: 250px; /* Ajustado proporcionalmente */
-    margin-top: 90px; /* Mantener consistencia */
+    margin-top: 70px;
   }
   
   .registerButton {
-    bottom: 12px;
-    right: 12px;
-    padding: 5px 10px;
-    font-size: 12px;
+    bottom: 15px;
+    padding: 7px 12px;
+    font-size: 10px;
+    min-width: 80px;
   }
 }
