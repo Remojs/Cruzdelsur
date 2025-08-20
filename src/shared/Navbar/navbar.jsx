@@ -61,7 +61,7 @@ export default function Navbar() {
             <li><a href="#/"><FaHome className={styles.homeIcon} /> {t('nav.home')}</a></li>
             <li><a href="#/learning">{t('nav.academy')}</a></li>
             <li><a href="#/recruitment">{t('nav.recruitment')}</a></li>
-            <li><a href="#/careers">Careers</a></li>
+            <li><a href="#/careers">{t('nav.careers')}</a></li>
           </ul>
 
           <img src={logo} alt="Cruz del Sur Logo" className={styles.logo} />

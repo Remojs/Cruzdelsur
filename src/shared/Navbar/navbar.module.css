@@ -215,10 +215,9 @@
   font-size: 1rem;
 }
 
-/* Responsive Breakpoints */
 
 /* Large Desktop - 1200px and up */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .navbar {
     padding: 0 1.5rem;
   }
@@ -267,39 +266,8 @@
   }
 }
 
-/* Extra Large Desktop - 1400px and up */
-@media (min-width: 1400px) {
-  .leftNavLinks, .rightNavLinks {
-    gap: 2rem;
-  }
-  
-  .leftNavLinks {
-    margin-right: 2rem;
-  }
-  
-  .rightNavLinks {
-    margin-left: 2rem;
-  }
-  
-  .leftNavLinks a, .rightNavLinks a {
-    font-size: 1.1rem;
-  }
-  
-  .logo {
-    height: 70px;
-  }
-  
-  .iconLink {
-    font-size: 1.2rem;
-  }
-  
-  .iconContainer {
-    gap: 1rem;
-  }
-}
-
 /* Medium Desktop - 1024px to 1199px */
-@media (max-width: 1199px) and (min-width: 1024px) {
+@media (max-width: 1399px) and (min-width: 1024px) {
   .leftNavLinks, .rightNavLinks {
     gap: 1rem; /* Reducido de 1.2rem */
   }

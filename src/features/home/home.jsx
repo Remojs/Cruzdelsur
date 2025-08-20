@@ -65,7 +65,6 @@ export default function Home() {
 
       <main className={styles.main}>
         <div>
-          <h1 className={styles.sectionTitleCard}>{t('home.sectionTitle')}</h1>
           <SectionCardGroup cards={cards} />
         </div>
 

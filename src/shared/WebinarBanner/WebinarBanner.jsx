@@ -1,31 +1,30 @@
 import React from 'react';
 import { useTranslation } from '../../i18n/LanguageContext';
 import styles from './WebinarBanner.module.css';
-import WebinarPortrait from '@assets/banners/webinar-banner.png';
+import WebinarBannerDesktop from '@assets/banners/mentoria-banner.png';
+import WebinarBannerMobile from '@assets/banners/mentoria-banner-mobile.png';
 
 export default function WebinarBanner() {
   const { t } = useTranslation();
 
   const handleRegisterClick = () => {
-    // Navegar al webinar
-    window.location.href = '#/webinar';
-    
-    // Pequeño delay para asegurar que la página se cargue antes del scroll
-    setTimeout(() => {
-      const registrationSection = document.querySelector('.registrationSection');
-      if (registrationSection) {
-        registrationSection.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    }, 300);
+    // Redirect to Google Forms
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSeMq3SUIQTm0947dfrGZkrX0jG4zFHnX7AEIwZ9mWo8zPVaEQ/viewform', '_blank');
   };
 
   return (
     <div className={styles.bannerContainer}>
       <div className={styles.bannerImage}>
-        <img src={WebinarPortrait} alt="Webinar Banner" />
+        <img 
+          src={WebinarBannerDesktop} 
+          alt="Webinar Banner" 
+          className={styles.desktopImage}
+        />
+        <img 
+          src={WebinarBannerMobile} 
+          alt="Webinar Banner Mobile" 
+          className={styles.mobileImage}
+        />
         <div className={styles.overlay}></div>
       </div>
       <button 

@@ -190,7 +190,7 @@
   }
   
   .title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   
   .defineDescription {
@@ -198,12 +198,13 @@
   }
   
   .invitationTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
+    margin-left: 2rem;
   }
   
   .invitationText p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     letter-spacing: 0.1px;
   }
 
@@ -456,4 +457,14 @@
   .invitationImageContainer {
     width: 98vw;
   }
+}
+
+/* Testimonial Section Styles */
+.testimonialSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  padding: 0 2rem;
 }

@@ -6,7 +6,8 @@ export const translations = {
       home: "Home",
       academy: "Academia",
       recruitment: "Reclutamiento",
-      consulting: "Consultoría", 
+      consulting: "Consultoría",
+      careers: "Carreras", 
       safety: "Seguridad",
       flights: "Vuelos",
       contact: "Contacto"
@@ -309,6 +310,7 @@ export const translations = {
       home: "Home",
       academy: "Academy", 
       recruitment: "Recruitment",
+      careers: "Careers",
       consulting: "Consulting",
       safety: "Safety",
       flights: "Flights",
