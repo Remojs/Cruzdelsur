@@ -127,7 +127,7 @@
 
 @media (max-width: 480px) {
   .bannerContainer {
-    margin-top: 80px;
+    margin-top: 0px;
   }
   
   .registerButton {
@@ -140,7 +140,7 @@
 
 @media (max-width: 360px) {
   .bannerContainer {
-    margin-top: 70px;
+    margin-top: 0px;
   }
   
   .registerButton {

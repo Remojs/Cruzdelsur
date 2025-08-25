@@ -17,7 +17,7 @@ export const translations = {
     home: {
       sectionTitle: "Nuestro enfoque se despliega en cinco áreas clave",
       webinarBanner: {
-        registerButton: "Inscribirse"
+        registerButton: "Mas Info"
       },
       consulting: {
         title: "Consulting",
@@ -321,7 +321,7 @@ export const translations = {
     home: {
       sectionTitle: "Our approach unfolds in five key areas",
       webinarBanner: {
-        registerButton: "Register"
+        registerButton: "More Info"
       },
       consulting: {
         title: "Consulting",
