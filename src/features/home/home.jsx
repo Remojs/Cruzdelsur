@@ -19,6 +19,7 @@ import ScrollSection from '@shared/ScrollSection/ScrollSection';
 import ReverseScrollSection from '@shared/ReverseScrollSection/ReverseScrollSection';
 import BlueSection from '@shared/BlueSection/BlueSection';
 import WebinarBanner from '@shared/WebinarBanner/WebinarBanner';
+import Testimonials from '@shared/Testimonials/Testiamonials';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -72,7 +73,8 @@ export default function Home() {
       </main>
       
       {/* <Stats /> */}
-      <BlueSection />
+  <BlueSection />
+  <Testimonials imageSrc={HomeIMG} altText="Fondo testimonios" />
       <Contact />
     </div>
   )

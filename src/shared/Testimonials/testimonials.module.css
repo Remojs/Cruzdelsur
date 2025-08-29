@@ -1,0 +1,599 @@
+.section {
+  position: relative;
+  min-height: calc(100vh - 130px);
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .section {
+    margin-bottom: 0;
+  }
+}
+
+.backgroundWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* La imagen se pasa como prop desde el componente padre */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.backgroundOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.darkOverlay {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.contentContainer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .contentContainer {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contentContainer {
+    padding: 0 2rem;
+  }
+}
+
+.contentGrid {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 80vh;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+
+.card {
+  backdrop-filter: blur(4px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: .25rem;
+  padding: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.card:nth-child(2) {
+  position: relative;
+}
+
+.card:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/src/assets/images/texture.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4; /* Solo el fondo será transparente */
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card:first-child {
+  width: 475px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin-right: -90px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card:last-child {
+  width: 1000px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+}
+
+/* full width wrapper for testimonials */
+.cardFull {
+  width: 100% !important;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.cardFull::before {
+  display: none ;
+}
+
+@media (max-width: 1600px) {
+  .card:first-child {
+    width: 380px;
+    height: 320px;
+    margin-right: -70px;
+  }
+  
+  .card:last-child {
+    width: 850px;
+    height: 510px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .card:last-child {
+    width: 850px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 1000px) {
+  .card:first-child {
+    width: 280px;
+    height: 230px;
+    margin-right: -40px;
+  }
+  
+  .card:last-child {
+    width: 600px;
+    height: 380px;
+  }
+  
+  .textContent {
+    width: 90% !important;
+    margin: 0 0 0 0.5rem !important;
+    padding: 0 !important;
+  }
+  
+  .heading {
+    font-size: 0.75rem !important;
+    margin: 0 0 0.8rem 0.8rem !important;
+  }
+  
+  .paragraph {
+    font-size: 0.70rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (max-width: 999px) {
+  .card:first-child {
+    display: none !important;
+  }
+  
+  .card:last-child {
+    width: 100% !important;
+    max-width: 800px !important;
+    height: auto !important;
+    min-height: 450px !important;
+    margin: 0 auto !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  }
+  
+  .contentGrid {
+    justify-content: center !important;
+  }
+  
+  .contentBox {
+    padding: 1.2rem !important;
+  }
+  
+  .textContent {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .heading {
+    font-size: 1rem !important;
+    margin: 0 0 1rem 1rem !important;
+  }
+  
+  .paragraph {
+    font-size: 0.80rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .card:last-child {
+    width: 95%;
+    min-height: 400px;
+    padding: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .textContent {
+    width: 100% !important;
+    padding: 0.5rem !important;
+    margin: 0 !important;
+  }
+  
+  .heading {
+    font-size: 1.1rem !important;
+    margin: 0 0 0 0.5rem !important;
+  }
+  
+  .paragraph {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    margin-top: 0;
+    min-height: calc(100vh - 100px);
+    margin-bottom: 0;
+  }
+  
+  .card:last-child {
+    width: 100%;
+    min-height: 280px;
+    padding: 0.8rem;
+    margin-bottom: 0;
+  }
+  
+  .contentBox {
+    padding: 0.5rem !important;
+  }
+  
+  .textContent {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .heading {
+    font-size: 1rem !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+  }
+  
+  .paragraph {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+  }
+}
+
+@media (max-width: 300px) {
+  .section {
+    margin-top: 0;
+    min-height: calc(100vh - 80px);
+    margin-bottom: 0;
+    padding: 0;
+  }
+  
+  .contentContainer {
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .card:last-child {
+    width: 100vw;
+    min-height: 250px;
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 0;
+  }
+  
+  .contentBox {
+    padding: 0.3rem !important;
+  }
+  
+  .textContent {
+    width: 100% !important;
+    padding: 0 0.5rem !important;
+    margin: 0 !important;
+  }
+  
+  .heading {
+    font-size: 0.9rem !important;
+    margin: 0 auto 0.5rem auto !important;
+    text-align: center !important;
+  }
+  
+  .paragraph {
+    font-size: 0.75rem !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .card:nth-child(2) {
+    padding: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+}
+
+.centerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.logoContainer {
+  width: 95%;
+  height: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.companyName {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .companyName {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .companyName {
+    font-size: 3.75rem;
+  }
+}
+
+.italic {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.25rem;
+}
+
+/* Testimonials specific layout */
+.testimonialsRow {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.testimonialCard {
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  padding: 1.25rem;
+  width: 320px;
+  min-height: 160px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.testimonialTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.testimonialDesc {
+  font-size: 0.95rem;
+  color: #374151;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 900px) {
+  .testimonialsRow {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .testimonialCard {
+    width: 90%;
+    max-width: 520px;
+  }
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #374151;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 2rem;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  font-size: 1.4rem;
+  font-weight: normal;
+  font-style: normal;
+  color: #1f2937;
+  margin: 0 0 0 3rem;
+  align-self: flex-start;
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 1.4rem;
+    margin: 0 0 0 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 1.4rem;
+    margin: 0 0 0 3rem;
+  }
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 95%;
+  margin: 0 0 0 0rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.paragraph {
+  font-size: 0.97rem;
+  color: #374151;
+  line-height: 1.625;
+  text-align: justify;
+  margin: 0;
+  text-indent: 0;
+}
+
+.paragraph:first-child {
+  text-indent: 0;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+@media (min-width: 1024px) {
+  .scrollIndicator {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrollIndicator {
+    display: none;
+  }
+}
+
+.scrollContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.scrollText {
+  color: #1e2128;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.scrollArrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #1e2128;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+}
+
+.reversed .card:first-child {
+  margin-right: 0;
+  margin-left: -40px;
+}
+
+@media (max-width: 1600px) {
+  .reversed .card:first-child {
+    margin-left: -20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .reversed {
+    flex-direction: column;
+  }
+  
+  .reversed .card:first-child {
+    margin-left: 0;
+    margin-bottom: -40px;
+  }
+}
