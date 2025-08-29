@@ -2,7 +2,6 @@ import { useTranslation } from '../../i18n/LanguageContext';
 import styles from './BlueSection.module.css';
 import BlueSectionImg from '@assets/images/Bluesectionimg.png';
 import BlueSectionImg2 from '@assets/images/Bluesectionimg2.png';
-import TestimonialCarousel from '../TestimonialCarousel/TestimonialCarousel';
 
 export default function BlueSection() {
   const { t } = useTranslation();
@@ -88,11 +87,7 @@ export default function BlueSection() {
           </div>
         </div>
       </div>
-      
-      {/* Testimonial Carousel Section
-      <div className={styles.testimonialSection}>
-        <TestimonialCarousel />
-      </div> */}
+
     </section>
   );
 }

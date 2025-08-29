@@ -206,6 +206,26 @@ export const translations = {
       }
     },
 
+    // Testimonials
+    testimonials: {
+      '0': {
+        title: "Diego, Comandante, HONG KONG - 2025",
+        text: "Confié en la mentoría de Cruz del Sur, y fue una de las decisiones más acertadas que tomé.",
+        detail: "Confié en la mentoría de Cruz del Sur, y fue una de las decisiones más acertadas que tomé.\n\nEste enfoque humano y profesional me permitió presentarme con seguridad y autenticidad en cada instancia.\n\nBrindan las herramientas necesarias para transformar la incertidumbre en oportunidad y aumentar significativamente las probabilidades de éxito."
+      },
+      '1': {
+        title: "Anna, Primer oficial, Estados Unidos - 2024",
+        text: "Trabajar con Cruz del Sur ha sido una de las mejores decisiones que tomé en mi preparación para una entrevista en Estados Unidos.",
+        detail: "Trabajar con Cruz del Sur ha sido una de las mejores decisiones que tomé en mi preparación para una entrevista con una aerolínea en Estados Unidos.\n\nGracias a este equilibrio entre sutileza y exigencia, mis respuestas no solo mejoraron en contenido, sino también en la manera de expresarlas.\n\nLa recomiendo a cualquiera que busque no solo prepararse, sino superarse a sí mismo en su presente profesional."
+      },
+      '2': {
+        title: "Sofía, Tripulante de Cabina de pasajeros, Emiratos Árabes - 2025",
+        text: "Gracias a esta preparación, no solo logré avanzar en todas las instancias, sino que también disfruté del camino.",
+        detail: "Cuando decidí postularme a aerolíneas del Medio Oriente, sentí que me enfrentaba a un desafío enorme: procesos muy exigentes, entrevistas en inglés y la necesidad de destacar entre miles de candidatos internacionales. Fue entonces cuando conocí a Cruz del Sur, y el acompañamiento marcó la diferencia desde el primer día.\n\nLo que más me impresionó fue su capacidad para ver mi perfil con ojos de reclutador internacional. Me ayudó a reorganizar mi CV y a adaptar mi presentación personal, resaltando mis fortalezas y experiencia de una manera clara y atractiva. Las simulaciones de entrevistas fueron una herramienta clave: cada feedback era constructivo, detallado y orientado a que yo pudiera dar lo mejor de mí con naturalidad y confianza.\n\nMás allá de lo técnico, recibí un apoyo humano invaluable. Los instructores tienen una habilidad única para motivar y transmitir seguridad, incluso en los momentos de mayor incertidumbre. Sentí que realmente se involucraron en mi proceso y en mi crecimiento personal.\n\nGracias a esta preparación, no solo logré avanzar en todas las instancias, sino que también disfruté del camino, porque me sentía acompañada y fortalecida. Recomiendo Cruz del Sur a cualquier tripulante que sueñe con volar más alto y abrirse camino en la aviación internacional."
+      },
+      title: "Testimonios"
+    },
+
     // Footer
     footer: {
       description: "Cruz del Sur - Consultora global especializada en aviación",
@@ -218,7 +238,7 @@ export const translations = {
 
     // Flights/Charters
     flights: {
-      title: "Solicita una Cotización para tu Próximo Vuelo Charter",
+      title: "Solicita una cotización para tu próximo Vuelo Charter",
       description1: "Cada vuelo tiene una historia, una necesidad y un propósito diferente. Por eso, en Cruz del Sur diseñamos experiencias de vuelo que combinan eficiencia operativa, confort y precisión a medida.",
       description2: "Contanos los detalles de tu próximo viaje y nuestro equipo te contactará a la brevedad con una propuesta personalizada, pensada para optimizar tu tiempo y responder con exactitud a tus expectativas.",
       subDescription: "Completá el formulario con toda la información posible. Estamos listos para ayudarte a llegar más alto.",
@@ -510,6 +530,28 @@ export const translations = {
       }
     },
 
+      // Testimonials
+      testimonials: {
+        '0': {
+          title: "Diego, Captain, HONG KONG - 2025",
+          text: "I trusted Cruz del Sur's mentorship, and it was one of the best decisions I made.",
+          detail: "I trusted Cruz del Sur's mentorship, and it was one of the best decisions I made.\n\nThis human and professional approach allowed me to present myself with confidence and authenticity at every stage.\n\nThey provide the necessary tools to turn uncertainty into opportunity and significantly increase the chances of success."
+        },
+        '1': {
+          title: "Anna, First Officer, United States - 2024",
+          text: "Working with Cruz del Sur was one of the best decisions I made in preparing for an airline interview in the United States.",
+          detail: "Working with Cruz del Sur was one of the best decisions I made in preparing for an interview with an airline in the United States.\n\nThanks to this balance between subtlety and rigor, my answers not only improved in content but also in how I delivered them.\n\nI recommend them to anyone who seeks not only to prepare but to surpass themselves in their professional journey."
+        },
+        '2': {
+          title: "Sofia, Cabin Crew, United Arab Emirates - 2025",
+          text: "Thanks to this preparation, I not only progressed through all stages, but I also enjoyed the journey.",
+          detail: "When I decided to apply to Middle Eastern airlines, I felt I was facing a huge challenge: very demanding processes, interviews in English, and the need to stand out among thousands of international candidates. That's when I met Cruz del Sur, and their support made the difference from day one.\n\nWhat impressed me most was their ability to see my profile through the eyes of an international recruiter. They helped me reorganize my CV and adapt my personal presentation, highlighting my strengths and experience in a clear and attractive way. Interview simulations were a key tool: each feedback was constructive, detailed, and aimed at allowing me to give my best with naturalness and confidence.\n\nBeyond the technical side, I received invaluable human support. The instructors have a unique ability to motivate and convey confidence even in moments of greatest uncertainty. I felt they were truly involved in my process and personal growth.\n\nThanks to this preparation, I not only progressed through all stages, but I also enjoyed the journey, because I felt accompanied and strengthened. I recommend Cruz del Sur to any crew member who dreams of flying higher and making their way into international aviation."
+        },
+        title: "Testimonials"
+      },
+
+      
+
     // Footer
     footer: {
       description: "Cruz del Sur - Global aviation specialized consultancy",
@@ -522,7 +564,7 @@ export const translations = {
 
     // Flights/Charters
     flights: {
-      title: "Request a Quote for Your Next Charter Flight",
+      title: "Request a quote for your next Charter Flight",
       description1: "Every flight has a story, a need, and a different purpose. That's why, at Cruz del Sur, we design flight experiences that combine operational efficiency, comfort, and tailor-made precision.",
       description2: "Tell us the details of your next trip and our team will contact you shortly with a personalized proposal, designed to optimize your time and respond exactly to your expectations.",
       subDescription: "Complete the form with as much information as possible. We are ready to help you reach higher.",
