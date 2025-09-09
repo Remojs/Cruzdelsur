@@ -608,7 +608,13 @@ export const translations = {
         invalidPhone: "Formato de teléfono inválido",
         invalidHours: "Las horas deben ser un número válido",
         invalidHeight: "La altura debe estar entre 150-200 cm",
-        invalidWeight: "El peso debe estar entre 40-150 kg"
+        invalidWeight: "El peso debe estar entre 40-150 kg",
+        fileTooLarge: "El archivo excede el límite de 2MB",
+        totalSizeTooLarge: "El tamaño total de archivos excede 10MB",
+        invalidFileType: "Tipo de archivo no permitido",
+        missingRequiredFile: "Este archivo es requerido",
+        formIncomplete: "Por favor completa todos los campos requeridos",
+        errorsFound: "errores encontrados"
       },
 
       // Success
@@ -822,6 +828,11 @@ export const translations = {
         threeMonths: "3 months",
         otherOption: "Other"
       },
+
+      // Select Options
+      select: "Select...",
+      yes: "Yes",
+      no: "No",
       
       pilot: {
         title: "Pilot",
@@ -1148,7 +1159,13 @@ export const translations = {
         invalidPhone: "Invalid phone format",
         invalidHours: "Hours must be a valid number",
         invalidHeight: "Height must be between 150-200 cm",
-        invalidWeight: "Weight must be between 40-150 kg"
+        invalidWeight: "Weight must be between 40-150 kg",
+        fileTooLarge: "File exceeds 2MB limit",
+        totalSizeTooLarge: "Total file size exceeds 10MB",
+        invalidFileType: "File type not allowed",
+        missingRequiredFile: "This file is required",
+        formIncomplete: "Please complete all required fields",
+        errorsFound: "errors found"
       },
 
       // Success

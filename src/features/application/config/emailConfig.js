@@ -14,8 +14,8 @@ export const EMAILJS_CONFIG = {
   // Tu Template ID de EmailJS 
   templateId: 'template_rkzw2gj',
   
-  // Tu Public Key de EmailJS (necesitas obtener este de tu cuenta)
-  publicKey: 'xxxxxxxxxxxxxxx', // Reemplaza con tu Public Key
+  // Tu Public Key de EmailJS (IMPORTANTE: configurar correctamente)
+  publicKey: 'YOUR_EMAILJS_PUBLIC_KEY', // REEMPLAZA con tu Public Key real
 };
 
 // Email de destino para las aplicaciones

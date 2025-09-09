@@ -118,6 +118,26 @@ const PilotForm = ({ onBack }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [uploadProgress, setUploadProgress] = useState('');
+
+  // Función para calcular tamaño total de archivos
+  const calculateTotalFileSize = () => {
+    const fileFields = ['cv', 'coverLetter', 'pilotLicense', 'validMedical', 'validPassport', 'courseCertificates', 'professionalPhoto'];
+    return fileFields.reduce((total, field) => {
+      if (formData[field] && formData[field] instanceof File) {
+        return total + formData[field].size;
+      }
+      return total;
+    }, 0);
+  };
+
+  // Función para obtener lista de archivos adjuntos
+  const getAttachedFiles = () => {
+    const fileFields = ['cv', 'coverLetter', 'pilotLicense', 'validMedical', 'validPassport', 'courseCertificates', 'professionalPhoto'];
+    return fileFields.filter(field => formData[field] && formData[field] instanceof File)
+                    .map(field => ({ field, file: formData[field] }));
+  };
 
   const handleInputChange = (name, value) => {
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -127,7 +147,13 @@ const PilotForm = ({ onBack }) => {
   };
 
   const handleFileChange = (name, file) => {
+    console.log(`Archivo seleccionado para ${name}:`, file ? file.name : 'ninguno');
     setFormData(prev => ({ ...prev, [name]: file }));
+    
+    // Limpiar error de ese campo si había uno
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
 
   const validateForm = () => {
@@ -146,6 +172,56 @@ const PilotForm = ({ onBack }) => {
     requiredFields.forEach(field => {
       if (!formData[field]) {
         newErrors[field] = t('application.validation.required');
+      }
+    });
+
+    // Required files validation
+    const requiredFiles = ['cv', 'pilotLicense', 'validMedical', 'validPassport', 'professionalPhoto'];
+    requiredFiles.forEach(file => {
+      if (!formData[file]) {
+        newErrors[file] = t('application.validation.missingRequiredFile');
+      }
+    });
+
+    // File size validation (2MB = 2 * 1024 * 1024 bytes)
+    const maxFileSize = 2 * 1024 * 1024;
+    const maxTotalSize = 10 * 1024 * 1024;
+    let totalSize = 0;
+
+    const fileFields = ['cv', 'coverLetter', 'pilotLicense', 'validMedical', 'validPassport', 'courseCertificates', 'professionalPhoto'];
+    
+    fileFields.forEach(field => {
+      if (formData[field]) {
+        const file = formData[field];
+        if (file.size > maxFileSize) {
+          newErrors[field] = t('application.validation.fileTooLarge');
+        }
+        totalSize += file.size;
+      }
+    });
+
+    if (totalSize > maxTotalSize) {
+      newErrors.totalFileSize = t('application.validation.totalSizeTooLarge');
+    }
+
+    // File type validation
+    const fileTypeValidation = {
+      cv: ['pdf', 'doc', 'docx'],
+      coverLetter: ['pdf', 'doc', 'docx'],
+      pilotLicense: ['pdf', 'jpg', 'jpeg', 'png'],
+      validMedical: ['pdf', 'jpg', 'jpeg', 'png'],
+      validPassport: ['pdf', 'jpg', 'jpeg', 'png'],
+      courseCertificates: ['pdf', 'jpg', 'jpeg', 'png'],
+      professionalPhoto: ['jpg', 'jpeg', 'png']
+    };
+
+    Object.keys(fileTypeValidation).forEach(field => {
+      if (formData[field]) {
+        const file = formData[field];
+        const extension = file.name.split('.').pop().toLowerCase();
+        if (!fileTypeValidation[field].includes(extension)) {
+          newErrors[field] = t('application.validation.invalidFileType');
+        }
       }
     });
 
@@ -181,13 +257,26 @@ const PilotForm = ({ onBack }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    setSubmitError('');
+    setUploadProgress('');
+    
     if (!validateForm()) {
+      setSubmitError(t('application.validation.formIncomplete'));
       return;
     }
 
     setIsSubmitting(true);
+    setUploadProgress('Preparando archivos...');
     
     try {
+      // Contar archivos a procesar
+      const fileFields = ['cv', 'coverLetter', 'pilotLicense', 'validMedical', 'validPassport', 'courseCertificates', 'professionalPhoto'];
+      const attachedFiles = fileFields.filter(field => formData[field] instanceof File);
+      
+      if (attachedFiles.length > 0) {
+        setUploadProgress(`Procesando ${attachedFiles.length} archivo(s)...`);
+      }
+      
       // Use EmailJS to send the application directly from frontend
       await sendApplicationEmailJS(formData, 'pilot');
       
@@ -196,9 +285,19 @@ const PilotForm = ({ onBack }) => {
       
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert(t('application.submitError'));
+      
+      // Determinar tipo de error para mensaje más específico
+      let errorMessage = t('application.submitError');
+      if (error.message.includes('archivo')) {
+        errorMessage = `Error con archivos: ${error.message}`;
+      } else if (error.message.includes('network') || error.message.includes('Network')) {
+        errorMessage = 'Error de conexión. Verifica tu internet e intenta nuevamente.';
+      }
+      
+      setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);
+      setUploadProgress('');
     }
   };
 
@@ -1016,6 +1115,7 @@ const PilotForm = ({ onBack }) => {
               label={t('application.pilot.fields.cv')}
               name="cv"
               type="file"
+              value={formData.cv}
               onChange={handleFileChange}
               error={errors.cv}
               accept=".pdf,.doc,.docx"
@@ -1026,6 +1126,7 @@ const PilotForm = ({ onBack }) => {
               label={t('application.pilot.fields.coverLetter')}
               name="coverLetter"
               type="file"
+              value={formData.coverLetter}
               onChange={handleFileChange}
               error={errors.coverLetter}
               accept=".pdf,.doc,.docx"
@@ -1035,6 +1136,7 @@ const PilotForm = ({ onBack }) => {
               label={t('application.pilot.fields.pilotLicense')}
               name="pilotLicense"
               type="file"
+              value={formData.pilotLicense}
               onChange={handleFileChange}
               error={errors.pilotLicense}
               accept=".pdf,.jpg,.jpeg,.png"
@@ -1045,6 +1147,7 @@ const PilotForm = ({ onBack }) => {
               label={t('application.pilot.fields.validMedical')}
               name="validMedical"
               type="file"
+              value={formData.validMedical}
               onChange={handleFileChange}
               error={errors.validMedical}
               accept=".pdf,.jpg,.jpeg,.png"
@@ -1055,6 +1158,7 @@ const PilotForm = ({ onBack }) => {
               label={t('application.pilot.fields.validPassport')}
               name="validPassport"
               type="file"
+              value={formData.validPassport}
               onChange={handleFileChange}
               error={errors.validPassport}
               accept=".pdf,.jpg,.jpeg,.png"
@@ -1065,6 +1169,7 @@ const PilotForm = ({ onBack }) => {
               label={t('application.pilot.fields.courseCertificates')}
               name="courseCertificates"
               type="file"
+              value={formData.courseCertificates}
               onChange={handleFileChange}
               error={errors.courseCertificates}
               accept=".pdf,.jpg,.jpeg,.png"
@@ -1074,12 +1179,53 @@ const PilotForm = ({ onBack }) => {
               label={t('application.pilot.fields.professionalPhoto')}
               name="professionalPhoto"
               type="file"
+              value={formData.professionalPhoto}
               onChange={handleFileChange}
               error={errors.professionalPhoto}
               accept=".jpg,.jpeg,.png"
               required
             />
           </div>
+        </div>
+
+        {/* Resumen de Archivos Adjuntos */}
+        <div className={styles.filesSummary}>
+          <h4 className={styles.filesSummaryTitle}>📎 Resumen de Archivos Adjuntos</h4>
+          {getAttachedFiles().length > 0 ? (
+            <div className={styles.filesSummaryContent}>
+              <div className={styles.filesSummaryHeader}>
+                <span>📁 {getAttachedFiles().length} archivo(s) seleccionado(s)</span>
+                <span className={calculateTotalFileSize() > 10 * 1024 * 1024 ? styles.sizeWarning : styles.sizeInfo}>
+                  📏 {(calculateTotalFileSize() / 1024 / 1024).toFixed(2)} MB / 10 MB
+                </span>
+              </div>
+              
+              <div className={styles.filesList}>
+                {getAttachedFiles().map(({ field, file }) => (
+                  <div key={field} className={styles.fileItem}>
+                    <span className={styles.fileItemIcon}>
+                      {file.name.toLowerCase().includes('pdf') ? '📄' : 
+                       file.name.toLowerCase().match(/\.(jpg|jpeg|png)$/) ? '🖼️' : '📝'}
+                    </span>
+                    <div className={styles.fileItemInfo}>
+                      <div className={styles.fileItemName}>{file.name}</div>
+                      <div className={styles.fileItemSize}>{(file.size / 1024 / 1024).toFixed(2)} MB</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {calculateTotalFileSize() > 10 * 1024 * 1024 && (
+                <div className={styles.fileSizeWarning}>
+                  ⚠️ El tamaño total excede el límite de 10MB. Reduce el tamaño de algunos archivos.
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className={styles.noFilesMessage}>
+              📝 Ningún archivo seleccionado aún
+            </div>
+          )}
         </div>
 
         {/* 10. Disponibilidad y Preferencias */}
@@ -1229,6 +1375,33 @@ const PilotForm = ({ onBack }) => {
             {isSubmitting ? t('application.submitting') : t('application.submit')}
           </button>
         </div>
+        
+        {/* Upload Progress */}
+        {uploadProgress && (
+          <div className={styles.progressMessage}>
+            <span className={styles.spinner}>⏳</span>
+            {uploadProgress}
+          </div>
+        )}
+        
+        {/* Error Messages */}
+        {submitError && (
+          <div className={styles.errorMessage}>
+            {submitError}
+          </div>
+        )}
+        
+        {errors.totalFileSize && (
+          <div className={styles.errorMessage}>
+            {errors.totalFileSize}
+          </div>
+        )}
+        
+        {Object.keys(errors).length > 0 && !submitError && (
+          <div className={styles.errorMessage}>
+            {t('application.validation.formIncomplete')} ({Object.keys(errors).length} {t('application.validation.errorsFound')})
+          </div>
+        )}
       </form>
     </div>
   );

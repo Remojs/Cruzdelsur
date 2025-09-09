@@ -1,79 +1,72 @@
 import emailjs from '@emailjs/browser';
 import { EMAILJS_CONFIG, DESTINATION_EMAIL, FILE_CONFIG } from '../config/emailConfig';
 
-// Inicializar EmailJS
-emailjs.init(EMAILJS_CONFIG.publicKey);
+// Verificar configuración
+const isConfigured = () => {
+  return EMAILJS_CONFIG.publicKey && 
+         EMAILJS_CONFIG.publicKey !== 'YOUR_EMAILJS_PUBLIC_KEY' &&
+         EMAILJS_CONFIG.serviceId && 
+         EMAILJS_CONFIG.templateId;
+};
 
-// Función para convertir archivo a base64
+// Inicializar EmailJS solo si está configurado
+if (isConfigured()) {
+  emailjs.init(EMAILJS_CONFIG.publicKey);
+} else {
+  console.warn('EmailJS no está configurado correctamente. Verifica emailConfig.js');
+}
+
+// Función para convertir archivo a base64 con manejo de errores
 const fileToBase64 = (file) => {
   return new Promise((resolve, reject) => {
+    console.log(`Convirtiendo archivo ${file.name} a base64...`);
+    
+    // Verificar tamaño antes de convertir
+    if (file.size > 2 * 1024 * 1024) { // 2MB
+      reject(new Error(`Archivo ${file.name} es muy grande (${(file.size / 1024 / 1024).toFixed(2)}MB). Máximo 2MB permitido.`));
+      return;
+    }
+    
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
+    reader.onload = () => {
+      console.log(`Archivo ${file.name} convertido exitosamente`);
+      resolve(reader.result);
+    };
+    reader.onerror = error => {
+      console.error(`Error convirtiendo archivo ${file.name}:`, error);
+      reject(new Error(`Error procesando archivo ${file.name}`));
+    };
   });
 };
 
 // Función principal para enviar emails con EmailJS
 export const sendApplicationEmailJS = async (formData, applicationType) => {
   try {
-    // Convertir archivos a base64 si existen
+    // Verificar configuración antes de proceder
+    if (!isConfigured()) {
+      throw new Error('EmailJS no está configurado correctamente. Por favor contacta al administrador del sistema.');
+    }
+    
+    console.log('Iniciando envío de aplicación...', { applicationType, hasFiles: Object.keys(formData).filter(key => formData[key] instanceof File).length });
+    
+    // Convertir archivos a base64 si existen - con manejo de errores individual
     const attachments = {};
+    const fileFields = ['cv', 'coverLetter', 'pilotLicense', 'validMedical', 'validPassport', 'courseCertificates', 'professionalPhoto', 'nationalId', 'fullBodyPhoto', 'passportPhoto', 'trainingCertificates'];
     
-    if (formData.cv) {
-      attachments.cv = await fileToBase64(formData.cv);
-      attachments.cv_name = formData.cv.name;
-    }
-    
-    if (formData.coverLetter) {
-      attachments.cover_letter = await fileToBase64(formData.coverLetter);
-      attachments.cover_letter_name = formData.coverLetter.name;
-    }
-    
-    if (formData.pilotLicense) {
-      attachments.pilot_license = await fileToBase64(formData.pilotLicense);
-      attachments.pilot_license_name = formData.pilotLicense.name;
-    }
-    
-    if (formData.validMedical) {
-      attachments.valid_medical = await fileToBase64(formData.validMedical);
-      attachments.valid_medical_name = formData.validMedical.name;
-    }
-    
-    if (formData.validPassport) {
-      attachments.valid_passport = await fileToBase64(formData.validPassport);
-      attachments.valid_passport_name = formData.validPassport.name;
-    }
-    
-    if (formData.courseCertificates) {
-      attachments.course_certificates = await fileToBase64(formData.courseCertificates);
-      attachments.course_certificates_name = formData.courseCertificates.name;
-    }
-    
-    if (formData.professionalPhoto) {
-      attachments.professional_photo = await fileToBase64(formData.professionalPhoto);
-      attachments.professional_photo_name = formData.professionalPhoto.name;
-    }
-    
-    // Archivos específicos de TCP
-    if (formData.nationalId) {
-      attachments.national_id = await fileToBase64(formData.nationalId);
-      attachments.national_id_name = formData.nationalId.name;
-    }
-    
-    if (formData.fullBodyPhoto) {
-      attachments.full_body_photo = await fileToBase64(formData.fullBodyPhoto);
-      attachments.full_body_photo_name = formData.fullBodyPhoto.name;
-    }
-    
-    if (formData.passportPhoto) {
-      attachments.passport_photo = await fileToBase64(formData.passportPhoto);
-      attachments.passport_photo_name = formData.passportPhoto.name;
-    }
-    
-    if (formData.trainingCertificates) {
-      attachments.training_certificates = await fileToBase64(formData.trainingCertificates);
-      attachments.training_certificates_name = formData.trainingCertificates.name;
+    for (const field of fileFields) {
+      if (formData[field] && formData[field] instanceof File) {
+        try {
+          console.log(`Procesando archivo: ${field} - ${formData[field].name}`);
+          attachments[field] = await fileToBase64(formData[field]);
+          attachments[`${field}_name`] = formData[field].name;
+          attachments[`${field}_size`] = `${(formData[field].size / 1024 / 1024).toFixed(2)}MB`;
+        } catch (error) {
+          console.error(`Error procesando archivo ${field}:`, error);
+          // Continuar con otros archivos en lugar de fallar completamente
+          attachments[`${field}_error`] = `Error: ${error.message}`;
+        }
+      }
     }
 
     // Preparar datos para el template de EmailJS

@@ -21,13 +21,16 @@ const FormField = ({
     // Validar tamaño
     if (file.size > FILE_CONFIG.maxSize) {
       const sizeMB = (FILE_CONFIG.maxSize / (1024 * 1024)).toFixed(1);
-      return `El archivo es muy grande. Máximo ${sizeMB}MB permitido.`;
+      return `El archivo "${file.name}" es muy grande. Máximo ${sizeMB}MB permitido. Tamaño actual: ${(file.size / (1024 * 1024)).toFixed(2)}MB`;
     }
 
-    // Validar tipo
-    if (!FILE_CONFIG.allowedTypes.includes(file.type)) {
-      const extensions = FILE_CONFIG.allowedExtensions.join(', ');
-      return `Tipo de archivo no permitido. Solo: ${extensions}`;
+    // Validar tipo por extensión (más confiable)
+    const fileName = file.name.toLowerCase();
+    const allowedExtensions = ['.pdf', '.doc', '.docx', '.jpg', '.jpeg', '.png'];
+    const hasValidExtension = allowedExtensions.some(ext => fileName.endsWith(ext));
+    
+    if (!hasValidExtension) {
+      return `Tipo de archivo no permitido. Solo se permiten: ${allowedExtensions.join(', ')}`;
     }
 
     return null;
@@ -100,13 +103,44 @@ const FormField = ({
               className={styles.fileInput}
               {...props}
             />
-            <label htmlFor={name} className={styles.fileLabel}>
-              <span>📁</span>
-              {value ? value.name : placeholder || 'Choose file...'}
+            <label htmlFor={name} className={`${styles.fileLabel} ${value ? styles.fileLabelSelected : ''}`}>
+              <span className={styles.fileIcon}>📁</span>
+              {value ? `📄 ${value.name}` : 'Seleccionar archivo'}
             </label>
+            
             {value && (
-              <div className={styles.fileName}>
-                Selected: {value.name}
+              <div className={styles.fileInfo}>
+                <div className={styles.fileDetails}>
+                  <span className={styles.checkIcon}>✅</span>
+                  <div className={styles.fileText}>
+                    <div className={styles.fileName}>{value.name}</div>
+                    <div className={styles.fileSize}>
+                      Tamaño: {(value.size / 1024 / 1024).toFixed(2)} MB
+                    </div>
+                    <div className={styles.fileType}>
+                      Tipo: {value.name.split('.').pop().toUpperCase()}
+                    </div>
+                  </div>
+                  <button 
+                    type="button" 
+                    className={styles.removeFile}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (onChange) onChange(name, null);
+                      document.getElementById(name).value = '';
+                    }}
+                    title="Eliminar archivo"
+                  >
+                    ❌
+                  </button>
+                </div>
+              </div>
+            )}
+            
+            {!value && (
+              <div className={styles.fileHint}>
+                <div>📄 Formatos: PDF, DOC, DOCX, JPG, PNG</div>
+                <div>📏 Máximo: 2MB por archivo</div>
               </div>
             )}
           </div>

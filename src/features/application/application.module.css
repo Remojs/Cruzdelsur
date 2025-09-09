@@ -284,6 +284,10 @@
   font-family: 'Aptos', sans-serif;
   font-size: 0.875rem;
   color: #6b7280;
+  min-height: 3rem;
+  text-align: center;
+  word-break: break-word;
+  flex-wrap: wrap;
 }
 
 .fileLabel:hover {
@@ -291,11 +295,259 @@
   background-color: #eff6ff;
 }
 
+.fileLabelSelected {
+  border-color: #10b981 !important;
+  background-color: #ecfdf5 !important;
+  color: #065f46 !important;
+  border-style: solid !important;
+}
+
+.fileLabelSelected:hover {
+  border-color: #059669 !important;
+  background-color: #d1fae5 !important;
+}
+
 .fileName {
   font-family: 'Aptos', sans-serif;
   font-size: 0.875rem;
   color: #374151;
   margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fileIcon {
+  font-size: 1rem;
+}
+
+.fileSize {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+.fileHint {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.25rem;
+  border: 1px solid #e5e7eb;
+}
+
+.fileHint div {
+  margin: 0.25rem 0;
+}
+
+/* File Information Display */
+.fileInfo {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 0.375rem;
+}
+
+.fileDetails {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.checkIcon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.fileText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.fileName {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+  word-break: break-word;
+}
+
+.fileSize {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.75rem;
+  color: #059669;
+  font-weight: 500;
+}
+
+.fileType {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.removeFile {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.removeFile:hover {
+  background-color: #fee2e2;
+}
+
+.fileIcon {
+  margin-right: 0.5rem;
+}
+
+/* Files Summary */
+.filesSummary {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+}
+
+.filesSummaryTitle {
+  font-family: 'Aptos', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.filesSummaryContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filesSummaryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+}
+
+.sizeInfo {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.875rem;
+  color: #059669;
+  font-weight: 500;
+}
+
+.sizeWarning {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.875rem;
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.filesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: white;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+  transition: border-color 0.2s ease;
+}
+
+.fileItem:hover {
+  border-color: #3b82f6;
+}
+
+.fileItemIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.fileItemInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.fileItemName {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1f2937;
+  word-break: break-word;
+  margin-bottom: 0.25rem;
+}
+
+.fileItemSize {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.fileSizeWarning {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.875rem;
+  color: #dc2626;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.noFilesMessage {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* Progress Message */
+.progressMessage {
+  font-family: 'Aptos', sans-serif;
+  font-size: 0.875rem;
+  color: #3b82f6;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* Checkbox and Radio */

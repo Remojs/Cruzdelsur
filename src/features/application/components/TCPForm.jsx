@@ -112,6 +112,26 @@ const TCPForm = ({ onBack }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [uploadProgress, setUploadProgress] = useState('');
+
+  // Función para calcular tamaño total de archivos
+  const calculateTotalFileSize = () => {
+    const fileFields = ['cv', 'coverLetter', 'nationalId', 'fullBodyPhoto', 'passportPhoto', 'trainingCertificates'];
+    return fileFields.reduce((total, field) => {
+      if (formData[field] && formData[field] instanceof File) {
+        return total + formData[field].size;
+      }
+      return total;
+    }, 0);
+  };
+
+  // Función para obtener lista de archivos adjuntos
+  const getAttachedFiles = () => {
+    const fileFields = ['cv', 'coverLetter', 'nationalId', 'fullBodyPhoto', 'passportPhoto', 'trainingCertificates'];
+    return fileFields.filter(field => formData[field] && formData[field] instanceof File)
+                    .map(field => ({ field, file: formData[field] }));
+  };
 
   const handleInputChange = (name, value) => {
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -121,7 +141,13 @@ const TCPForm = ({ onBack }) => {
   };
 
   const handleFileChange = (name, file) => {
+    console.log(`Archivo seleccionado para ${name}:`, file ? file.name : 'ninguno');
     setFormData(prev => ({ ...prev, [name]: file }));
+    
+    // Limpiar error de ese campo si había uno
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
   };
 
   const validateForm = () => {
@@ -141,6 +167,56 @@ const TCPForm = ({ onBack }) => {
     requiredFields.forEach(field => {
       if (!formData[field]) {
         newErrors[field] = t('application.validation.required');
+      }
+    });
+
+    // Required files validation
+    const requiredFiles = ['cv', 'validPassport', 'fullBodyPhoto', 'passportPhoto'];
+    requiredFiles.forEach(file => {
+      if (!formData[file]) {
+        newErrors[file] = t('application.validation.missingRequiredFile');
+      }
+    });
+
+    // File size validation (2MB = 2 * 1024 * 1024 bytes)
+    const maxFileSize = 2 * 1024 * 1024;
+    const maxTotalSize = 10 * 1024 * 1024;
+    let totalSize = 0;
+
+    const fileFields = ['cv', 'coverLetter', 'validPassport', 'nationalId', 'fullBodyPhoto', 'passportPhoto', 'trainingCertificates'];
+    
+    fileFields.forEach(field => {
+      if (formData[field]) {
+        const file = formData[field];
+        if (file.size > maxFileSize) {
+          newErrors[field] = t('application.validation.fileTooLarge');
+        }
+        totalSize += file.size;
+      }
+    });
+
+    if (totalSize > maxTotalSize) {
+      newErrors.totalFileSize = t('application.validation.totalSizeTooLarge');
+    }
+
+    // File type validation
+    const fileTypeValidation = {
+      cv: ['pdf', 'doc', 'docx'],
+      coverLetter: ['pdf', 'doc', 'docx'],
+      validPassport: ['pdf', 'jpg', 'jpeg', 'png'],
+      nationalId: ['pdf', 'jpg', 'jpeg', 'png'],
+      fullBodyPhoto: ['jpg', 'jpeg', 'png'],
+      passportPhoto: ['jpg', 'jpeg', 'png'],
+      trainingCertificates: ['pdf', 'jpg', 'jpeg', 'png']
+    };
+
+    Object.keys(fileTypeValidation).forEach(field => {
+      if (formData[field]) {
+        const file = formData[field];
+        const extension = file.name.split('.').pop().toLowerCase();
+        if (!fileTypeValidation[field].includes(extension)) {
+          newErrors[field] = t('application.validation.invalidFileType');
+        }
       }
     });
 
@@ -181,13 +257,26 @@ const TCPForm = ({ onBack }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    setSubmitError('');
+    setUploadProgress('');
+    
     if (!validateForm()) {
+      setSubmitError(t('application.validation.formIncomplete'));
       return;
     }
 
     setIsSubmitting(true);
+    setUploadProgress('Preparando archivos...');
     
     try {
+      // Contar archivos a procesar
+      const fileFields = ['cv', 'coverLetter', 'nationalId', 'fullBodyPhoto', 'passportPhoto', 'trainingCertificates'];
+      const attachedFiles = fileFields.filter(field => formData[field] instanceof File);
+      
+      if (attachedFiles.length > 0) {
+        setUploadProgress(`Procesando ${attachedFiles.length} archivo(s)...`);
+      }
+      
       // Use EmailJS to send the application directly from frontend
       await sendApplicationEmailJS(formData, 'tcp');
       
@@ -196,9 +285,19 @@ const TCPForm = ({ onBack }) => {
       
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert(t('application.submitError'));
+      
+      // Determinar tipo de error para mensaje más específico
+      let errorMessage = t('application.submitError');
+      if (error.message.includes('archivo')) {
+        errorMessage = `Error con archivos: ${error.message}`;
+      } else if (error.message.includes('network') || error.message.includes('Network')) {
+        errorMessage = 'Error de conexión. Verifica tu internet e intenta nuevamente.';
+      }
+      
+      setSubmitError(errorMessage);
     } finally {
       setIsSubmitting(false);
+      setUploadProgress('');
     }
   };
 
@@ -971,6 +1070,7 @@ const TCPForm = ({ onBack }) => {
               label={t('application.tcp.fields.cv')}
               name="cv"
               type="file"
+              value={formData.cv}
               onChange={handleFileChange}
               error={errors.cv}
               accept=".pdf,.doc,.docx"
@@ -981,6 +1081,7 @@ const TCPForm = ({ onBack }) => {
               label={t('application.tcp.fields.coverLetter')}
               name="coverLetter"
               type="file"
+              value={formData.coverLetter}
               onChange={handleFileChange}
               error={errors.coverLetter}
               accept=".pdf,.doc,.docx"
@@ -990,6 +1091,7 @@ const TCPForm = ({ onBack }) => {
               label={t('application.tcp.fields.validPassport')}
               name="validPassport"
               type="file"
+              value={formData.validPassport}
               onChange={handleFileChange}
               error={errors.validPassport}
               accept=".pdf,.jpg,.jpeg,.png"
@@ -1000,6 +1102,7 @@ const TCPForm = ({ onBack }) => {
               label={t('application.tcp.fields.nationalId')}
               name="nationalId"
               type="file"
+              value={formData.nationalId}
               onChange={handleFileChange}
               error={errors.nationalId}
               accept=".pdf,.jpg,.jpeg,.png"
@@ -1009,6 +1112,7 @@ const TCPForm = ({ onBack }) => {
               label={t('application.tcp.fields.fullBodyPhoto')}
               name="fullBodyPhoto"
               type="file"
+              value={formData.fullBodyPhoto}
               onChange={handleFileChange}
               error={errors.fullBodyPhoto}
               accept=".jpg,.jpeg,.png"
@@ -1019,6 +1123,7 @@ const TCPForm = ({ onBack }) => {
               label={t('application.tcp.fields.passportPhoto')}
               name="passportPhoto"
               type="file"
+              value={formData.passportPhoto}
               onChange={handleFileChange}
               error={errors.passportPhoto}
               accept=".jpg,.jpeg,.png"
@@ -1029,11 +1134,52 @@ const TCPForm = ({ onBack }) => {
               label={t('application.tcp.fields.trainingCertificates')}
               name="trainingCertificates"
               type="file"
+              value={formData.trainingCertificates}
               onChange={handleFileChange}
               error={errors.trainingCertificates}
               accept=".pdf,.jpg,.jpeg,.png"
             />
           </div>
+        </div>
+
+        {/* Resumen de Archivos Adjuntos */}
+        <div className={styles.filesSummary}>
+          <h4 className={styles.filesSummaryTitle}>📎 Resumen de Archivos Adjuntos</h4>
+          {getAttachedFiles().length > 0 ? (
+            <div className={styles.filesSummaryContent}>
+              <div className={styles.filesSummaryHeader}>
+                <span>📁 {getAttachedFiles().length} archivo(s) seleccionado(s)</span>
+                <span className={calculateTotalFileSize() > 10 * 1024 * 1024 ? styles.sizeWarning : styles.sizeInfo}>
+                  📏 {(calculateTotalFileSize() / 1024 / 1024).toFixed(2)} MB / 10 MB
+                </span>
+              </div>
+              
+              <div className={styles.filesList}>
+                {getAttachedFiles().map(({ field, file }) => (
+                  <div key={field} className={styles.fileItem}>
+                    <span className={styles.fileItemIcon}>
+                      {file.name.toLowerCase().includes('pdf') ? '📄' : 
+                       file.name.toLowerCase().match(/\.(jpg|jpeg|png)$/) ? '🖼️' : '📝'}
+                    </span>
+                    <div className={styles.fileItemInfo}>
+                      <div className={styles.fileItemName}>{file.name}</div>
+                      <div className={styles.fileItemSize}>{(file.size / 1024 / 1024).toFixed(2)} MB</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {calculateTotalFileSize() > 10 * 1024 * 1024 && (
+                <div className={styles.fileSizeWarning}>
+                  ⚠️ El tamaño total excede el límite de 10MB. Reduce el tamaño de algunos archivos.
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className={styles.noFilesMessage}>
+              📝 Ningún archivo seleccionado aún
+            </div>
+          )}
         </div>
 
         {/* 10. Disponibilidad y Preferencias */}
@@ -1208,6 +1354,33 @@ const TCPForm = ({ onBack }) => {
             {isSubmitting ? t('application.submitting') : t('application.submit')}
           </button>
         </div>
+        
+        {/* Upload Progress */}
+        {uploadProgress && (
+          <div className={styles.progressMessage}>
+            <span className={styles.spinner}>⏳</span>
+            {uploadProgress}
+          </div>
+        )}
+        
+        {/* Error Messages */}
+        {submitError && (
+          <div className={styles.errorMessage}>
+            {submitError}
+          </div>
+        )}
+        
+        {errors.totalFileSize && (
+          <div className={styles.errorMessage}>
+            {errors.totalFileSize}
+          </div>
+        )}
+        
+        {Object.keys(errors).length > 0 && !submitError && (
+          <div className={styles.errorMessage}>
+            {t('application.validation.formIncomplete')} ({Object.keys(errors).length} {t('application.validation.errorsFound')})
+          </div>
+        )}
       </form>
     </div>
   );
