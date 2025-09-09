@@ -270,7 +270,7 @@ export const translations = {
       marketingConsent: "Acepto recibir comunicaciones por correo electrónico de Cruz Del Sur.",
       submitButton: "ENVIAR SOLICITUD",
       helpText: "¿Tienes alguna pregunta? Contáctanos a través de:",
-      contactPhone: "+54 911 2345 6789",
+      contactPhone: "+54 9 11 3431-0913",
       titles: {
         mr: "Sr.",
         mrs: "Sra.",
@@ -596,7 +596,7 @@ export const translations = {
       marketingConsent: "I agree to receive email communications from Cruz Del Sur.",
       submitButton: "SUBMIT REQUEST",
       helpText: "Have any questions? Contact us at:",
-      contactPhone: "+54 911 2345 6789",
+      contactPhone: "+54 9 11 3431-0913",
       titles: {
         mr: "Mr.",
         mrs: "Mrs.",
