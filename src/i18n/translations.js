@@ -247,9 +247,11 @@ export const translations = {
       
       pilot: {
         title: "Piloto",
-        description: "Únete a nuestro equipo de pilotos altamente calificados",
+        description: "Invitamos a todos los pilotos que deseen ser considerados en actuales o futuros procesos de selección para Aerolíneas / compañías aéreas, a dejar sus datos y CV en nuestro formulario.",
         formTitle: "Formulario de Aplicación para Piloto",
         formSubtitle: "Por favor, completa todos los campos requeridos para procesar tu aplicación.",
+        welcomeTitle: "Bienvenidos a Cruz del Sur",
+        welcomeText: "Invitamos a todos los pilotos que deseen ser considerados en actuales o futuros procesos de selección para Aerolíneas / compañías aéreas, a dejar sus datos y CV en nuestro formulario.\n\nSon 30 minutos de inversión personal en tiempo, que pueden abrir una nueva puerta hacia la realización profesional, y con ella, un mundo de nuevas vivencias, destinos y experiencias.\n\n⏳ Set the timer.\n\nEn Cruz del Sur, cada aplicación cuenta:\n• Los perfiles cargados son analizados por nuestro equipo especializado en reclutamiento aeronáutico.\n• Tu CV puede ser presentado ante aerolíneas internacionales y consultoras asociadas en más de 15 países.\n• Según estadísticas del sector, más del 70% de los pilotos que participan en bases de datos profesionales son convocados a entrevistas en menos de 6 meses.\n\nTe invitamos a dar este primer paso, y nosotros damos el que sigue por vos.",
         fileWarning: "Importante: Los archivos deben pesar lo menos posible. El límite por archivo es de 2MB.",
         
         sections: {
@@ -411,9 +413,11 @@ export const translations = {
       
       tcp: {
         title: "Tripulante de Cabina (TCP)",
-        description: "Forma parte de nuestro equipo de tripulantes de cabina",
+        description: "Invitamos a todos los Tripulantes de Cabina que deseen ser considerados en actuales o futuros procesos de selección a dejar sus datos y CV en nuestro formulario.",
         formTitle: "Formulario de Aplicación para Tripulante de Cabina",
         formSubtitle: "Por favor, completa todos los campos requeridos para procesar tu aplicación.",
+        welcomeTitle: "Bienvenidos a Cruz del Sur",
+        welcomeText: "Invitamos a todos los Tripulantes de Cabina que deseen ser considerados en actuales o futuros procesos de selección a dejar sus datos y CV en nuestro formulario.\n\nSon 30 minutos de inversión personal que pueden abrir la puerta hacia una nueva etapa profesional, y con ella, la posibilidad de descubrir un mundo de culturas, destinos y experiencias únicas.\n\n⏳ Set the timer.\n\nEn Cruz del Sur, cada aplicación cuenta:\n• Los perfiles son analizados cuidadosamente por nuestro equipo de especialistas en reclutamiento aeronáutico.\n• Tu CV puede llegar a aerolíneas internacionales y consultoras asociadas en más de 15 países.\n• Según estadísticas del sector, más del 65% de los Tripulantes de Cabina registrados en bases de datos profesionales son convocados a entrevistas en menos de 6 meses.\n\nDejar tus datos aquí es dar el primer paso hacia tu próxima aventura en los cielos.",
         fileWarning: "Importante: Los archivos deben pesar lo menos posible. El límite por archivo es de 2MB.",
         
         sections: {
@@ -836,9 +840,11 @@ export const translations = {
       
       pilot: {
         title: "Pilot",
-        description: "Join our team of highly qualified pilots",
+        description: "We invite all pilots who wish to be considered for current or future selection processes for Airlines / air companies to leave their data and CV in our form.",
         formTitle: "Pilot Application Form",
         formSubtitle: "Please complete all required fields to process your application.",
+        welcomeTitle: "Welcome to Cruz del Sur",
+        welcomeText: "We invite all pilots who wish to be considered for current or future selection processes for Airlines / air companies to leave their data and CV in our form.\n\n30 minutes of personal time investment that can open a new door to professional fulfillment, and with it, a world of new experiences, destinations and adventures.\n\n⏳ Set the timer.\n\nAt Cruz del Sur, every application counts:\n• The profiles loaded are analyzed by our specialized team in aeronautical recruitment.\n• Your CV can be presented to international airlines and associated consultants in more than 15 countries.\n• According to industry statistics, more than 70% of pilots who participate in professional databases are called for interviews in less than 6 months.\n\nWe invite you to take this first step, and we take the next one for you.",
         fileWarning: "Important: Files must be as small as possible. The limit per file is 2MB.",
         
         sections: {
@@ -1000,9 +1006,11 @@ export const translations = {
       
       tcp: {
         title: "Cabin Crew (TCP)",
-        description: "Be part of our cabin crew team",
+        description: "We invite all Cabin Crew members who wish to be considered for current or future selection processes to leave their data and CV in our form.",
         formTitle: "Cabin Crew Application Form",
         formSubtitle: "Please complete all required fields to process your application.",
+        welcomeTitle: "Welcome to Cruz del Sur",
+        welcomeText: "We invite all Cabin Crew members who wish to be considered for current or future selection processes to leave their data and CV in our form.\n\n30 minutes of personal investment that can open the door to a new professional stage, and with it, the possibility of discovering a world of cultures, destinations and unique experiences.\n\n⏳ Set the timer.\n\nAt Cruz del Sur, every application counts:\n• Profiles are carefully analyzed by our team of specialists in aeronautical recruitment.\n• Your CV can reach international airlines and associated consultants in more than 15 countries.\n• According to industry statistics, more than 65% of Cabin Crew registered in professional databases are called for interviews in less than 6 months.\n\nLeaving your data here is taking the first step towards your next adventure in the skies.",
         fileWarning: "Important: Files must be as small as possible. The limit per file is 2MB.",
         
         sections: {
@@ -1163,9 +1171,7 @@ export const translations = {
         fileTooLarge: "File exceeds 2MB limit",
         totalSizeTooLarge: "Total file size exceeds 10MB",
         invalidFileType: "File type not allowed",
-        missingRequiredFile: "This file is required",
-        formIncomplete: "Please complete all required fields",
-        errorsFound: "errors found"
+        missingRequiredFile: "This file is required"
       },
 
       // Success

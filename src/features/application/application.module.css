@@ -162,6 +162,47 @@
   line-height: 1.5;
 }
 
+/* Welcome Section */
+.welcomeSection {
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+}
+
+.welcomeTitle {
+  font-family: 'Aptos', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.welcomeText {
+  font-family: 'Aptos', sans-serif;
+  color: #374151;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.welcomeParagraph {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.welcomeParagraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Styling for bullet points in welcome text */
+.welcomeText p:contains("•") {
+  margin-left: 1rem;
+}
+
+.welcomeText strong {
+  font-weight: 600;
+  color: #1f2937;
+}
+
 /* Form Sections */
 .formSection {
   margin-bottom: 2rem;

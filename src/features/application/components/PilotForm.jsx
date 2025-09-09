@@ -317,6 +317,18 @@ const PilotForm = ({ onBack }) => {
 
   return (
     <div className={styles.formContainer}>
+      {/* Sección de Bienvenida */}
+      <div className={styles.welcomeSection}>
+        <h2 className={styles.welcomeTitle}>{t('application.pilot.welcomeTitle')}</h2>
+        <div className={styles.welcomeText}>
+          {t('application.pilot.welcomeText').split('\n').map((paragraph, index) => (
+            <p key={index} className={styles.welcomeParagraph}>
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
+      
       <h1 className={styles.formTitle}>{t('application.pilot.formTitle')}</h1>
       <p className={styles.formSubtitle}>{t('application.pilot.formSubtitle')}</p>
       
