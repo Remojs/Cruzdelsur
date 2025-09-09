@@ -2,6 +2,7 @@ import { createHashRouter } from 'react-router-dom';
 import Home from '../features/home/home';
 import Layout from './layout/Layout';
 import Charters from '../features/charters/charters';
+import Application from '../features/application';
 import WebinarPage from '../pages/webinar/webinar';
 import Contact from '../pages/contact/Contact';
 import { NotFound, UnderConstruction } from '../ui';
@@ -36,7 +37,7 @@ export const router = createHashRouter([
       },
       {
         path: '/careers',
-        element: <UnderConstruction />,
+        element: <Application />,
       },
       {
         path: '/consulting',

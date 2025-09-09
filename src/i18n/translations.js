@@ -236,6 +236,388 @@ export const translations = {
       copyright: "© 2025 Cruz del Sur. Todos los derechos reservados."
     },
 
+    // Application Forms
+    application: {
+      title: "Únete a Nuestro Equipo",
+      description: "En Cruz del Sur, buscamos profesionales excepcionales que compartan nuestra pasión por la excelencia en la aviación. Completa tu aplicación y comienza tu carrera con nosotros.",
+      selectPosition: "Selecciona tu Posición",
+      back: "Volver",
+      submit: "Enviar Aplicación",
+      submitting: "Enviando...",
+      
+      pilot: {
+        title: "Piloto",
+        description: "Únete a nuestro equipo de pilotos altamente calificados",
+        formTitle: "Formulario de Aplicación para Piloto",
+        formSubtitle: "Por favor, completa todos los campos requeridos para procesar tu aplicación.",
+        fileWarning: "Importante: Los archivos deben pesar lo menos posible. El límite por archivo es de 2MB.",
+        
+        sections: {
+          personalInfo: "1. Información Personal",
+          licenses: "2. Licencias y Certificaciones",
+          flightExperience: "3. Experiencia de Vuelo",
+          typeRatings: "4. Habilitaciones de Tipo",
+          education: "5. Formación Académica",
+          languages: "6. Idiomas",
+          aviationExperience: "7. Experiencia Profesional en Aviación",
+          specializedTraining: "8. Cursos y Entrenamientos Especializados",
+          documents: "9. Documentos Requeridos",
+          availability: "10. Disponibilidad y Preferencias",
+          declarations: "11. Declaraciones y Consentimiento"
+        },
+        
+        subsections: {
+          primaryLicense: "Licencia Principal",
+          additionalLicense: "Licencia Adicional"
+        },
+        
+        fields: {
+          // 1. Información Personal
+          fullName: "Nombre completo",
+          dateOfBirth: "Fecha de nacimiento (dd/mm/aaaa)",
+          age: "Edad",
+          gender: "Género",
+          nationality: "Nacionalidad",
+          hasValidPassport: "Pasaporte válido (Sí/No)",
+          passportExpiryDate: "Fecha de vencimiento del pasaporte",
+          hasOtherNationality: "Otra nacionalidad (Sí/No)",
+          otherNationality: "Si es así, especificar",
+          idNumber: "Número de cédula nacional",
+          currentAddress: "Dirección actual (ciudad/país)",
+          contactPhone: "Número de teléfono de contacto",
+          email: "Correo electrónico",
+          linkedIn: "LinkedIn / Perfil profesional (opcional)",
+          availableForRelocation: "Disponibilidad para reubicación internacional",
+          relocationPreferences: "Especificar países preferidos o restricciones",
+          
+          // 2. Licencias y Certificaciones
+          currentLicense: "Licencia actual (PPL / CPL / ATPL / MPL)",
+          licenseCountry: "País/autoridad emisora",
+          licenseNumber: "Número de licencia",
+          licenseIssueDate: "Fecha de emisión",
+          licenseExpiryDate: "Fecha de vencimiento",
+          currentEndorsements: "Habilitaciones actuales (ej., IR, MCC, TRI, TRE, SFI, Instructor, etc.)",
+          medicalClass: "Clase Médica (Clase 1 / Clase 2)",
+          medicalIssueDate: "Fecha de emisión del médico",
+          medicalExpiryDate: "Fecha de vencimiento del médico",
+          additionalLicense: "Licencia actual adicional (PPL / CPL / ATPL / MPL)",
+          additionalLicenseCountry: "País/autoridad emisora",
+          additionalLicenseNumber: "Número de licencia",
+          additionalLicenseIssueDate: "Fecha de emisión",
+          additionalLicenseExpiryDate: "Fecha de vencimiento",
+          additionalEndorsements: "Habilitaciones actuales (ej., IR, MCC, TRI, TRE, SFI, Instructor, etc.)",
+          additionalMedicalClass: "Clase Médica (Clase 1 / Clase 2)",
+          additionalMedicalIssueDate: "Fecha de emisión del médico",
+          additionalMedicalExpiryDate: "Fecha de vencimiento del médico",
+          icaoEnglishProficiency: "Competencia en Inglés OACI (Nivel 4 / 5 / 6)",
+          englishProficiencyExpiry: "Fecha de vencimiento si aplica",
+          
+          // 3. Experiencia de Vuelo
+          totalFlightHours: "Horas de vuelo totales",
+          picHours: "Horas como PIC (Piloto al Mando)",
+          jetHours: "Horas en aeronaves a reacción",
+          propellerTurbopropHours: "Horas en hélice/turbohélice",
+          multiEngineHours: "Horas en aeronaves multimotores",
+          simulatorHours: "Horas en simulador (si aplica, especificar tipo)",
+          simulatorType: "Tipo de simulador",
+          lastCommercialOperation: "Última operación comercial realizada (fecha)",
+          lastCommercialOperationAirline: "Aerolínea/empresa",
+          lastFlightIn90Days: "Vuelo en los últimos 90 días (Sí/No)",
+          lastFlightAircraftType: "Aeronave/tipo",
+          
+          // 4. Habilitaciones de Tipo
+          typeRatings: "Tipo(s) de aeronave habilitada (ej., A320, B737, B787, etc.)",
+          typeRatingIssueDate: "Fecha de emisión de la habilitación de tipo",
+          typeRatingExpiryDate: "Fecha de vencimiento de la habilitación de tipo",
+          recentExperienceHours: "Experiencia reciente en esa aeronave (horas totales)",
+          recentExperienceLast12Months: "Horas en los últimos 12 meses",
+          
+          // 5. Formación Académica
+          educationLevel: "Nivel más alto de educación completado",
+          institution: "Institución",
+          degreeTitle: "Título / Calificación obtenida",
+          graduationDate: "Fecha de graduación",
+          
+          // 6. Idiomas
+          englishLevel: "Nivel de inglés",
+          englishCertification: "Certificación si aplica (TOEFL, IELTS, etc.)",
+          otherLanguages: "Otros idiomas (especificar nivel y certificación si aplica)",
+          
+          // 7. Experiencia Profesional en Aviación
+          aviationExperience: "Experiencia Profesional en Aviación (orden cronológico inverso, últimos 10 años)",
+          
+          // 8. Cursos y Entrenamientos Especializados
+          hasMCC: "MCC (Cooperación de Tripulación Múltiple) (Sí/No)",
+          mccDate: "Fecha",
+          mccCenter: "Centro de entrenamiento",
+          hasJetOrientation: "Curso de Orientación a Jet (Sí/No)",
+          jetOrientationDate: "Fecha",
+          jetOrientationCenter: "Centro de entrenamiento",
+          loftCrmSmsTraining: "LOFT / CRM / SMS / Gestión de Fatiga / Factores Humanos (especificar)",
+          otherRelevantCourses: "Otros cursos relevantes",
+          
+          // 9. Documentos Requeridos
+          cv: "CV actualizado",
+          coverLetter: "Carta de presentación (si está disponible)",
+          pilotLicense: "Licencia de piloto (ambos lados)",
+          validMedical: "Certificado médico válido",
+          validPassport: "Pasaporte válido",
+          courseCertificates: "Certificados de cursos relevantes (MCC, Orientación a Jet, Habilitaciones de Tipo, etc.)",
+          professionalPhoto: "Foto profesional (primer plano)",
+          
+          // 10. Disponibilidad y Preferencias
+          contractAvailability: "Disponibilidad para comenzar contrato",
+          operationTypePreference: "Tipo de operación preferida",
+          airlineInterest: "Interés en aerolíneas específicas (campo abierto)",
+          salaryExpectation: "Expectativas salariales (opcional/confidencial)",
+          
+          // 11. Declaraciones y Consentimiento
+          hasLegalRecords: "¿Tienes algún antecedente legal o disciplinario? (Sí/No)",
+          legalRecordsDetails: "Si es así, especificar",
+          hasMedicalDenial: "¿Alguna vez te han negado un Médico Clase 1? (Sí/No)",
+          medicalDenialDetails: "Si es así, especificar",
+          dataUsageConsent: "Aceptación del uso de datos personales (GDPR/LOPD)",
+          informationAccuracy: "Confirmación de exactitud y veracidad de la información proporcionada"
+        },
+        
+        options: {
+          class1: "Clase 1",
+          class2: "Clase 2",
+          level4: "Nivel 4",
+          level5: "Nivel 5",
+          level6: "Nivel 6",
+          immediate: "Inmediato",
+          oneMonth: "1 mes",
+          threeMonths: "3 meses",
+          other: "Otro",
+          longHaul: "Largo alcance",
+          mediumHaul: "Mediano alcance",
+          shortHaul: "Corto alcance",
+          charter: "Charter",
+          cargo: "Carga",
+          executive: "Ejecutivo"
+        },
+        
+        placeholders: {
+          endorsements: "ej., IR, MCC, TRI, TRE, SFI, Instructor, etc.",
+          typeRatings: "ej., A320, B737, B787, etc.",
+          englishCertification: "TOEFL, IELTS, etc.",
+          otherLanguages: "Especificar nivel y certificación si aplica",
+          aviationExperience: "Para cada posición: Empresa/Escuela, Posición (FO, Capitán, Instructor, etc.), Período (desde-hasta), Tipo de aeronave, Horas acumuladas, Motivo de salida (opcional)",
+          loftCrmSmsTraining: "Especificar entrenamiento LOFT / CRM / SMS / Gestión de Fatiga / Factores Humanos",
+          salaryExpectation: "Opcional/confidencial"
+        }
+      },
+      
+      tcp: {
+        title: "Tripulante de Cabina (TCP)",
+        description: "Forma parte de nuestro equipo de tripulantes de cabina",
+        formTitle: "Formulario de Aplicación para Tripulante de Cabina",
+        formSubtitle: "Por favor, completa todos los campos requeridos para procesar tu aplicación.",
+        fileWarning: "Importante: Los archivos deben pesar lo menos posible. El límite por archivo es de 2MB.",
+        
+        sections: {
+          personalInfo: "1. Información Personal",
+          physicalRequirements: "2. Requisitos Físicos",
+          education: "3. Educación",
+          languages: "4. Idiomas",
+          workExperience: "5. Experiencia Laboral en Aviación / Hotelería / Atención al Cliente",
+          training: "6. Entrenamiento y Certificados de Tripulante de Cabina",
+          flightExperience: "7. Experiencia de Vuelo (si ya es Tripulante de Cabina)",
+          skills: "8. Habilidades y Competencias",
+          documents: "9. Documentos Requeridos",
+          availability: "10. Disponibilidad y Preferencias",
+          declarations: "11. Declaraciones y Consentimiento"
+        },
+        
+        fields: {
+          // 1. Información Personal
+          fullName: "Nombre completo",
+          dateOfBirth: "Fecha de nacimiento (dd/mm/aaaa)",
+          age: "Edad",
+          gender: "Género",
+          nationality: "Nacionalidad",
+          hasOtherNationality: "Otra nacionalidad (Sí/No)",
+          otherNationality: "Si es así, especificar",
+          hasValidPassport: "Pasaporte válido (Sí/No)",
+          passportExpiryDate: "Fecha de vencimiento del pasaporte",
+          idNumber: "Número de cédula nacional",
+          currentAddress: "Dirección actual (ciudad/país)",
+          contactPhone: "Número de teléfono de contacto",
+          email: "Correo electrónico",
+          linkedIn: "LinkedIn / Perfil profesional (opcional)",
+          availableForRelocation: "Disponibilidad para reubicación internacional",
+          relocationPreferences: "Especificar restricciones o países preferidos",
+          
+          // 2. Requisitos Físicos
+          height: "Altura (cm)",
+          weight: "Peso (kg)",
+          armReach: "Alcance del brazo (cm - descalzo, de puntillas si es necesario)",
+          hasVisibleTattoos: "Tatuajes visibles (Sí/No)",
+          tattooDetails: "Si es así, ubicación y tamaño",
+          hasVisiblePiercings: "Perforaciones visibles (Sí/No)",
+          piercingDetails: "Si es así, especificar",
+          hasCorrectiveLenses: "Lentes correctivos (Sí/No)",
+          correctiveLensesType: "Anteojos/lentes de contacto",
+          hasMedicalFitness: "Aptitud médica (Sí/No)",
+          lastMedicalExamDate: "Fecha del último examen médico",
+          
+          // 3. Educación
+          educationLevel: "Nivel más alto de educación completado",
+          institution: "Institución",
+          degreeTitle: "Título / Calificación obtenida",
+          graduationDate: "Fecha de graduación",
+          
+          // 4. Idiomas
+          englishLevel: "Nivel de inglés",
+          englishCertification: "Certificación si aplica (TOEFL, IELTS, etc.)",
+          otherLanguages: "Otros idiomas (especificar nivel y certificación si aplica)",
+          
+          // 5. Experiencia Laboral
+          workExperience: "Experiencia Laboral en Aviación / Hotelería / Atención al Cliente (orden cronológico inverso, últimos 10 años)",
+          
+          // 6. Entrenamiento y Certificados
+          hasInitialTCPCourse: "Curso Inicial de Tripulante de Cabina (Sí/No)",
+          initialTCPDate: "Fecha",
+          initialTCPCenter: "Centro de entrenamiento",
+          hasSEP: "Procedimientos de Seguridad y Emergencia (SEP) (Sí/No)",
+          sepDate: "Fecha",
+          sepCenter: "Centro de entrenamiento",
+          hasFirstAidCertificate: "Certificado de Primeros Auxilios (Sí/No)",
+          firstAidDate: "Fecha",
+          firstAidCenter: "Centro de entrenamiento",
+          hasDangerousGoodsCertificate: "Certificado de Mercancías Peligrosas (Sí/No)",
+          dangerousGoodsDate: "Fecha",
+          dangerousGoodsCenter: "Centro de entrenamiento",
+          hasSecurityTraining: "Entrenamiento de Seguridad (Sí/No)",
+          securityTrainingDate: "Fecha",
+          securityTrainingCenter: "Centro de entrenamiento",
+          otherRelevantCertificates: "Otros certificados relevantes (ej., Atención al Cliente, Hotelería, Lucha contra Incendios, Factores Humanos, CRM, etc.)",
+          
+          // 7. Experiencia de Vuelo
+          totalFlightHours: "Número total de horas de vuelo",
+          aircraftTypesOperated: "Tipos de aeronave operados (A320, A350, B737, B777, etc.)",
+          lastEmployerAirline: "Última aerolínea empleada como Tripulante de Cabina (especificar empresa)",
+          lastDutyDate: "Última función (fecha)",
+          
+          // 8. Habilidades y Competencias
+          customerServiceSkills: "Habilidades de atención al cliente",
+          conflictManagementSkills: "Gestión de conflictos",
+          teamworkLeadershipSkills: "Trabajo en equipo y liderazgo",
+          multiculturalAdaptationSkills: "Adaptabilidad a entornos multiculturales",
+          otherSkills: "Otras habilidades (campo abierto: idiomas, IT, etc.)",
+          
+          // 9. Documentos Requeridos
+          cv: "CV actualizado",
+          coverLetter: "Carta de presentación (si está disponible)",
+          validPassport: "Pasaporte (válido)",
+          nationalId: "Cédula de identidad nacional (si lo requiere la ley)",
+          fullBodyPhoto: "Foto profesional de cuerpo completo (traje de negocios)",
+          passportPhoto: "Foto profesional tamaño pasaporte (primer plano)",
+          trainingCertificates: "Certificados de entrenamiento relevante (SEP, Primeros Auxilios, Mercancías Peligrosas, etc.)",
+          
+          // 10. Disponibilidad y Preferencias
+          contractAvailability: "Disponibilidad para comenzar contrato",
+          operationTypePreference: "Tipo de operación preferida",
+          airlineInterest: "Interés en aerolíneas específicas (campo abierto)",
+          willingnessToRelocate: "Disposición a reubicarse (Sí/No)",
+          relocationCountryPreferences: "Países preferidos o restricciones",
+          salaryExpectation: "Expectativas salariales (opcional/confidencial)",
+          
+          // 11. Declaraciones y Consentimiento
+          hasLegalRecords: "¿Tienes algún antecedente legal o disciplinario? (Sí/No)",
+          legalRecordsDetails: "Si es así, especificar",
+          hasMedicalDenial: "¿Alguna vez te han negado autorización médica para funciones de Tripulante de Cabina? (Sí/No)",
+          medicalDenialDetails: "Si es así, especificar",
+          dataUsageConsent: "Aceptación del uso de datos personales (GDPR/LOPD)",
+          informationAccuracy: "Confirmación de exactitud y veracidad de la información proporcionada"
+        },
+        
+        options: {
+          immediate: "Inmediato",
+          oneMonth: "1 mes",
+          threeMonths: "3 meses",
+          other: "Otro",
+          longHaul: "Largo alcance",
+          mediumHaul: "Mediano alcance",
+          shortHaul: "Corto alcance",
+          charter: "Charter",
+          corporate: "Corporativo",
+          privateJet: "Jet Privado"
+        },
+        
+        placeholders: {
+          heightCm: "cm",
+          weightKg: "kg",
+          armReachCm: "cm",
+          tattooDetails: "Ubicación y tamaño aproximado",
+          piercingDetails: "Tipo y ubicación",
+          otherLanguages: "Especificar nivel y certificación si aplica",
+          workExperience: "Para cada posición: Empresa, Posición, Período (desde-hasta), Responsabilidades principales, Motivo de salida (opcional)",
+          aircraftTypes: "ej., A320, A350, B737, B777, etc.",
+          customerServiceSkills: "Describe tu experiencia y habilidades en atención al cliente",
+          conflictManagementSkills: "Describe tu experiencia manejando situaciones difíciles",
+          teamworkLeadershipSkills: "Describe tu experiencia trabajando en equipo y roles de liderazgo",
+          multiculturalAdaptationSkills: "Describe tu experiencia trabajando con personas de diferentes culturas",
+          otherSkills: "Idiomas adicionales, habilidades informáticas, etc.",
+          relocationCountryPreferences: "Países preferidos o restricciones específicas",
+          salaryExpectation: "Opcional/confidencial"
+        }
+      },
+
+      // Common Options
+      common: {
+        select: "Seleccionar...",
+        yes: "Sí",
+        no: "No",
+        male: "Masculino",
+        female: "Femenino",
+        other: "Otro",
+        secondary: "Secundaria",
+        university: "Universidad",
+        postgraduate: "Postgrado",
+        basic: "Básico",
+        intermediate: "Intermedio",
+        advanced: "Avanzado",
+        fluent: "Fluido",
+        immediate: "Inmediato",
+        oneMonth: "1 mes",
+        threeMonths: "3 meses",
+        otherOption: "Otro"
+      },
+
+      // Select Options
+      select: "Seleccionar...",
+      yes: "Sí",
+      no: "No",
+      depends: "Depende",
+      expired: "Vencido",
+      excellent: "Excelente",
+      good: "Bueno",
+      basic: "Básico",
+      none: "Ninguno",
+      fullTime: "Tiempo Completo",
+      partTime: "Medio Tiempo",
+      seasonal: "Estacional",
+      flexible: "Flexible",
+
+      // Validation
+      validation: {
+        required: "Este campo es requerido",
+        invalidEmail: "Formato de email inválido",
+        invalidPhone: "Formato de teléfono inválido",
+        invalidHours: "Las horas deben ser un número válido",
+        invalidHeight: "La altura debe estar entre 150-200 cm",
+        invalidWeight: "El peso debe estar entre 40-150 kg"
+      },
+
+      // Success
+      successTitle: "¡Aplicación Enviada Exitosamente!",
+      successMessage: "Gracias por tu interés en Cruz del Sur. Revisaremos tu aplicación y te contactaremos pronto.",
+      backToSelection: "Volver a Selección",
+      submitError: "Error al enviar la aplicación. Por favor, inténtalo nuevamente."
+    },
+
     // Flights/Charters
     flights: {
       title: "Solicita una cotización para tu próximo Vuelo Charter",
@@ -407,6 +789,373 @@ export const translations = {
       description: "Driven by strategic vision and deep market knowledge, Cruz del Sur combines world-class charter services.",
       aboutUs: "ABOUT US",
       viewMore: "VIEW MORE"
+    },
+
+    // Application Forms
+    application: {
+      title: "Join Our Team",
+      description: "At Cruz del Sur, we seek exceptional professionals who share our passion for excellence in aviation. Complete your application and start your career with us.",
+      selectPosition: "Select Your Position",
+      back: "Back",
+      submit: "Submit Application",
+      submitting: "Submitting...",
+      
+      // Common elements
+      common: {
+        select: "Select...",
+        yes: "Yes",
+        no: "No",
+        male: "Male",
+        female: "Female",
+        other: "Other",
+        basic: "Basic",
+        intermediate: "Intermediate",
+        advanced: "Advanced",
+        fluent: "Fluent",
+        excellent: "Excellent",
+        good: "Good",
+        secondary: "High School",
+        university: "University",
+        postgraduate: "Postgraduate",
+        immediate: "Immediate",
+        oneMonth: "1 month",
+        threeMonths: "3 months",
+        otherOption: "Other"
+      },
+      
+      pilot: {
+        title: "Pilot",
+        description: "Join our team of highly qualified pilots",
+        formTitle: "Pilot Application Form",
+        formSubtitle: "Please complete all required fields to process your application.",
+        fileWarning: "Important: Files must be as small as possible. The limit per file is 2MB.",
+        
+        sections: {
+          personalInfo: "1. Personal Information",
+          licenses: "2. Licenses and Certifications",
+          flightExperience: "3. Flight Experience",
+          typeRatings: "4. Type Ratings",
+          education: "5. Academic Background",
+          languages: "6. Languages",
+          aviationExperience: "7. Professional Aviation Experience",
+          specializedTraining: "8. Specialized Courses and Training",
+          documents: "9. Required Documents",
+          availability: "10. Availability and Preferences",
+          declarations: "11. Declarations and Consent"
+        },
+        
+        subsections: {
+          primaryLicense: "Primary License",
+          additionalLicense: "Additional License"
+        },
+        
+        fields: {
+          // 1. Personal Information
+          fullName: "Full name",
+          dateOfBirth: "Date of birth (dd/mm/yyyy)",
+          age: "Age",
+          gender: "Gender",
+          nationality: "Nationality",
+          hasValidPassport: "Valid passport (Yes/No)",
+          passportExpiryDate: "Passport expiry date",
+          hasOtherNationality: "Other nationality (Yes/No)",
+          otherNationality: "If yes, specify",
+          idNumber: "National ID number",
+          currentAddress: "Current address (city/country)",
+          contactPhone: "Contact phone number",
+          email: "Email",
+          linkedIn: "LinkedIn / Professional profile (optional)",
+          availableForRelocation: "Availability for international relocation",
+          relocationPreferences: "Specify preferred countries or restrictions",
+          
+          // 2. Licenses and Certifications
+          currentLicense: "Current license (PPL / CPL / ATPL / MPL)",
+          licenseCountry: "Country/issuing authority",
+          licenseNumber: "License number",
+          licenseIssueDate: "Issue date",
+          licenseExpiryDate: "Expiry date",
+          currentEndorsements: "Current endorsements (e.g., IR, MCC, TRI, TRE, SFI, Instructor, etc.)",
+          medicalClass: "Medical Class (Class 1 / Class 2)",
+          medicalIssueDate: "Medical issue date",
+          medicalExpiryDate: "Medical expiry date",
+          additionalLicense: "Additional current license (PPL / CPL / ATPL / MPL)",
+          additionalLicenseCountry: "Country/issuing authority",
+          additionalLicenseNumber: "License number",
+          additionalLicenseIssueDate: "Issue date",
+          additionalLicenseExpiryDate: "Expiry date",
+          additionalEndorsements: "Current endorsements (e.g., IR, MCC, TRI, TRE, SFI, Instructor, etc.)",
+          additionalMedicalClass: "Medical Class (Class 1 / Class 2)",
+          additionalMedicalIssueDate: "Medical issue date",
+          additionalMedicalExpiryDate: "Medical expiry date",
+          icaoEnglishProficiency: "ICAO English Proficiency (Level 4 / 5 / 6)",
+          englishProficiencyExpiry: "Expiry date if applicable",
+          
+          // 3. Flight Experience
+          totalFlightHours: "Total flight hours",
+          picHours: "Hours as PIC (Pilot in Command)",
+          jetHours: "Hours on jet aircraft",
+          propellerTurbopropHours: "Hours on propeller/turboprop aircraft",
+          multiEngineHours: "Hours on multi-engine aircraft",
+          simulatorHours: "Hours in simulator (if applicable, specify type)",
+          simulatorType: "Simulator type",
+          lastCommercialOperation: "Last commercial operation performed (date)",
+          lastCommercialOperationAirline: "Airline/company",
+          lastFlightIn90Days: "Flight within the last 90 days (Yes/No)",
+          lastFlightAircraftType: "Aircraft/type",
+          
+          // 4. Type Ratings
+          typeRatings: "Aircraft type(s) rated (e.g., A320, B737, B787, etc.)",
+          typeRatingIssueDate: "Type rating issue date",
+          typeRatingExpiryDate: "Type rating expiry date",
+          recentExperienceHours: "Recent experience on that aircraft (total hours)",
+          recentExperienceLast12Months: "Hours in last 12 months",
+          
+          // 5. Academic Background
+          educationLevel: "Highest level of education completed",
+          institution: "Institution",
+          degreeTitle: "Degree / Qualification obtained",
+          graduationDate: "Graduation date",
+          
+          // 6. Languages
+          englishLevel: "English level",
+          englishCertification: "Certification if applicable (TOEFL, IELTS, etc.)",
+          otherLanguages: "Other languages (specify level and certification if applicable)",
+          
+          // 7. Professional Aviation Experience
+          aviationExperience: "Professional Aviation Experience (reverse chronological order, last 10 years)",
+          
+          // 8. Specialized Courses and Training
+          hasMCC: "MCC (Multi-Crew Cooperation) (Yes/No)",
+          mccDate: "Date",
+          mccCenter: "Training center",
+          hasJetOrientation: "Jet Orientation Course (Yes/No)",
+          jetOrientationDate: "Date",
+          jetOrientationCenter: "Training center",
+          loftCrmSmsTraining: "LOFT / CRM / SMS / Fatigue Management / Human Factors (specify)",
+          otherRelevantCourses: "Other relevant courses",
+          
+          // 9. Required Documents
+          cv: "Updated CV",
+          coverLetter: "Cover letter (if available)",
+          pilotLicense: "Pilot license (both sides)",
+          validMedical: "Valid medical certificate",
+          validPassport: "Valid passport",
+          courseCertificates: "Certificates of relevant courses (MCC, Jet Orientation, Type Ratings, etc.)",
+          professionalPhoto: "Professional photo (headshot)",
+          
+          // 10. Availability and Preferences
+          contractAvailability: "Availability to start contract",
+          operationTypePreference: "Preferred type of operation",
+          airlineInterest: "Interest in specific airlines (open field)",
+          salaryExpectation: "Salary expectations (optional/confidential)",
+          
+          // 11. Declarations and Consent
+          hasLegalRecords: "Do you have any legal or disciplinary records? (Yes/No)",
+          legalRecordsDetails: "If yes, specify",
+          hasMedicalDenial: "Have you ever been denied a Class 1 Medical? (Yes/No)",
+          medicalDenialDetails: "If yes, specify",
+          dataUsageConsent: "Acceptance of personal data usage (GDPR/LOPD)",
+          informationAccuracy: "Confirmation of accuracy and truthfulness of the information provided"
+        },
+        
+        options: {
+          class1: "Class 1",
+          class2: "Class 2",
+          level4: "Level 4",
+          level5: "Level 5",
+          level6: "Level 6",
+          immediate: "Immediate",
+          oneMonth: "1 month",
+          threeMonths: "3 months",
+          other: "Other",
+          longHaul: "Long-haul",
+          mediumHaul: "Medium-haul",
+          shortHaul: "Short-haul",
+          charter: "Charter",
+          cargo: "Cargo",
+          executive: "Executive"
+        },
+        
+        placeholders: {
+          endorsements: "e.g., IR, MCC, TRI, TRE, SFI, Instructor, etc.",
+          typeRatings: "e.g., A320, B737, B787, etc.",
+          englishCertification: "TOEFL, IELTS, etc.",
+          otherLanguages: "Specify level and certification if applicable",
+          aviationExperience: "For each position: Company/School, Position (FO, Captain, Instructor, etc.), Period (from-to), Aircraft type, Hours accumulated, Reason for leaving (optional)",
+          loftCrmSmsTraining: "Specify LOFT / CRM / SMS / Fatigue Management / Human Factors training",
+          salaryExpectation: "Optional/confidential"
+        }
+      },
+      
+      tcp: {
+        title: "Cabin Crew (TCP)",
+        description: "Be part of our cabin crew team",
+        formTitle: "Cabin Crew Application Form",
+        formSubtitle: "Please complete all required fields to process your application.",
+        fileWarning: "Important: Files must be as small as possible. The limit per file is 2MB.",
+        
+        sections: {
+          personalInfo: "1. Personal Information",
+          physicalRequirements: "2. Physical Requirements",
+          education: "3. Education",
+          languages: "4. Languages",
+          workExperience: "5. Work Experience in Aviation / Hospitality / Customer Service",
+          training: "6. Cabin Crew Training and Certificates",
+          flightExperience: "7. Flight Experience (if already Cabin Crew)",
+          skills: "8. Skills and Competencies",
+          documents: "9. Required Documents",
+          availability: "10. Availability and Preferences",
+          declarations: "11. Declarations and Consent"
+        },
+        
+        fields: {
+          // 1. Personal Information
+          fullName: "Full name",
+          dateOfBirth: "Date of birth (dd/mm/yyyy)",
+          age: "Age",
+          gender: "Gender",
+          nationality: "Nationality",
+          hasOtherNationality: "Other nationality (Yes/No)",
+          otherNationality: "If yes, specify",
+          hasValidPassport: "Valid passport (Yes/No)",
+          passportExpiryDate: "Passport expiry date",
+          idNumber: "National ID number",
+          currentAddress: "Current address (city/country)",
+          contactPhone: "Contact phone number",
+          email: "Email",
+          linkedIn: "LinkedIn / Professional profile (optional)",
+          availableForRelocation: "Availability for international relocation",
+          relocationPreferences: "Specify restrictions or preferred countries",
+          
+          // 2. Physical Requirements
+          height: "Height (cm)",
+          weight: "Weight (kg)",
+          armReach: "Arm reach (cm - barefoot, standing on tiptoes if required)",
+          hasVisibleTattoos: "Visible tattoos (Yes/No)",
+          tattooDetails: "If yes, location and size",
+          hasVisiblePiercings: "Visible piercings (Yes/No)",
+          piercingDetails: "If yes, specify",
+          hasCorrectiveLenses: "Corrective lenses (Yes/No)",
+          correctiveLensesType: "Glasses/contact lenses",
+          hasMedicalFitness: "Medical fitness (Yes/No)",
+          lastMedicalExamDate: "Date of last medical exam",
+          
+          // 3. Education
+          educationLevel: "Highest level of education completed",
+          institution: "Institution",
+          degreeTitle: "Degree / Qualification obtained",
+          graduationDate: "Graduation date",
+          
+          // 4. Languages
+          englishLevel: "English level",
+          englishCertification: "Certification if applicable (TOEFL, IELTS, etc.)",
+          otherLanguages: "Other languages (specify level and certification if applicable)",
+          
+          // 5. Work Experience
+          workExperience: "Work Experience in Aviation / Hospitality / Customer Service (reverse chronological order, last 10 years)",
+          
+          // 6. Training and Certificates
+          hasInitialTCPCourse: "Initial Cabin Crew Training Course (Yes/No)",
+          initialTCPDate: "Date",
+          initialTCPCenter: "Training center",
+          hasSEP: "Safety & Emergency Procedures (SEP) (Yes/No)",
+          sepDate: "Date",
+          sepCenter: "Training center",
+          hasFirstAidCertificate: "First Aid Certificate (Yes/No)",
+          firstAidDate: "Date",
+          firstAidCenter: "Training center",
+          hasDangerousGoodsCertificate: "Dangerous Goods Certificate (Yes/No)",
+          dangerousGoodsDate: "Date",
+          dangerousGoodsCenter: "Training center",
+          hasSecurityTraining: "Security Training (Yes/No)",
+          securityTrainingDate: "Date",
+          securityTrainingCenter: "Training center",
+          otherRelevantCertificates: "Other relevant certificates (e.g., Customer Service, Hospitality, Fire Fighting, Human Factors, CRM, etc.)",
+          
+          // 7. Flight Experience
+          totalFlightHours: "Total number of flying hours",
+          aircraftTypesOperated: "Aircraft types operated (A320, A350, B737, B777, etc.)",
+          lastEmployerAirline: "Last airline employed as Cabin Crew (specify company)",
+          lastDutyDate: "Last duty (date)",
+          
+          // 8. Skills and Competencies
+          customerServiceSkills: "Customer service skills",
+          conflictManagementSkills: "Conflict management",
+          teamworkLeadershipSkills: "Teamwork and leadership",
+          multiculturalAdaptationSkills: "Adaptability to multicultural environments",
+          otherSkills: "Other skills (open field: languages, IT, etc.)",
+          
+          // 9. Required Documents
+          cv: "Updated CV",
+          coverLetter: "Cover letter (if available)",
+          validPassport: "Passport (valid)",
+          nationalId: "National ID card (if required by law)",
+          fullBodyPhoto: "Full-length professional photo (business attire)",
+          passportPhoto: "Passport-size professional photo (headshot)",
+          trainingCertificates: "Certificates of relevant training (SEP, First Aid, Dangerous Goods, etc.)",
+          
+          // 10. Availability and Preferences
+          contractAvailability: "Availability to start contract",
+          operationTypePreference: "Preferred type of operation",
+          airlineInterest: "Interest in specific airlines (open field)",
+          willingnessToRelocate: "Willingness to relocate (Yes/No)",
+          relocationCountryPreferences: "Preferred countries or restrictions",
+          salaryExpectation: "Salary expectations (optional/confidential)",
+          
+          // 11. Declarations and Consent
+          hasLegalRecords: "Do you have any legal or disciplinary records? (Yes/No)",
+          legalRecordsDetails: "If yes, specify",
+          hasMedicalDenial: "Have you ever been denied medical clearance for Cabin Crew duties? (Yes/No)",
+          medicalDenialDetails: "If yes, specify",
+          dataUsageConsent: "Acceptance of personal data usage (GDPR/LOPD)",
+          informationAccuracy: "Confirmation of accuracy and truthfulness of the information provided"
+        },
+        
+        options: {
+          immediate: "Immediate",
+          oneMonth: "1 month",
+          threeMonths: "3 months",
+          other: "Other",
+          longHaul: "Long-haul",
+          mediumHaul: "Medium-haul",
+          shortHaul: "Short-haul",
+          charter: "Charter",
+          corporate: "Corporate",
+          privateJet: "Private Jet"
+        },
+        
+        placeholders: {
+          heightCm: "cm",
+          weightKg: "kg",
+          armReachCm: "cm - barefoot, standing on tiptoes if required",
+          tattooDetails: "Location and size",
+          piercingDetails: "Specify",
+          correctiveLensesType: "Glasses/contact lenses",
+          englishCertification: "TOEFL, IELTS, etc.",
+          otherLanguages: "Specify level and certification if applicable",
+          workExperience: "For each position: Company/Hotel/Customer Service employer, Position (Cabin Crew, Purser, Senior, Hospitality Staff, etc.), Period (from-to), Key duties and responsibilities, Reason for leaving (optional)",
+          aircraftTypesOperated: "A320, A350, B737, B777, etc.",
+          otherRelevantCertificates: "e.g., Customer Service, Hospitality, Fire Fighting, Human Factors, CRM, etc.",
+          otherSkills: "Languages, IT, etc.",
+          salaryExpectation: "Optional/confidential"
+        }
+      },
+
+      // Validation
+      validation: {
+        required: "This field is required",
+        invalidEmail: "Invalid email format",
+        invalidPhone: "Invalid phone format",
+        invalidHours: "Hours must be a valid number",
+        invalidHeight: "Height must be between 150-200 cm",
+        invalidWeight: "Weight must be between 40-150 kg"
+      },
+
+      // Success
+      successTitle: "Application Submitted Successfully!",
+      successMessage: "Thank you for your interest in Cruz del Sur. We will review your application and contact you soon.",
+      backToSelection: "Back to Selection",
+      submitError: "Error submitting application. Please try again."
     },
 
     // Under construction page
