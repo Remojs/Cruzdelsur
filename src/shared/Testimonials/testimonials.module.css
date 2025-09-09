@@ -520,6 +520,13 @@
   justify-content: flex-start; /* title at the top */
   align-items: flex-start;
   text-align: left;
+  cursor: pointer; /* Add pointer cursor */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
 .testimonialTitle {
@@ -534,8 +541,7 @@
   color: #374151;
   line-height: 1.5; /* improve readability */
   margin: 0;
-  max-height: 6.2rem;
-  overflow: hidden;
+  /* Removed max-height and overflow: hidden to show full text */
 }
 
 .testimonialContent {
