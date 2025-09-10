@@ -88,7 +88,7 @@ const TCPForm = ({ onBack }) => {
     operationTypePreference: '',
     airlineInterest: '',
     willingnessToRelocate: '',
-    relocationCountryPreferences: '',
+    relocationCountryPreferences: '',  
     salaryExpectation: '',
     
     // 11. Declaraciones y Consentimiento

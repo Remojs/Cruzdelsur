@@ -16,7 +16,7 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   min-height: 100vh;
-  background-image: url('../assets/backgrounds/background.png');
+  background-image: url('../assets/backgrounds/background.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from '../../i18n/LanguageContext';
 import styles from './WebinarBanner.module.css';
-import WebinarBannerDesktop from '@assets/banners/mentoria-banner.png';
-import WebinarBannerMobile from '@assets/banners/mentoria-banner-mobile.png';
+import WebinarBannerDesktop from '@assets/banners/mentoria-banner.webp';
+import WebinarBannerMobile from '@assets/banners/mentoria-banner-mobile.webp';
 
 export default function WebinarBanner() {
   const { t } = useTranslation();

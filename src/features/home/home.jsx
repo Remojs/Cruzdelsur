@@ -2,14 +2,13 @@ import styles from './home.module.css';
 import { useTranslation } from '../../i18n/LanguageContext';
 
 //Images
-import HomePortrait from '@assets/banners/HomePortrait.webp'
 import HomeIMG from '@assets/backgrounds/AnimationBG.webp'
 import HomeIMG2 from '@assets/backgrounds/AnimationBG.webp'
 import SectionCard1 from '@assets/images/SectionCard_IMG1.webp';
 import SectionCard2 from '@assets/images/SectionCard_IMG2.webp';
 import SectionCard3 from '@assets/images/SectionCard_IMG3.webp';
 import SectionCard4 from '@assets/images/SectionCard_IMG4.webp';
-import SectionCard5 from '@assets/images/SectionCard_IMG5.png';
+import SectionCard5 from '@assets/images/SectionCard_IMG5.webp';
 
 //Components
 import SectionCardGroup from '@shared/SectionCardGroup/SectionCardGroup';

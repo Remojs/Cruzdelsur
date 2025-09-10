@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from '../../i18n/LanguageContext';
 import styles from './UnderConstruction.module.css';
-import constructionImage from '@assets/images/underconstruction.png'; // Adjust the path as necessary
+import constructionImage from '@assets/images/underconstruction.webp'; // Adjust the path as necessary
 
 const UnderConstruction = () => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { useTranslation } from '../../i18n/LanguageContext';
 import styles from './BlueSection.module.css';
-import BlueSectionImg from '@assets/images/Bluesectionimg.png';
-import BlueSectionImg2 from '@assets/images/Bluesectionimg2.png';
+import BlueSectionImg from '@assets/images/Bluesectionimg.webp';
+import BlueSectionImg2 from '@assets/images/Bluesectionimg2.webp';
 
 export default function BlueSection() {
   const { t } = useTranslation();
