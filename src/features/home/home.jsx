@@ -12,7 +12,6 @@ import SectionCard5 from '@assets/images/SectionCard_IMG5.webp';
 
 //Components
 import SectionCardGroup from '@shared/SectionCardGroup/SectionCardGroup';
-import Stats from '@shared/Stats/Stats';
 import Contact from '@shared/Contact/Contact';
 import ScrollSection from '@shared/ScrollSection/ScrollSection';
 import ReverseScrollSection from '@shared/ReverseScrollSection/ReverseScrollSection';
