@@ -116,15 +116,15 @@
 }
 
 .pilotButton .cardImage {
-  background-image: url('../../assets/images/SectionCard_IMG1.webp');
+  background-image: url('../../assets/images/app1.png');
 }
 
 .tcpButton .cardImage {
-  background-image: url('../../assets/images/SectionCard_IMG2.webp');
+  background-image: url('../../assets/images/app2.png');
 }
 
 .otherButton .cardImage {
-  background-image: url('../../assets/images/SectionCard_IMG5.webp');
+  background-image: url('../../assets/images/app3.png');
 }
 
 .cardLabel {
