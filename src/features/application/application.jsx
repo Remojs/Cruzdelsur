@@ -54,37 +54,42 @@ const Application = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className={styles.selectionSection}
         >
-          <h2 className={styles.selectionTitle}>{t('application.selectPosition')}</h2>
           <div className={styles.buttonContainer}>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleFormSelection('pilot')}
               className={`${styles.selectionButton} ${styles.pilotButton}`}
             >
-              <div className={styles.buttonContent}>
-                <div className={styles.buttonIcon}>✈️</div>
-                <div className={styles.buttonText}>
-                  <h3>{t('application.pilot.title')}</h3>
-                  <p>{t('application.pilot.description')}</p>
-                </div>
+              <div className={styles.cardImage}></div>
+              <div className={styles.cardLabel}>
+                <h3>Piloto</h3>
               </div>
-            </motion.button>
+            </motion.div>
 
-            <motion.button
-              whileHover={{ scale: 1.02 }}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleFormSelection('tcp')}
               className={`${styles.selectionButton} ${styles.tcpButton}`}
             >
-              <div className={styles.buttonContent}>
-                <div className={styles.buttonIcon}>👥</div>
-                <div className={styles.buttonText}>
-                  <h3>{t('application.tcp.title')}</h3>
-                  <p>{t('application.tcp.description')}</p>
-                </div>
+              <div className={styles.cardImage}></div>
+              <div className={styles.cardLabel}>
+                <h3>Tripulante de cabina<br />de pasajeros</h3>
               </div>
-            </motion.button>
+            </motion.div>
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => window.location.href = '/under-construction'}
+              className={`${styles.selectionButton} ${styles.otherButton}`}
+            >
+              <div className={styles.cardImage}></div>
+              <div className={styles.cardLabel}>
+                <h3>Otras Areas</h3>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>

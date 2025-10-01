@@ -239,7 +239,7 @@ export const translations = {
     // Application Forms
     application: {
       title: "Únete a Nuestro Equipo",
-      description: "En Cruz del Sur, buscamos profesionales excepcionales que compartan nuestra pasión por la excelencia en la aviación. Completa tu aplicación y comienza tu carrera con nosotros.",
+      description: "En Cruz del Sur, convocamos a profesionales\nque quieran dar un paso mas en su carrera, en la Industria de la Aviacion.\nCarga tus datos para ser considerado\nen actuales / futuros procesos de seleccion",
       selectPosition: "Selecciona tu Posición",
       back: "Volver",
       submit: "Enviar Aplicación",
@@ -804,7 +804,7 @@ export const translations = {
     // Application Forms
     application: {
       title: "Join Our Team",
-      description: "At Cruz del Sur, we seek exceptional professionals who share our passion for excellence in aviation. Complete your application and start your career with us.",
+      description: "At Cruz del Sur, we invite professionals\nwho want to take the next step in their career in the Aviation Industry.\nUpload your information to be considered\nfor current / future selection processes",
       selectPosition: "Select Your Position",
       back: "Back",
       submit: "Submit Application",
